@@ -4,6 +4,7 @@ import { QuickLinks } from "@/components/QuickLinks";
 import { MainNavigation } from "@/components/MainNavigation";
 import { FeaturedSections } from "@/components/FeaturedSections";
 import { FAQSections } from "@/components/FAQSections";
+import { AskQuestion } from "@/components/AskQuestion";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
       <QuickLinks />
       <FeaturedSections />
       <FAQSections />
+      <AskQuestion />
       <Footer />
     </div>
   );

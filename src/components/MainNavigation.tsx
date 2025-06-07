@@ -23,6 +23,7 @@ export const MainNavigation = () => {
     { title: "Hostel & Accommodation", href: "#hostel" },
     { title: "Student Support", href: "#support" },
     { title: "Vadodara City Guide", href: "#city-guide" },
+    { title: "Ask a Question", href: "#ask-question" },
     { title: "Contact Us", href: "#contact" }
   ];
 
