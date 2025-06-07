@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -57,7 +56,7 @@ export const AskQuestion = () => {
   };
 
   return (
-    <section id="ask-question" className="py-16 bg-background">
+    <section id="contact" className="py-16 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
