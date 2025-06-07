@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageSquareQuestion, Send } from "lucide-react";
+import { MessageSquare, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const AskQuestion = () => {
@@ -62,7 +62,7 @@ export const AskQuestion = () => {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
             <div className="p-3 bg-primary/10 rounded-full">
-              <MessageSquareQuestion className="h-8 w-8 text-primary" />
+              <MessageSquare className="h-8 w-8 text-primary" />
             </div>
           </div>
           <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -76,7 +76,7 @@ export const AskQuestion = () => {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <MessageSquareQuestion className="h-5 w-5 text-primary" />
+              <MessageSquare className="h-5 w-5 text-primary" />
               <span>Submit Your Question</span>
             </CardTitle>
             <CardDescription>
