@@ -139,17 +139,17 @@ export const FAQSections = () => {
     <section id="faqs" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4 card-text-enhanced">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto card-text-enhanced">
             Get answers to the most common questions from GSV freshers
           </p>
         </div>
 
         <div className="grid gap-8">
           {faqCategories.map((category) => (
-            <Card key={category.id} id={category.id} className={`${category.color} border-2`}>
+            <Card key={category.id} id={category.id} className="space-card-light border-2">
               <Collapsible 
                 open={openSections.includes(category.id)}
                 onOpenChange={() => toggleSection(category.id)}
@@ -158,16 +158,16 @@ export const FAQSections = () => {
                   <CardHeader className="cursor-pointer hover:bg-black/5 transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="p-3 bg-white rounded-lg shadow-sm">
+                        <div className="p-3 bg-primary/20 rounded-lg shadow-sm">
                           <category.icon className="h-6 w-6 text-primary" />
                         </div>
                         <div className="text-left">
-                          <CardTitle className="text-xl">{category.title}</CardTitle>
-                          <CardDescription className="mt-1">{category.description}</CardDescription>
+                          <CardTitle className="text-xl text-gray-900 font-bold">{category.title}</CardTitle>
+                          <CardDescription className="mt-1 text-gray-700 font-medium">{category.description}</CardDescription>
                         </div>
                       </div>
                       <ChevronDown 
-                        className={`h-5 w-5 transition-transform ${
+                        className={`h-5 w-5 transition-transform text-gray-900 ${
                           openSections.includes(category.id) ? 'rotate-180' : ''
                         }`} 
                       />
@@ -179,16 +179,16 @@ export const FAQSections = () => {
                   <CardContent className="pt-0">
                     <div className="space-y-4">
                       {category.faqs.map((faq, index) => (
-                        <Card key={index} className="bg-white/50 border">
+                        <Card key={index} className="bg-white/90 border shadow-sm">
                           <CardContent className="p-4">
-                            <h4 className="font-semibold text-foreground mb-2">{faq.question}</h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                            <h4 className="font-bold text-gray-900 mb-2 text-base">{faq.question}</h4>
+                            <p className="text-sm text-gray-800 leading-relaxed font-medium">{faq.answer}</p>
                           </CardContent>
                         </Card>
                       ))}
                     </div>
                     <div className="mt-6 text-center">
-                      <Button variant="outline">
+                      <Button variant="outline" className="leetcode-btn button-text-enhanced font-bold text-gray-900">
                         View More {category.title}
                       </Button>
                     </div>

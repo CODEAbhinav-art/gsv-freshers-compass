@@ -60,26 +60,26 @@
   }
 }
 
-/* Enhanced button hover effects */
+/* Enhanced button hover effects - Sharp and Clear */
 @layer components {
   .leetcode-btn {
-    @apply relative overflow-hidden transition-all duration-300 ease-out;
-    box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+    @apply relative overflow-hidden transition-all duration-200 ease-out;
+    box-shadow: 0 2px 8px 0 rgba(0, 118, 255, 0.3);
+    border: 1px solid rgba(0, 118, 255, 0.4);
   }
 
   .leetcode-btn::before {
     content: '';
-    @apply absolute inset-0 -z-10 opacity-0 transition-opacity duration-300;
-    background: linear-gradient(135deg, rgba(0, 118, 255, 0.1), rgba(147, 51, 234, 0.1));
-    filter: blur(20px);
+    @apply absolute inset-0 -z-10 opacity-0 transition-opacity duration-200;
+    background: linear-gradient(135deg, rgba(0, 118, 255, 0.15), rgba(147, 51, 234, 0.15));
   }
 
   .leetcode-btn:hover {
-    @apply transform -translate-y-1;
+    @apply transform -translate-y-0.5;
     box-shadow: 
-      0 8px 25px 0 rgba(0, 118, 255, 0.5),
-      0 0 20px rgba(147, 51, 234, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 4px 15px 0 rgba(0, 118, 255, 0.4),
+      0 0 15px rgba(147, 51, 234, 0.2);
+    border-color: rgba(0, 118, 255, 0.6);
   }
 
   .leetcode-btn:hover::before {
@@ -88,18 +88,20 @@
 
   .leetcode-btn:active {
     @apply transform translate-y-0;
-    box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+    box-shadow: 0 2px 8px 0 rgba(0, 118, 255, 0.3);
   }
 
-  /* Enhanced text visibility */
+  /* Enhanced text visibility - Sharp and Bold */
   .card-text-enhanced {
-    @apply text-foreground;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    @apply text-foreground font-semibold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+    color: #1a1a1a !important;
   }
 
   .button-text-enhanced {
-    @apply text-foreground font-medium;
+    @apply text-foreground font-bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    color: #1a1a1a !important;
   }
 }
 
