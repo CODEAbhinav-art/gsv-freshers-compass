@@ -47,7 +47,13 @@ export const AdminDashboard = () => {
         throw error;
       }
 
-      setQuestions(data || []);
+      // Type cast the data to ensure status is properly typed
+      const typedData = (data || []).map(item => ({
+        ...item,
+        status: item.status as 'pending' | 'answered' | 'closed'
+      }));
+
+      setQuestions(typedData);
     } catch (error) {
       console.error('Error fetching questions:', error);
     } finally {
