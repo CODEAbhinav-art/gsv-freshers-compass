@@ -49,7 +49,7 @@ export const Hero = () => {
           <div className="relative">
             <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://i.ytimg.com/vi/O9JHRjcw1kE/maxresdefault.jpg"
                 alt="GSV Campus View"
                 className="w-full h-full object-cover"
               />
