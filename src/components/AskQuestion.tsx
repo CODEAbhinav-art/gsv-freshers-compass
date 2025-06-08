@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MessageSquare, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const AskQuestion = () => {
   const [name, setName] = useState("");
@@ -39,8 +41,23 @@ export const AskQuestion = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('questions')
+        .insert([
+          {
+            name,
+            email,
+            category,
+            question,
+            status: 'pending'
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Question Submitted!",
         description: "Your question has been submitted successfully. We'll get back to you soon.",
@@ -51,12 +68,20 @@ export const AskQuestion = () => {
       setEmail("");
       setCategory("");
       setQuestion("");
+    } catch (error) {
+      console.error('Error submitting question:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit your question. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
-    <section id="contact" className="py-16 bg-background">
+    <section id="contact" className="py-16 bg-background relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
@@ -72,7 +97,7 @@ export const AskQuestion = () => {
           </p>
         </div>
 
-        <Card className="shadow-lg">
+        <Card className="shadow-lg backdrop-blur-sm bg-card/95">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <MessageSquare className="h-5 w-5 text-primary" />
@@ -146,7 +171,7 @@ export const AskQuestion = () => {
                 </p>
               </div>
 
-              <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+              <Button type="submit" className="w-full leetcode-btn" size="lg" disabled={isSubmitting}>
                 {isSubmitting ? (
                   "Submitting..."
                 ) : (
@@ -161,7 +186,7 @@ export const AskQuestion = () => {
         </Card>
 
         {/* Community Guidelines */}
-        <Card className="mt-8 bg-primary/5 border-primary/20">
+        <Card className="mt-8 bg-primary/5 border-primary/20 backdrop-blur-sm">
           <CardContent className="pt-6">
             <h3 className="font-semibold mb-3 text-foreground">Community Guidelines</h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">

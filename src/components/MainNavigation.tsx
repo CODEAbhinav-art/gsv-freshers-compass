@@ -17,18 +17,19 @@ export const MainNavigation = () => {
         { name: "Placements & Careers", href: "#placements-careers" }
       ]
     },
+    { title: "Community Forum", href: "#community" },
     { title: "Admissions & Enrollment", href: "#admissions" },
     { title: "Academics", href: "#academics" },
     { title: "Campus Life", href: "#campus-life" },
     { title: "Hostel & Accommodation", href: "#hostel" },
     { title: "Student Support", href: "#support" },
     { title: "Vadodara City Guide", href: "#city-guide" },
-    { title: "Ask a Question", href: "#ask-question" },
-    { title: "Contact Us", href: "#contact" }
+    { title: "Ask a Question", href: "#contact" },
+    { title: "Admin Portal", href: "/admin" }
   ];
 
   return (
-    <nav className="bg-background border-b sticky top-0 z-50">
+    <nav className="bg-background/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -82,6 +83,7 @@ export const MainNavigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="leetcode-btn"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -90,7 +92,7 @@ export const MainNavigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t border-white/10">
             <div className="space-y-2">
               {menuItems.map((item) => (
                 <div key={item.title}>

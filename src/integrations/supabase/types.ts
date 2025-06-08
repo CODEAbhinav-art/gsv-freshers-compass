@@ -9,7 +9,148 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      forum_likes: {
+        Row: {
+          created_at: string
+          id: string
+          post_id: string
+          user_email: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          post_id: string
+          user_email: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          post_id?: string
+          user_email?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_likes_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "forum_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_posts: {
+        Row: {
+          author_email: string
+          author_name: string
+          category: string
+          content: string
+          created_at: string
+          id: string
+          likes_count: number | null
+          replies_count: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_email: string
+          author_name: string
+          category: string
+          content: string
+          created_at?: string
+          id?: string
+          likes_count?: number | null
+          replies_count?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_email?: string
+          author_name?: string
+          category?: string
+          content?: string
+          created_at?: string
+          id?: string
+          likes_count?: number | null
+          replies_count?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      forum_replies: {
+        Row: {
+          author_email: string
+          author_name: string
+          content: string
+          created_at: string
+          id: string
+          post_id: string
+        }
+        Insert: {
+          author_email: string
+          author_name: string
+          content: string
+          created_at?: string
+          id?: string
+          post_id: string
+        }
+        Update: {
+          author_email?: string
+          author_name?: string
+          content?: string
+          created_at?: string
+          id?: string
+          post_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_replies_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "forum_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questions: {
+        Row: {
+          admin_id: string | null
+          answer: string | null
+          category: string
+          created_at: string
+          email: string
+          id: string
+          name: string
+          question: string
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          admin_id?: string | null
+          answer?: string | null
+          category: string
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          question: string
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          admin_id?: string | null
+          answer?: string | null
+          category?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          question?: string
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
