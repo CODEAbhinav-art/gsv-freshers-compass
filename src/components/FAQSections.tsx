@@ -23,6 +23,7 @@ export const FAQSections = () => {
       icon: BookOpen,
       description: "Everything about courses, exams, and academic procedures",
       color: "bg-blue-50 border-blue-200",
+      iconColor: "text-blue-500",
       faqs: [
         {
           question: "What is the credit system at GSV?",
@@ -52,6 +53,7 @@ export const FAQSections = () => {
       icon: Users,
       description: "Campus life, facilities, and general student queries",
       color: "bg-green-50 border-green-200",
+      iconColor: "text-green-500",
       faqs: [
         {
           question: "What are the hostel facilities available?",
@@ -81,6 +83,7 @@ export const FAQSections = () => {
       icon: Briefcase,
       description: "Internship opportunities, procedures, and guidelines",
       color: "bg-purple-50 border-purple-200",
+      iconColor: "text-purple-500",
       faqs: [
         {
           question: "When should I start applying for internships?",
@@ -110,6 +113,7 @@ export const FAQSections = () => {
       icon: TrendingUp,
       description: "Job opportunities, career guidance, and placement process",
       color: "bg-orange-50 border-orange-200",
+      iconColor: "text-orange-500",
       faqs: [
         {
           question: "What is the placement record of GSV?",
@@ -139,17 +143,17 @@ export const FAQSections = () => {
     <section id="faqs" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4 card-text-enhanced">
+          <h2 className="text-3xl font-bold text-white mb-4 font-extrabold">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto card-text-enhanced">
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto font-semibold">
             Get answers to the most common questions from GSV freshers
           </p>
         </div>
 
         <div className="grid gap-8">
           {faqCategories.map((category) => (
-            <Card key={category.id} id={category.id} className="space-card-light border-2">
+            <Card key={category.id} id={category.id} className="space-card-light border-2 bg-white/95">
               <Collapsible 
                 open={openSections.includes(category.id)}
                 onOpenChange={() => toggleSection(category.id)}
@@ -158,12 +162,12 @@ export const FAQSections = () => {
                   <CardHeader className="cursor-pointer hover:bg-black/5 transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="p-3 bg-primary/20 rounded-lg shadow-sm">
-                          <category.icon className="h-6 w-6 text-primary" />
+                        <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg shadow-sm border border-blue-400/30">
+                          <category.icon className={`h-6 w-6 ${category.iconColor}`} />
                         </div>
                         <div className="text-left">
                           <CardTitle className="text-xl text-gray-900 font-bold">{category.title}</CardTitle>
-                          <CardDescription className="mt-1 text-gray-700 font-medium">{category.description}</CardDescription>
+                          <CardDescription className="mt-1 text-gray-700 font-semibold">{category.description}</CardDescription>
                         </div>
                       </div>
                       <ChevronDown 
@@ -188,7 +192,8 @@ export const FAQSections = () => {
                       ))}
                     </div>
                     <div className="mt-6 text-center">
-                      <Button variant="outline" className="leetcode-btn button-text-enhanced font-bold text-gray-900">
+                      <Button variant="outline" className="leetcode-btn bg-black/80 text-white font-bold hover:bg-black/90 border-blue-400/50">
+                        <category.icon className={`h-4 w-4 mr-2 ${category.iconColor}`} />
                         View More {category.title}
                       </Button>
                     </div>

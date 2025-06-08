@@ -67,12 +67,23 @@ export const SpaceBackground = () => {
     <>
       {/* Space Background */}
       <div className="fixed inset-0 -z-50 bg-gradient-to-b from-slate-950 via-purple-950 to-slate-900">
-        {/* Black Hole */}
-        <div className="absolute top-1/4 left-1/3 w-32 h-32 black-hole">
-          <div className="absolute inset-0 rounded-full bg-black shadow-[0_0_100px_20px_rgba(0,0,0,0.8)]"></div>
-          <div className="absolute inset-2 rounded-full bg-gradient-radial from-transparent via-purple-900/50 to-black animate-spin-slow"></div>
-          <div className="absolute inset-4 rounded-full bg-gradient-radial from-transparent via-blue-900/30 to-black animate-spin-reverse"></div>
-          <div className="absolute inset-6 rounded-full bg-black"></div>
+        {/* Enhanced Black Hole - Much More Visible */}
+        <div className="absolute top-1/4 left-1/3 w-48 h-48 black-hole z-10">
+          {/* Outer event horizon with strong glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-purple-900/80 to-black shadow-[0_0_200px_50px_rgba(147,51,234,0.8)] animate-spin-slow"></div>
+          
+          {/* Middle accretion disk */}
+          <div className="absolute inset-3 rounded-full bg-gradient-radial from-transparent via-orange-500/60 to-purple-900/90 shadow-[0_0_150px_30px_rgba(251,146,60,0.6)] animate-spin-reverse"></div>
+          
+          {/* Inner disk with intense glow */}
+          <div className="absolute inset-6 rounded-full bg-gradient-radial from-transparent via-blue-500/70 to-black shadow-[0_0_100px_20px_rgba(59,130,246,0.8)] animate-spin-slow"></div>
+          
+          {/* Event horizon - pure black center */}
+          <div className="absolute inset-12 rounded-full bg-black shadow-[inset_0_0_50px_rgba(0,0,0,1)]"></div>
+          
+          {/* Gravitational lensing effect */}
+          <div className="absolute -inset-8 rounded-full border-2 border-purple-400/30 animate-pulse"></div>
+          <div className="absolute -inset-12 rounded-full border border-blue-400/20 animate-pulse delay-1000"></div>
         </div>
         
         {/* Nebula Effect */}

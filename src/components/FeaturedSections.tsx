@@ -50,26 +50,26 @@ export const FeaturedSections = () => {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4 font-extrabold">
             Featured Information for New Students
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto font-semibold">
             Essential information curated specifically for incoming freshers
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {featuredContent.map((item) => (
-            <Card key={item.title} className="space-card border-2 hover:shadow-xl transition-all duration-300">
+            <Card key={item.title} className="space-card border-2 hover:shadow-xl transition-all duration-300 bg-white/95">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <item.icon className="h-6 w-6 text-primary" />
+                    <div className="p-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-400/30">
+                      <item.icon className="h-6 w-6 text-blue-600" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl card-text-enhanced">{item.title}</CardTitle>
-                      <CardDescription className="mt-1 card-text-enhanced">{item.description}</CardDescription>
+                      <CardTitle className="text-xl text-gray-900 font-bold">{item.title}</CardTitle>
+                      <CardDescription className="mt-1 text-gray-700 font-semibold">{item.description}</CardDescription>
                     </div>
                   </div>
                   <Badge className={getStatusColor(item.status)} variant="outline">
@@ -82,11 +82,11 @@ export const FeaturedSections = () => {
                   {item.items.map((listItem, index) => (
                     <li key={index} className="flex items-center space-x-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                      <span className="card-text-enhanced">{listItem}</span>
+                      <span className="text-gray-900 font-semibold">{listItem}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full" variant="outline">
+                <Button className="w-full leetcode-btn bg-black/80 text-white font-bold hover:bg-black/90 border-blue-400/50" variant="outline">
                   View Details
                 </Button>
               </CardContent>
@@ -96,7 +96,7 @@ export const FeaturedSections = () => {
 
         {/* Success Stories Section */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">What Current Students Say</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-white font-extrabold">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -115,14 +115,14 @@ export const FeaturedSections = () => {
                 quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="space-card">
+              <Card key={index} className="space-card bg-white/95">
                 <CardContent className="p-6">
-                  <blockquote className="text-sm italic mb-4 card-text-enhanced">
+                  <blockquote className="text-sm italic mb-4 text-gray-900 font-semibold">
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="text-sm">
-                    <p className="font-semibold card-text-enhanced">{testimonial.name}</p>
-                    <p className="text-muted-foreground card-text-enhanced">{testimonial.year}</p>
+                    <p className="font-bold text-gray-900">{testimonial.name}</p>
+                    <p className="text-gray-700 font-semibold">{testimonial.year}</p>
                   </div>
                 </CardContent>
               </Card>

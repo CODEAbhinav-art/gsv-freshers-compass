@@ -53,10 +53,10 @@ export const QuickLinks = () => {
     <section className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4 font-extrabold">
             Quick Access to Popular Sections
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto font-semibold">
             Jump directly to the information you need most as a new student at GSV
           </p>
         </div>
@@ -66,17 +66,17 @@ export const QuickLinks = () => {
             <Card key={link.title} className="space-card-light hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-3">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-primary/10 rounded-lg shadow-sm">
-                    <link.icon className="h-6 w-6 text-primary" />
+                  <div className="p-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg shadow-sm border border-blue-400/30">
+                    <link.icon className="h-6 w-6 text-blue-400" />
                   </div>
-                  <CardTitle className="text-lg text-gray-900 card-text-enhanced">{link.title}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900 font-bold">{link.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <CardDescription className="mb-4 text-sm text-gray-700 card-text-enhanced">
+                <CardDescription className="mb-4 text-sm text-gray-700 font-semibold">
                   {link.description}
                 </CardDescription>
-                <Button variant="outline" size="sm" className="w-full leetcode-btn button-text-enhanced" asChild>
+                <Button variant="outline" size="sm" className="w-full leetcode-btn bg-black/80 text-white font-bold hover:bg-black/90 border-blue-400/50" asChild>
                   <a href={link.href}>Learn More</a>
                 </Button>
               </CardContent>
