@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 interface Star {
@@ -16,7 +17,7 @@ export const SpaceBackground = () => {
     // Generate initial stars
     const generateStars = () => {
       const newStars: Star[] = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 150; i++) {
         newStars.push({
           id: i,
           x: Math.random() * window.innerWidth,
@@ -66,10 +67,18 @@ export const SpaceBackground = () => {
     <>
       {/* Space Background */}
       <div className="fixed inset-0 -z-50 bg-gradient-to-b from-slate-950 via-purple-950 to-slate-900">
+        {/* Black Hole */}
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 black-hole">
+          <div className="absolute inset-0 rounded-full bg-black shadow-[0_0_100px_20px_rgba(0,0,0,0.8)]"></div>
+          <div className="absolute inset-2 rounded-full bg-gradient-radial from-transparent via-purple-900/50 to-black animate-spin-slow"></div>
+          <div className="absolute inset-4 rounded-full bg-gradient-radial from-transparent via-blue-900/30 to-black animate-spin-reverse"></div>
+          <div className="absolute inset-6 rounded-full bg-black"></div>
+        </div>
+        
         {/* Nebula Effect */}
         <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-900/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-purple-900/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         
         {/* Falling Stars */}
         {stars.map(star => (

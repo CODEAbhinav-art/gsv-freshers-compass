@@ -60,7 +60,7 @@
   }
 }
 
-/* LeetCode-style button hover effects */
+/* Enhanced button hover effects */
 @layer components {
   .leetcode-btn {
     @apply relative overflow-hidden transition-all duration-300 ease-out;
@@ -89,6 +89,17 @@
   .leetcode-btn:active {
     @apply transform translate-y-0;
     box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  }
+
+  /* Enhanced text visibility */
+  .card-text-enhanced {
+    @apply text-foreground;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+
+  .button-text-enhanced {
+    @apply text-foreground font-medium;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -122,12 +133,30 @@
     }
   }
 
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
   .animate-scan {
     animation: scan 3s linear infinite;
   }
 
   .animate-scan-reverse {
     animation: scan-reverse 4s linear infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 8s linear infinite;
   }
 
   .shooting-star {
@@ -168,11 +197,43 @@
     60% { transform: translateX(-1px); }
     80% { transform: translateX(1px); }
   }
+
+  /* Black hole effect */
+  .black-hole {
+    filter: blur(1px);
+  }
+
+  .black-hole::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 40%, rgba(75, 0, 130, 0.3) 70%, rgba(25, 25, 112, 0.5) 100%);
+    animation: black-hole-distortion 4s ease-in-out infinite;
+  }
+
+  @keyframes black-hole-distortion {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+  }
 }
 
-/* Card transparency for space theme */
+/* Card transparency and text enhancement for space theme */
 .backdrop-blur-sm {
   backdrop-filter: blur(4px);
-  background: rgba(15, 15, 35, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 15, 35, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced visibility for cards and components */
+.space-card {
+  background: rgba(15, 15, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.space-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }

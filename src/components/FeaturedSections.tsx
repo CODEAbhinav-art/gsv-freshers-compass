@@ -60,7 +60,7 @@ export const FeaturedSections = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {featuredContent.map((item) => (
-            <Card key={item.title} className="border-2 hover:shadow-xl transition-all duration-300">
+            <Card key={item.title} className="space-card border-2 hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
@@ -68,8 +68,8 @@ export const FeaturedSections = () => {
                       <item.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl">{item.title}</CardTitle>
-                      <CardDescription className="mt-1">{item.description}</CardDescription>
+                      <CardTitle className="text-xl card-text-enhanced">{item.title}</CardTitle>
+                      <CardDescription className="mt-1 card-text-enhanced">{item.description}</CardDescription>
                     </div>
                   </div>
                   <Badge className={getStatusColor(item.status)} variant="outline">
@@ -82,7 +82,7 @@ export const FeaturedSections = () => {
                   {item.items.map((listItem, index) => (
                     <li key={index} className="flex items-center space-x-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                      <span>{listItem}</span>
+                      <span className="card-text-enhanced">{listItem}</span>
                     </li>
                   ))}
                 </ul>
@@ -96,7 +96,7 @@ export const FeaturedSections = () => {
 
         {/* Success Stories Section */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8">What Current Students Say</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -115,14 +115,14 @@ export const FeaturedSections = () => {
                 quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-card">
+              <Card key={index} className="space-card">
                 <CardContent className="p-6">
-                  <blockquote className="text-sm italic mb-4">
+                  <blockquote className="text-sm italic mb-4 card-text-enhanced">
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="text-sm">
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-muted-foreground">{testimonial.year}</p>
+                    <p className="font-semibold card-text-enhanced">{testimonial.name}</p>
+                    <p className="text-muted-foreground card-text-enhanced">{testimonial.year}</p>
                   </div>
                 </CardContent>
               </Card>

@@ -63,20 +63,20 @@ export const QuickLinks = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {quickLinks.map((link) => (
-            <Card key={link.title} className={`${link.color} hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
+            <Card key={link.title} className="space-card-light hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-3">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-white rounded-lg shadow-sm">
+                  <div className="p-2 bg-primary/10 rounded-lg shadow-sm">
                     <link.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{link.title}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900 card-text-enhanced">{link.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <CardDescription className="mb-4 text-sm">
+                <CardDescription className="mb-4 text-sm text-gray-700 card-text-enhanced">
                   {link.description}
                 </CardDescription>
-                <Button variant="outline" size="sm" className="w-full" asChild>
+                <Button variant="outline" size="sm" className="w-full leetcode-btn button-text-enhanced" asChild>
                   <a href={link.href}>Learn More</a>
                 </Button>
               </CardContent>
