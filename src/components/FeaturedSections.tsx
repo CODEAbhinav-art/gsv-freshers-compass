@@ -1,7 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Star, TrendingUp } from "lucide-react";
 
 export const FeaturedSections = () => {
@@ -11,28 +10,32 @@ export const FeaturedSections = () => {
       description: "Complete post-admission formalities with our step-by-step guide",
       status: "Essential",
       icon: CheckCircle,
-      items: ["Document verification", "Fee payment", "Medical certificates", "Anti-ragging affidavit"]
+      items: ["Document verification", "Fee payment", "Medical certificates", "Anti-ragging affidavit"],
+      gradient: "from-red-400 to-pink-500"
     },
     {
       title: "Orientation Schedule",
       description: "Don't miss important orientation sessions and welcome events",
       status: "Upcoming",
       icon: Clock,
-      items: ["Department introduction", "Campus tour", "Mentor assignment", "Student activities fair"]
+      items: ["Department introduction", "Campus tour", "Mentor assignment", "Student activities fair"],
+      gradient: "from-blue-400 to-cyan-500"
     },
     {
       title: "Popular Student Clubs",
       description: "Join vibrant communities and pursue your interests",
       status: "Trending",
       icon: TrendingUp,
-      items: ["Technical societies", "Cultural clubs", "Sports teams", "Entrepreneurship cell"]
+      items: ["Technical societies", "Cultural clubs", "Sports teams", "Entrepreneurship cell"],
+      gradient: "from-green-400 to-emerald-500"
     },
     {
       title: "Campus Facilities",
       description: "Explore world-class infrastructure and amenities",
       status: "Featured",
       icon: Star,
-      items: ["Modern laboratories", "Central library", "Sports complex", "Wi-Fi campus"]
+      items: ["Modern laboratories", "Central library", "Sports complex", "Wi-Fi campus"],
+      gradient: "from-purple-400 to-violet-500"
     }
   ];
 
@@ -47,83 +50,111 @@ export const FeaturedSections = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-extrabold">
+    <section className="py-16 bg-white relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200/20 rounded-full animate-blob"></div>
+        <div className="absolute top-20 right-10 w-24 h-24 bg-purple-200/20 rounded-full animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-20 w-20 h-20 bg-pink-200/20 rounded-full animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Featured Information for New Students
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-semibold">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Essential information curated specifically for incoming freshers
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {featuredContent.map((item) => (
-            <Card key={item.title} className="space-card border-2 hover:shadow-xl transition-all duration-300 bg-white/95">
+          {featuredContent.map((item, index) => (
+            <Card 
+              key={item.title} 
+              className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/90 backdrop-blur-sm hover:-translate-y-1 animate-fade-in-staggered"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-400/30">
-                      <item.icon className="h-6 w-6 text-blue-600" />
+                    <div className={`p-3 bg-gradient-to-r ${item.gradient} rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <item.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-gray-900 font-bold">{item.title}</CardTitle>
-                      <CardDescription className="mt-1 text-gray-700 font-semibold">{item.description}</CardDescription>
+                      <CardTitle className="text-xl text-gray-900 group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="mt-1 text-gray-700">
+                        {item.description}
+                      </CardDescription>
                     </div>
                   </div>
-                  <Badge className={getStatusColor(item.status)} variant="outline">
+                  <Badge className={`${getStatusColor(item.status)} animate-pulse-soft`} variant="outline">
                     {item.status}
                   </Badge>
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 mb-6">
-                  {item.items.map((listItem, index) => (
-                    <li key={index} className="flex items-center space-x-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                      <span className="text-gray-900 font-semibold">{listItem}</span>
+                <ul className="space-y-3 mb-6">
+                  {item.items.map((listItem, itemIndex) => (
+                    <li 
+                      key={itemIndex} 
+                      className="flex items-center space-x-3 text-sm group-hover:translate-x-2 transition-transform duration-300"
+                      style={{ transitionDelay: `${itemIndex * 50}ms` }}
+                    >
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-gray-900">{listItem}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full leetcode-btn bg-blue-600 text-white font-bold hover:bg-blue-700 border-blue-400/50" variant="outline">
-                  View Details
-                </Button>
+                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                  <div className={`h-full bg-gradient-to-r ${item.gradient} translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700`}></div>
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Success Stories Section */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900 font-extrabold">What Current Students Say</h3>
+        <div className="mt-16 animate-fade-in-delayed-3">
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 name: "Priya Sharma",
                 year: "2nd Year B.Tech",
-                quote: "The hostel facilities are excellent, and the mess food is really good. The campus Wi-Fi works great for online classes too!"
+                quote: "The hostel facilities are excellent, and the mess food is really good. The campus Wi-Fi works great for online classes too!",
+                gradient: "from-pink-400 to-rose-500"
               },
               {
                 name: "Rahul Patel",
-                year: "1st Year MBA",
-                quote: "The orientation program helped me settle in quickly. The senior mentors are very supportive and always ready to help."
+                year: "1st Year MBA", 
+                quote: "The orientation program helped me settle in quickly. The senior mentors are very supportive and always ready to help.",
+                gradient: "from-blue-400 to-indigo-500"
               },
               {
                 name: "Anjali Verma",
                 year: "3rd Year B.Tech",
-                quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!"
+                quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!",
+                gradient: "from-green-400 to-teal-500"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="space-card bg-white/95">
-                <CardContent className="p-6">
-                  <blockquote className="text-sm italic mb-4 text-gray-900 font-semibold">
+              <Card 
+                key={index} 
+                className="group hover:shadow-xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:-translate-y-2 animate-fade-in-staggered"
+                style={{ animationDelay: `${(index + 4) * 100}ms` }}
+              >
+                <CardContent className="p-6 relative overflow-hidden">
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${testimonial.gradient}`}></div>
+                  <blockquote className="text-sm italic mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="text-sm">
                     <p className="font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-gray-700 font-semibold">{testimonial.year}</p>
+                    <p className="text-gray-700">{testimonial.year}</p>
                   </div>
+                  <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-gray-200/50 to-transparent rounded-tl-full"></div>
                 </CardContent>
               </Card>
             ))}

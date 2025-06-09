@@ -17,14 +17,14 @@ export const SpaceBackground = () => {
     // Generate initial stars
     const generateStars = () => {
       const newStars: Star[] = [];
-      for (let i = 0; i < 150; i++) {
+      for (let i = 0; i < 100; i++) {
         newStars.push({
           id: i,
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
-          size: Math.random() * 3 + 1,
-          speed: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.8 + 0.2
+          size: Math.random() * 2 + 0.5,
+          speed: Math.random() * 1 + 0.2,
+          opacity: Math.random() * 0.6 + 0.2
         });
       }
       setStars(newStars);
@@ -38,7 +38,7 @@ export const SpaceBackground = () => {
         prevStars.map(star => ({
           ...star,
           y: star.y + star.speed,
-          x: star.x + Math.sin(star.y * 0.01) * 0.5,
+          x: star.x + Math.sin(star.y * 0.01) * 0.3,
           // Reset star when it goes off screen
           ...(star.y > window.innerHeight ? {
             y: -10,
@@ -65,66 +65,65 @@ export const SpaceBackground = () => {
 
   return (
     <>
-      {/* Space Background */}
-      <div className="fixed inset-0 -z-50 bg-gradient-to-b from-slate-950 via-purple-950 to-slate-900">
-        {/* Enhanced Black Hole - Much More Visible */}
-        <div className="absolute top-1/4 left-1/3 w-48 h-48 black-hole z-10">
-          {/* Outer event horizon with strong glow */}
-          <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-purple-900/80 to-black shadow-[0_0_200px_50px_rgba(147,51,234,0.8)] animate-spin-slow"></div>
+      {/* Space Background - More subtle for light theme */}
+      <div className="fixed inset-0 -z-50 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30">
+        {/* Enhanced Black Hole - Visible but subtle */}
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 black-hole z-10 opacity-30">
+          {/* Outer event horizon with subtle glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-purple-200/40 to-gray-300/20 shadow-[0_0_100px_20px_rgba(147,51,234,0.1)] animate-spin-slow-bg"></div>
           
           {/* Middle accretion disk */}
-          <div className="absolute inset-3 rounded-full bg-gradient-radial from-transparent via-orange-500/60 to-purple-900/90 shadow-[0_0_150px_30px_rgba(251,146,60,0.6)] animate-spin-reverse"></div>
+          <div className="absolute inset-2 rounded-full bg-gradient-radial from-transparent via-blue-200/30 to-purple-200/40 shadow-[0_0_60px_15px_rgba(59,130,246,0.1)] animate-spin-reverse"></div>
           
-          {/* Inner disk with intense glow */}
-          <div className="absolute inset-6 rounded-full bg-gradient-radial from-transparent via-blue-500/70 to-black shadow-[0_0_100px_20px_rgba(59,130,246,0.8)] animate-spin-slow"></div>
+          {/* Inner disk with gentle glow */}
+          <div className="absolute inset-4 rounded-full bg-gradient-radial from-transparent via-indigo-200/40 to-gray-400/20 shadow-[0_0_40px_10px_rgba(99,102,241,0.1)] animate-spin-slow-bg"></div>
           
-          {/* Event horizon - pure black center */}
-          <div className="absolute inset-12 rounded-full bg-black shadow-[inset_0_0_50px_rgba(0,0,0,1)]"></div>
+          {/* Event horizon - soft center */}
+          <div className="absolute inset-8 rounded-full bg-gray-300/30 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)]"></div>
           
-          {/* Gravitational lensing effect */}
-          <div className="absolute -inset-8 rounded-full border-2 border-purple-400/30 animate-pulse"></div>
-          <div className="absolute -inset-12 rounded-full border border-blue-400/20 animate-pulse delay-1000"></div>
+          {/* Gravitational lensing effect - very subtle */}
+          <div className="absolute -inset-4 rounded-full border border-purple-200/20 animate-pulse"></div>
+          <div className="absolute -inset-6 rounded-full border border-blue-200/10 animate-pulse delay-1000"></div>
         </div>
         
-        {/* Nebula Effect */}
-        <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-purple-900/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        {/* Subtle Nebula Effect */}
+        <div className="absolute inset-0 bg-gradient-radial from-purple-100/10 via-transparent to-transparent"></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-100/5 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-purple-100/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         
-        {/* Falling Stars */}
+        {/* Gentle Falling Stars */}
         {stars.map(star => (
           <div
             key={star.id}
-            className="absolute rounded-full bg-white animate-pulse"
+            className="absolute rounded-full bg-gray-400 animate-pulse"
             style={{
               left: `${star.x}px`,
               top: `${star.y}px`,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              opacity: star.opacity,
-              boxShadow: `0 0 ${star.size * 2}px rgba(255, 255, 255, ${star.opacity})`
+              opacity: star.opacity * 0.6, // Reduce opacity for light theme
+              boxShadow: `0 0 ${star.size * 1.5}px rgba(156, 163, 175, ${star.opacity * 0.3})`
             }}
           />
         ))}
 
-        {/* Additional shooting stars */}
-        <div className="shooting-star absolute top-1/4 left-0 w-2 h-2 bg-white rounded-full opacity-80"></div>
-        <div className="shooting-star absolute top-1/2 left-1/4 w-1 h-1 bg-blue-300 rounded-full opacity-60 delay-3000"></div>
-        <div className="shooting-star absolute top-3/4 left-1/2 w-1.5 h-1.5 bg-purple-300 rounded-full opacity-70 delay-6000"></div>
+        {/* Gentle shooting stars */}
+        <div className="shooting-star absolute top-1/4 left-0 w-1 h-1 bg-gray-400 rounded-full opacity-40"></div>
+        <div className="shooting-star absolute top-1/2 left-1/4 w-0.5 h-0.5 bg-blue-300 rounded-full opacity-30 delay-3000"></div>
+        <div className="shooting-star absolute top-3/4 left-1/2 w-1 h-1 bg-purple-300 rounded-full opacity-35 delay-6000"></div>
       </div>
 
-      {/* GSV 2025 Hologram */}
-      <div className="fixed bottom-10 right-10 -z-40 pointer-events-none">
+      {/* Subtle GSV 2025 Hologram */}
+      <div className="fixed bottom-10 right-10 -z-40 pointer-events-none opacity-60">
         <div className="relative">
-          <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse hologram-text">
+          <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-blue-500 to-purple-500 animate-pulse hologram-text">
             GSV
           </div>
-          <div className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mt-2 hologram-text">
+          <div className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mt-1 hologram-text">
             2025
           </div>
-          {/* Hologram scan lines */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent animate-scan opacity-50"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/10 to-transparent animate-scan-reverse opacity-30"></div>
+          {/* Subtle hologram scan lines */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-300/10 to-transparent animate-scan opacity-30"></div>
         </div>
       </div>
     </>
