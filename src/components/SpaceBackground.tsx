@@ -91,7 +91,7 @@ export const SpaceBackground = () => {
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-100/5 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-purple-100/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         
-        {/* Gentle Falling Stars */}
+        {/* Enhanced Falling Stars - Right side focus */}
         {stars.map(star => (
           <div
             key={star.id}
@@ -101,29 +101,30 @@ export const SpaceBackground = () => {
               top: `${star.y}px`,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              opacity: star.opacity * 0.6, // Reduce opacity for light theme
-              boxShadow: `0 0 ${star.size * 1.5}px rgba(156, 163, 175, ${star.opacity * 0.3})`
+              opacity: star.opacity * 0.8,
+              boxShadow: `0 0 ${star.size * 2}px rgba(156, 163, 175, ${star.opacity * 0.5})`
             }}
           />
         ))}
 
-        {/* Gentle shooting stars */}
-        <div className="shooting-star absolute top-1/4 left-0 w-1 h-1 bg-gray-400 rounded-full opacity-40"></div>
-        <div className="shooting-star absolute top-1/2 left-1/4 w-0.5 h-0.5 bg-blue-300 rounded-full opacity-30 delay-3000"></div>
-        <div className="shooting-star absolute top-3/4 left-1/2 w-1 h-1 bg-purple-300 rounded-full opacity-35 delay-6000"></div>
+        {/* Enhanced shooting stars - More prominent on right side */}
+        <div className="shooting-star absolute top-1/6 right-1/4 w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
+        <div className="shooting-star absolute top-2/5 right-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-50 delay-2000"></div>
+        <div className="shooting-star absolute top-3/5 right-1/5 w-2 h-2 bg-indigo-400 rounded-full opacity-70 delay-4000"></div>
+        <div className="shooting-star absolute top-4/5 right-2/5 w-1 h-1 bg-pink-400 rounded-full opacity-45 delay-6000"></div>
       </div>
 
-      {/* Subtle GSV 2025 Hologram */}
-      <div className="fixed bottom-10 right-10 -z-40 pointer-events-none opacity-60">
+      {/* Enhanced GSV 2025 Hologram */}
+      <div className="fixed bottom-10 right-10 -z-40 pointer-events-none opacity-70">
         <div className="relative">
-          <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-blue-500 to-purple-500 animate-pulse hologram-text">
+          <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-blue-600 to-purple-600 animate-pulse hologram-text">
             GSV
           </div>
-          <div className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mt-1 hologram-text">
+          <div className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mt-1 hologram-text">
             2025
           </div>
-          {/* Subtle hologram scan lines */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-300/10 to-transparent animate-scan opacity-30"></div>
+          {/* Enhanced hologram scan lines */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-400/15 to-transparent animate-scan opacity-40"></div>
         </div>
       </div>
     </>

@@ -60,9 +60,14 @@ export const FeaturedSections = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Featured Information for New Students
-          </h2>
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Featured Information for New Students
+            </h2>
+            <Badge className="bg-orange-100 text-orange-800 border-orange-200 animate-pulse-soft">
+              Upcoming
+            </Badge>
+          </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Essential information curated specifically for incoming freshers
           </p>
@@ -116,26 +121,26 @@ export const FeaturedSections = () => {
           ))}
         </div>
 
-        {/* Success Stories Section */}
+        {/* Success Stories Section with updated names */}
         <div className="mt-16 animate-fade-in-delayed-3">
           <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Priya Sharma",
-                year: "2nd Year B.Tech",
+                name: "Shashank Savarkar",
+                year: "2nd Year B.Tech-ECE",
                 quote: "The hostel facilities are excellent, and the mess food is really good. The campus Wi-Fi works great for online classes too!",
                 gradient: "from-pink-400 to-rose-500"
               },
               {
-                name: "Rahul Patel",
-                year: "1st Year MBA", 
+                name: "Aditya Kumar",
+                year: "2nd Year B.Tech-AI&DS", 
                 quote: "The orientation program helped me settle in quickly. The senior mentors are very supportive and always ready to help.",
                 gradient: "from-blue-400 to-indigo-500"
               },
               {
-                name: "Anjali Verma",
-                year: "3rd Year B.Tech",
+                name: "Aman Sharma",
+                year: "2nd Year B.Tech-AI&DS",
                 quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!",
                 gradient: "from-green-400 to-teal-500"
               }

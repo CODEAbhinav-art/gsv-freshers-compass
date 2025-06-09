@@ -1,9 +1,13 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { GraduationCap, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 export const Footer = () => {
+  const handleNewsletterSignup = () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSeRTcJSaN4XZxJz0LJmiVK1HM2ltPQMpO6KEpjA3gCQoJhquA/viewform?usp=dialog', '_blank');
+  };
+
   return (
     <footer className="bg-muted py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,17 +23,10 @@ export const Footer = () => {
               Created by students, for students.
             </p>
             <div className="flex space-x-2">
-              <Button variant="outline" size="icon">
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Instagram className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Linkedin className="h-4 w-4" />
+              <Button variant="outline" size="icon" asChild>
+                <a href="https://www.linkedin.com/school/gatishaktivishwavidyalaya/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>
@@ -47,9 +44,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Information */}
+          {/* College Information */}
           <div>
-            <h3 className="font-semibold mb-4">Contact Us</h3>
+            <h3 className="font-semibold mb-4">College Info</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-muted-foreground" />
@@ -76,8 +73,13 @@ export const Footer = () => {
               Subscribe to get the latest updates and announcements for freshers.
             </p>
             <div className="space-y-2">
-              <Input placeholder="Enter your email" type="email" />
-              <Button className="w-full" size="sm">Subscribe</Button>
+              <Button 
+                onClick={handleNewsletterSignup}
+                className="w-full" 
+                size="sm"
+              >
+                Subscribe to Updates
+              </Button>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 
 import { Hero } from "@/components/Hero";
 import { QuickLinks } from "@/components/QuickLinks";
-import { MainNavigation } from "@/components/MainNavigation";
+import { Header } from "@/components/Header";
 import { FeaturedSections } from "@/components/FeaturedSections";
 import { FAQSections } from "@/components/FAQSections";
 import { ImportantLinks } from "@/components/ImportantLinks";
@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <SpaceBackground />
-      <MainNavigation />
+      <Header />
       <Hero />
       <QuickLinks />
       <FeaturedSections />

@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen } from "lucide-react";
@@ -20,11 +19,11 @@ export const ImportantLinks = () => {
       category: "Orientation"
     },
     {
-      title: "Admission Brochure 2025",
-      description: "Official admission brochure with detailed information",
-      url: "https://gsv.ac.in/wp-content/uploads/2025/03/Admission-Brochure-2025-2.pdf",
+      title: "GSV Official Website",
+      description: "Refer to GSV website for faculties and curriculum",
+      url: "https://gsv.ac.in",
       icon: FileText,
-      category: "Admission"
+      category: "Official"
     },
     {
       title: "First Year Hostel (STANZA)",

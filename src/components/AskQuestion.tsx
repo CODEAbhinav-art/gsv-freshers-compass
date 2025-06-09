@@ -1,83 +1,11 @@
 
-import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { MessageSquare, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { MessageSquare, ExternalLink } from "lucide-react";
 
 export const AskQuestion = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [category, setCategory] = useState("");
-  const [question, setQuestion] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const categories = [
-    "Academic Queries",
-    "Hostel & Accommodation",
-    "Campus Life",
-    "Internships",
-    "Placements & Careers",
-    "City Guide",
-    "General Discussion",
-    "Other"
-  ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name || !email || !question || !category) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      const { error } = await supabase
-        .from('questions')
-        .insert([
-          {
-            name,
-            email,
-            category,
-            question,
-            status: 'pending'
-          }
-        ]);
-
-      if (error) {
-        throw error;
-      }
-
-      toast({
-        title: "Question Submitted!",
-        description: "Your question has been submitted successfully. We'll get back to you soon.",
-      });
-      
-      // Reset form
-      setName("");
-      setEmail("");
-      setCategory("");
-      setQuestion("");
-    } catch (error) {
-      console.error('Error submitting question:', error);
-      toast({
-        title: "Error",
-        description: "Failed to submit your question. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const handleOpenGoogleForm = () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSeRTcJSaN4XZxJz0LJmiVK1HM2ltPQMpO6KEpjA3gCQoJhquA/viewform?usp=dialog', '_blank');
   };
 
   return (
@@ -104,84 +32,25 @@ export const AskQuestion = () => {
               <span>Submit Your Question</span>
             </CardTitle>
             <CardDescription>
-              Fill out the form below and we'll connect you with someone who can help. Your question might also help other freshers facing similar doubts.
+              Click the button below to open our Google Form and submit your question. Your question will be answered by our community of seniors and staff members.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Your Name *</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Enter your full name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="category">Question Category *</Label>
-                <select
-                  id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  required
-                >
-                  <option value="">Select a category</option>
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="question">Your Question *</Label>
-                <Textarea
-                  id="question"
-                  placeholder="Describe your question in detail. The more specific you are, the better we can help you!"
-                  value={question}
-                  onChange={(e) => setQuestion(e.target.value)}
-                  rows={5}
-                  required
-                />
-              </div>
-
-              <div className="bg-muted/50 p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Note:</strong> We aim to respond to all questions within 24-48 hours. 
-                  For urgent matters, please contact us directly using the emergency contacts provided.
-                </p>
-              </div>
-
-              <Button type="submit" className="w-full leetcode-btn" size="lg" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  "Submitting..."
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" />
-                    Submit Question
-                  </>
-                )}
-              </Button>
-            </form>
+          <CardContent className="text-center py-8">
+            <Button 
+              onClick={handleOpenGoogleForm}
+              size="lg" 
+              className="text-lg px-8 group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <ExternalLink className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              Open Question Form
+            </Button>
+            
+            <div className="mt-8 bg-muted/50 p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <strong>Note:</strong> We aim to respond to all questions within 24-48 hours. 
+                For urgent matters, please contact us directly using the emergency contacts provided.
+              </p>
+            </div>
           </CardContent>
         </Card>
 

@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { BookOpen, Home, Users, MapPin, Phone, Calendar } from "lucide-react";
 
 export const QuickLinks = () => {
@@ -52,7 +53,7 @@ export const QuickLinks = () => {
     const sectionId = href.replace('#', '');
     const section = document.querySelector(`[data-section="${sectionId}"]`) || 
                    document.querySelector(href) ||
-                   document.querySelector('#faq-sections'); // Fallback to FAQ section
+                   document.querySelector('#faq-sections');
     
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -67,9 +68,14 @@ export const QuickLinks = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Quick Access to Popular Sections
-          </h2>
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Quick Access to Popular Sections
+            </h2>
+            <Badge className="bg-orange-100 text-orange-800 border-orange-200 animate-pulse-soft">
+              Upcoming
+            </Badge>
+          </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Jump directly to the information you need most as a new student at GSV
           </p>

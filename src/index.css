@@ -213,11 +213,14 @@
       transform: translateX(-100px) translateY(-100px);
       opacity: 0;
     }
-    50% {
+    10% {
+      opacity: 1;
+    }
+    90% {
       opacity: 1;
     }
     100% {
-      transform: translateX(300px) translateY(300px);
+      transform: translateX(400px) translateY(400px);
       opacity: 0;
     }
   }
@@ -249,7 +252,7 @@
   }
 
   .shooting-star {
-    animation: shooting-star 3s linear infinite;
+    animation: shooting-star 4s linear infinite;
   }
 
   .shooting-star:nth-child(2) {
@@ -258,6 +261,10 @@
 
   .shooting-star:nth-child(3) {
     animation-delay: 2s;
+  }
+
+  .shooting-star:nth-child(4) {
+    animation-delay: 3s;
   }
 
   /* Hologram text effect */
