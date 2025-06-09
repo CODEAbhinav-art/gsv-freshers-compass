@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, Star, TrendingUp } from "lucide-react";
@@ -121,14 +120,14 @@ export const FeaturedSections = () => {
           ))}
         </div>
 
-        {/* Success Stories Section with updated names */}
+        {/* Success Stories Section with updated name */}
         <div className="mt-16 animate-fade-in-delayed-3">
           <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 name: "Shashank Savarkar",
-                year: "2nd Year B.Tech-ECE",
+                year: "2nd Year B.Tech-CE",
                 quote: "The hostel facilities are excellent, and the mess food is really good. The campus Wi-Fi works great for online classes too!",
                 gradient: "from-pink-400 to-rose-500"
               },

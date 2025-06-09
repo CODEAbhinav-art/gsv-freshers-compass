@@ -1,51 +1,38 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Home, Users, MapPin, Phone, Calendar } from "lucide-react";
+import { Users, MapPin } from "lucide-react";
 
 export const QuickLinks = () => {
   const quickLinks = [
-    {
-      title: "Academic FAQs",
-      description: "Course structure, syllabus, and academic queries",
-      icon: BookOpen,
-      href: "#academic-faqs",
-      color: "from-blue-400 to-blue-600"
-    },
-    {
-      title: "Hostel Information",
-      description: "Accommodation, mess, and living arrangements",
-      icon: Home,
-      href: "#hostel",
-      color: "from-green-400 to-green-600"
-    },
     {
       title: "Campus Life",
       description: "Clubs, events, and student activities",
       icon: Users,
       href: "#campus-life",
-      color: "from-purple-400 to-purple-600"
+      color: "from-purple-400 to-purple-600",
+      details: [
+        "GSV has 9 different clubs providing opportunities for all types of interests",
+        "NCC is 'expected' to start from this academic year",
+        "Almost every week an event is organised by one of the clubs making college life more fun and interactive",
+        "Competitive environment in a productive way",
+        "A lot of greenery can be found in the college with rich flora and fauna"
+      ]
     },
     {
       title: "Vadodara Guide",
       description: "City exploration and local amenities",
       icon: MapPin,
       href: "#city-guide",
-      color: "from-orange-400 to-orange-600"
-    },
-    {
-      title: "Important Contacts",
-      description: "Emergency numbers and key departments",
-      icon: Phone,
-      href: "#contact",
-      color: "from-red-400 to-red-600"
-    },
-    {
-      title: "Important Dates",
-      description: "Academic calendar and deadlines",
-      icon: Calendar,
-      href: "#dates",
-      color: "from-yellow-400 to-yellow-600"
+      color: "from-orange-400 to-orange-600",
+      details: [
+        "Historical Facts: Vadodara was the capital of the former Baroda State and ruled by the Gaekwad dynasty",
+        "Laxmi Vilas Palace - One of the most magnificent palaces in India, four times the size of Buckingham Palace",
+        "Sayaji Baug - A beautiful garden with zoo, museum, and planetarium perfect for weekend visits",
+        "EME Temple (Dakshinamurty Temple) - A unique temple entirely made of aluminum",
+        "Kirti Mandir - Memorial dedicated to the Gaekwad family with beautiful architecture",
+        "Vadodara Museum & Picture Gallery - Rich collection of art, sculptures, and artifacts"
+      ]
     }
   ];
 
@@ -81,7 +68,7 @@ export const QuickLinks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {quickLinks.map((link, index) => (
             <Card 
               key={link.title} 
@@ -94,7 +81,7 @@ export const QuickLinks = () => {
                   <div className={`p-3 bg-gradient-to-r ${link.color} rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     <link.icon className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-gray-900 group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-primary transition-colors duration-300">
                     {link.title}
                   </CardTitle>
                 </div>
@@ -103,6 +90,20 @@ export const QuickLinks = () => {
                 <CardDescription className="mb-4 text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
                   {link.description}
                 </CardDescription>
+                
+                <div className="space-y-2 mb-6">
+                  {link.details.map((detail, detailIndex) => (
+                    <div 
+                      key={detailIndex}
+                      className="flex items-start space-x-2 text-xs text-gray-700 group-hover:translate-x-1 transition-transform duration-300"
+                      style={{ transitionDelay: `${detailIndex * 50}ms` }}
+                    >
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                      <span>{detail}</span>
+                    </div>
+                  ))}
+                </div>
+                
                 <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
                   <div className={`h-full bg-gradient-to-r ${link.color} translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500`}></div>
                 </div>

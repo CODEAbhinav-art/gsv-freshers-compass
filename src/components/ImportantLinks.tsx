@@ -48,6 +48,11 @@ export const ImportantLinks = () => {
       language: "General"
     },
     {
+      title: "GSOC Info",
+      url: "https://youtu.be/sPM2WiwA1us?feature=shared",
+      language: "Open Source"
+    },
+    {
       title: "Python Programming - CodeWithHarry",
       url: "https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&feature=shared",
       language: "Python"
