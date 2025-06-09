@@ -47,13 +47,13 @@ export const FeaturedSections = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4 font-extrabold">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-extrabold">
             Featured Information for New Students
           </h2>
-          <p className="text-lg text-gray-200 max-w-2xl mx-auto font-semibold">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-semibold">
             Essential information curated specifically for incoming freshers
           </p>
         </div>
@@ -86,7 +86,7 @@ export const FeaturedSections = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full leetcode-btn bg-black/80 text-white font-bold hover:bg-black/90 border-blue-400/50" variant="outline">
+                <Button className="w-full leetcode-btn bg-blue-600 text-white font-bold hover:bg-blue-700 border-blue-400/50" variant="outline">
                   View Details
                 </Button>
               </CardContent>
@@ -96,7 +96,7 @@ export const FeaturedSections = () => {
 
         {/* Success Stories Section */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-white font-extrabold">What Current Students Say</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900 font-extrabold">What Current Students Say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
