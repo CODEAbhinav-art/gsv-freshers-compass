@@ -1,7 +1,6 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Users, Award, Building } from "lucide-react";
 
 export const InternshipHighlights = () => {
   const internshipImages = [
@@ -18,8 +17,8 @@ export const InternshipHighlights = () => {
       description: "Learning through field visits and practical exposure"
     },
     {
-      src: "/lovable-uploads/111a24c2-1a22-4c39-a577-a518ae04f0cb.png",
-      alt: "GSV students at institutional visit",
+      src: "/lovable-uploads/63d365f7-0af5-49aa-84f5-e2b1b19b35ef.png",
+      alt: "GSV students in institutional meeting",
       title: "Institutional Partnerships",
       description: "Building connections with industry and academic institutions"
     },
@@ -40,33 +39,6 @@ export const InternshipHighlights = () => {
       alt: "GSV student operating train controls",
       title: "Hands-on Training",
       description: "Practical experience with real-world equipment and systems"
-    }
-  ];
-
-  const highlights = [
-    {
-      icon: TrendingUp,
-      title: "90% Placement Rate",
-      description: "High success rate in securing quality internships",
-      gradient: "from-green-400 to-emerald-500"
-    },
-    {
-      icon: Building,
-      title: "Top Companies",
-      description: "Partnerships with leading tech companies and startups",
-      gradient: "from-blue-400 to-cyan-500"
-    },
-    {
-      icon: Award,
-      title: "Industry Recognition",
-      description: "Students winning awards and recognition during internships",
-      gradient: "from-purple-400 to-violet-500"
-    },
-    {
-      icon: Users,
-      title: "Mentorship Program",
-      description: "Dedicated support from faculty and industry mentors",
-      gradient: "from-orange-400 to-red-500"
     }
   ];
 
@@ -93,32 +65,13 @@ export const InternshipHighlights = () => {
           </p>
         </div>
 
-        {/* Statistics Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {highlights.map((highlight, index) => (
-            <Card 
-              key={highlight.title}
-              className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-1 animate-fade-in-staggered border-0 bg-white/90 backdrop-blur-sm"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardContent className="p-6 text-center">
-                <div className={`inline-flex p-3 bg-gradient-to-r ${highlight.gradient} rounded-xl shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                  <highlight.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{highlight.title}</h3>
-                <p className="text-sm text-gray-600">{highlight.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
         {/* Image Gallery */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {internshipImages.map((image, index) => (
             <Card 
               key={index}
               className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-staggered overflow-hidden"
-              style={{ animationDelay: `${(index + 4) * 150}ms` }}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -149,7 +102,7 @@ export const InternshipHighlights = () => {
             </p>
             <div className="flex justify-center">
               <Badge className="bg-white/20 text-white border-white/30 text-sm px-4 py-2">
-                Applications Open for 2024-25
+                Admissions open for 2025-2026
               </Badge>
             </div>
           </div>
