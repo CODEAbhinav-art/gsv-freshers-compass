@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, Star, TrendingUp } from "lucide-react";
@@ -118,51 +119,6 @@ export const FeaturedSections = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Success Stories Section with updated name */}
-        <div className="mt-16 animate-fade-in-delayed-3">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">What Current Students Say</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Shashank Savarkar",
-                year: "2nd Year B.Tech-CE",
-                quote: "The hostel facilities are excellent, and the mess food is really good. The campus Wi-Fi works great for online classes too!",
-                gradient: "from-pink-400 to-rose-500"
-              },
-              {
-                name: "Aditya Kumar",
-                year: "2nd Year B.Tech-AI&DS", 
-                quote: "The orientation program helped me settle in quickly. The senior mentors are very supportive and always ready to help.",
-                gradient: "from-blue-400 to-indigo-500"
-              },
-              {
-                name: "Aman Sharma",
-                year: "2nd Year B.Tech-AI&DS",
-                quote: "Vadodara is a great city for students. There are many places to explore, and the local food is amazing!",
-                gradient: "from-green-400 to-teal-500"
-              }
-            ].map((testimonial, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:-translate-y-2 animate-fade-in-staggered"
-                style={{ animationDelay: `${(index + 4) * 100}ms` }}
-              >
-                <CardContent className="p-6 relative overflow-hidden">
-                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${testimonial.gradient}`}></div>
-                  <blockquote className="text-sm italic mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="text-sm">
-                    <p className="font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-gray-700">{testimonial.year}</p>
-                  </div>
-                  <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-gray-200/50 to-transparent rounded-tl-full"></div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
     </section>

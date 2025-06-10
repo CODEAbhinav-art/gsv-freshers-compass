@@ -6,34 +6,40 @@ import { TrendingUp, Users, Award, Building } from "lucide-react";
 export const InternshipHighlights = () => {
   const internshipImages = [
     {
-      src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-      alt: "Students working on laptops",
-      title: "Tech Internships",
-      description: "Students gaining hands-on experience in technology companies"
+      src: "/lovable-uploads/b79b4825-f392-4aee-a3b3-1fbc66e8114a.png",
+      alt: "GSV students at Container Corporation internship",
+      title: "Corporate Internships",
+      description: "Students gaining real-world experience at leading companies"
     },
     {
-      src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-      alt: "Programming on monitor",
-      title: "Software Development",
-      description: "Real-world programming and development projects"
+      src: "/lovable-uploads/610c4917-176a-40b6-ad03-4f6947297627.png",
+      alt: "GSV students at educational visit",
+      title: "Educational Visits",
+      description: "Learning through field visits and practical exposure"
     },
     {
-      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
-      alt: "Professional working on MacBook",
-      title: "Professional Environment",
-      description: "Working in corporate settings with industry mentors"
+      src: "/lovable-uploads/111a24c2-1a22-4c39-a577-a518ae04f0cb.png",
+      alt: "GSV students at institutional visit",
+      title: "Institutional Partnerships",
+      description: "Building connections with industry and academic institutions"
     },
     {
-      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
-      alt: "Collaborative workspace",
-      title: "Team Collaboration",
-      description: "Learning teamwork and collaborative development"
+      src: "/lovable-uploads/2f7f226d-0534-4a28-9bfd-d531fa6c3195.png",
+      alt: "GSV students at Railway Manager office",
+      title: "Government Sector Exposure",
+      description: "Exploring opportunities in public sector organizations"
     },
     {
-      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-      alt: "Coding workspace",
-      title: "Skills Development",
-      description: "Building practical coding and problem-solving skills"
+      src: "/lovable-uploads/4514667e-36a7-4bdf-81fa-a22cb2bc26d3.png",
+      alt: "GSV students in professional setting",
+      title: "Professional Development",
+      description: "Developing industry-ready skills and professional etiquette"
+    },
+    {
+      src: "/lovable-uploads/8afc2dda-6153-40b1-85e3-61f3ad35ac4a.png",
+      alt: "GSV student operating train controls",
+      title: "Hands-on Training",
+      description: "Practical experience with real-world equipment and systems"
     }
   ];
 
