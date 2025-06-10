@@ -1,0 +1,154 @@
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { TrendingUp, Users, Award, Building } from "lucide-react";
+
+export const InternshipHighlights = () => {
+  const internshipImages = [
+    {
+      src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
+      alt: "Students working on laptops",
+      title: "Tech Internships",
+      description: "Students gaining hands-on experience in technology companies"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+      alt: "Programming on monitor",
+      title: "Software Development",
+      description: "Real-world programming and development projects"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
+      alt: "Professional working on MacBook",
+      title: "Professional Environment",
+      description: "Working in corporate settings with industry mentors"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+      alt: "Collaborative workspace",
+      title: "Team Collaboration",
+      description: "Learning teamwork and collaborative development"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      alt: "Coding workspace",
+      title: "Skills Development",
+      description: "Building practical coding and problem-solving skills"
+    }
+  ];
+
+  const highlights = [
+    {
+      icon: TrendingUp,
+      title: "90% Placement Rate",
+      description: "High success rate in securing quality internships",
+      gradient: "from-green-400 to-emerald-500"
+    },
+    {
+      icon: Building,
+      title: "Top Companies",
+      description: "Partnerships with leading tech companies and startups",
+      gradient: "from-blue-400 to-cyan-500"
+    },
+    {
+      icon: Award,
+      title: "Industry Recognition",
+      description: "Students winning awards and recognition during internships",
+      gradient: "from-purple-400 to-violet-500"
+    },
+    {
+      icon: Users,
+      title: "Mentorship Program",
+      description: "Dedicated support from faculty and industry mentors",
+      gradient: "from-orange-400 to-red-500"
+    }
+  ];
+
+  return (
+    <section className="py-16 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-blue-200/20 rounded-full animate-blob"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 bg-purple-200/20 rounded-full animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12 animate-fade-in">
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900">
+              GSV Internship Highlights
+            </h2>
+            <Badge className="bg-green-100 text-green-800 border-green-200 animate-pulse-soft">
+              Success Stories
+            </Badge>
+          </div>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Discover how GSV students excel in internships and build successful careers
+          </p>
+        </div>
+
+        {/* Statistics Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {highlights.map((highlight, index) => (
+            <Card 
+              key={highlight.title}
+              className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-1 animate-fade-in-staggered border-0 bg-white/90 backdrop-blur-sm"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CardContent className="p-6 text-center">
+                <div className={`inline-flex p-3 bg-gradient-to-r ${highlight.gradient} rounded-xl shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                  <highlight.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{highlight.title}</h3>
+                <p className="text-sm text-gray-600">{highlight.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Image Gallery */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {internshipImages.map((image, index) => (
+            <Card 
+              key={index}
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-staggered overflow-hidden"
+              style={{ animationDelay: `${(index + 4) * 150}ms` }}
+            >
+              <div className="relative overflow-hidden">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                  {image.title}
+                </CardTitle>
+                <CardDescription className="text-sm group-hover:text-gray-800 transition-colors duration-300">
+                  {image.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center animate-fade-in-delayed-3">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
+            <p className="text-lg mb-6 opacity-90">
+              Join GSV and be part of the next generation of successful tech professionals
+            </p>
+            <div className="flex justify-center">
+              <Badge className="bg-white/20 text-white border-white/30 text-sm px-4 py-2">
+                Applications Open for 2024-25
+              </Badge>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen } from "lucide-react";
@@ -51,6 +52,11 @@ export const ImportantLinks = () => {
       title: "GSOC Info",
       url: "https://youtu.be/sPM2WiwA1us?feature=shared",
       language: "Open Source"
+    },
+    {
+      title: "LinkedIn Profile Guide",
+      url: "https://youtu.be/lzuiuRgwwrc?feature=shared",
+      language: "Professional"
     },
     {
       title: "Python Programming - CodeWithHarry",
