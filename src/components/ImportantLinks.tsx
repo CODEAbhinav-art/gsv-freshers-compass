@@ -1,4 +1,5 @@
 
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen, GraduationCap } from "lucide-react";
@@ -119,34 +120,6 @@ export const ImportantLinks = () => {
             </p>
           </div>
 
-          {/* Highlighted Exam Papers Button */}
-          <div className="mb-8 flex justify-center">
-            <Card className="border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg hover:shadow-xl transition-all duration-300 max-w-md">
-              <CardHeader className="pb-3">
-                <div className="flex items-center space-x-3">
-                  <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg animate-pulse">
-                    <GraduationCap className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-orange-600 font-bold mb-1 uppercase tracking-wide">IMPORTANT</div>
-                    <CardTitle className="text-xl text-gray-900">1st Year Exam Papers Link</CardTitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="mb-4 text-sm font-medium text-gray-700">
-                  Access previous year exam papers for better preparation
-                </CardDescription>
-                <Button asChild className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold shadow-md">
-                  <a href="https://drive.google.com/file/d/164-p3SOpgocOJUkK2zDGvE4V9IP_0vTa/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Access Exam Papers
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {importantLinks.map((link) => (
               <Card key={link.title} className="hover:shadow-lg transition-all duration-300">
@@ -174,6 +147,32 @@ export const ImportantLinks = () => {
                 </CardContent>
               </Card>
             ))}
+
+            {/* Highlighted Exam Papers Button - positioned in 2nd row after GSV Campus Location */}
+            <Card className="border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg animate-pulse">
+                    <GraduationCap className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-orange-600 font-bold mb-1 uppercase tracking-wide">IMPORTANT</div>
+                    <CardTitle className="text-lg text-gray-900">1st Year Exam Papers Link</CardTitle>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <CardDescription className="mb-4 text-sm font-medium text-gray-700">
+                  Access previous year exam papers for better preparation
+                </CardDescription>
+                <Button asChild className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold shadow-md">
+                  <a href="https://drive.google.com/file/d/164-p3SOpgocOJUkK2zDGvE4V9IP_0vTa/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Access Exam Papers
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -257,3 +256,4 @@ export const ImportantLinks = () => {
     </section>
   );
 };
+
