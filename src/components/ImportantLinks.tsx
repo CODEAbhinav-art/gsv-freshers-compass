@@ -149,7 +149,11 @@ export const ImportantLinks = () => {
             ))}
 
             {/* Highlighted Exam Papers Button - positioned in 2nd row after GSV Campus Location */}
-            <Card className="border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg hover:shadow-xl transition-all duration-300 relative">
+              {/* Credits Badge */}
+              <div className="absolute top-2 right-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full font-medium">
+                Credits: Pratik Ranjan(ECE-II)
+              </div>
               <CardHeader className="pb-3">
                 <div className="flex items-center space-x-3">
                   <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg animate-pulse">
