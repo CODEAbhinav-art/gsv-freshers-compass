@@ -1,10 +1,12 @@
 
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen, GraduationCap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ImportantLinks = () => {
+  const navigate = useNavigate();
+
   const importantLinks = [
     {
       title: "General College Review",
@@ -45,19 +47,16 @@ export const ImportantLinks = () => {
 
   const programmingResources = [
     {
-      title: "Programming Fundamentals",
-      url: "https://youtu.be/sPM2WiwA1us?feature=shared",
-      language: "General"
-    },
-    {
       title: "GSOC Info",
       url: "https://youtu.be/sPM2WiwA1us?feature=shared",
-      language: "Open Source"
+      language: "Open Source",
+      highlighted: true
     },
     {
       title: "LinkedIn Profile Guide",
       url: "https://youtu.be/lzuiuRgwwrc?feature=shared",
-      language: "Professional"
+      language: "Professional",
+      highlighted: true
     },
     {
       title: "Python Programming - CodeWithHarry",
@@ -177,6 +176,33 @@ export const ImportantLinks = () => {
                 </Button>
               </CardContent>
             </Card>
+
+            {/* New GSV Exam Preparation Resources Button */}
+            <Card className="border-2 border-green-300 bg-gradient-to-r from-green-50 to-teal-50 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg">
+                    <BookOpen className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-green-600 font-bold mb-1 uppercase tracking-wide">STUDY MATERIALS</div>
+                    <CardTitle className="text-lg text-gray-900">GSV Exam Preparation Resources</CardTitle>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <CardDescription className="mb-4 text-sm font-medium text-gray-700">
+                  Access comprehensive study materials, e-books, and subject-wise resources
+                </CardDescription>
+                <Button 
+                  onClick={() => navigate('/exam-preparation')}
+                  className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold shadow-md"
+                >
+                  <BookOpen className="h-4 w-4 mr-2" />
+                  Access Resources
+                </Button>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -206,16 +232,31 @@ export const ImportantLinks = () => {
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {programmingResources.map((resource, index) => (
-                <Card key={index} className="hover:shadow-md transition-all duration-300">
+                <Card key={index} className={`hover:shadow-md transition-all duration-300 ${
+                  resource.highlighted ? 'border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-pink-50 shadow-lg' : ''
+                }`}>
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">
+                      <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+                        resource.highlighted 
+                          ? 'bg-purple-100 text-purple-800' 
+                          : 'bg-green-100 text-green-800'
+                      }`}>
                         {resource.language}
                       </span>
                       <Youtube className="h-4 w-4 text-red-600" />
                     </div>
                     <h4 className="font-semibold text-sm mb-3">{resource.title}</h4>
-                    <Button asChild variant="outline" size="sm" className="w-full">
+                    <Button 
+                      asChild 
+                      variant={resource.highlighted ? "default" : "outline"} 
+                      size="sm" 
+                      className={`w-full ${
+                        resource.highlighted 
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
+                          : ''
+                      }`}
+                    >
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-3 w-3 mr-2" />
                         Watch
@@ -260,4 +301,3 @@ export const ImportantLinks = () => {
     </section>
   );
 };
-
