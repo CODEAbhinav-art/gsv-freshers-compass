@@ -36,7 +36,25 @@ const ExamPreparation = () => {
     {
       subject: "Mathematics",
       channels: [
-        { name: "Coming Soon", url: "#" }
+        { name: "Gajendra Purohit", url: "https://youtube.com/@gajendrapurohit?si=TXdMk_Z3X0gt9_ob" },
+        { name: "Pradeep Giri Academy", url: "https://youtube.com/@pradeepgiriacademy?si=HQ0VDBYBUNcviQaT" }
+      ]
+    },
+    {
+      subject: "BEE (Basic Electrical Engineering)",
+      channels: [
+        { name: "Perfect Computer Engineer", url: "https://youtube.com/@perfectcomputerengineer?si=_UMMc_6jDfz-NQmG" },
+        { name: "Ardi Satriawan", url: "https://youtube.com/@ardisatriawan?si=_OGkZADkay-AJLoM" },
+        { name: "BEE Playlist", url: "https://youtube.com/playlist?list=PL7-gxZsYKwehJ9eZxq8OFj5H4oTj3VFAF&si=7zK56XxAwM6L07Mx" },
+        { name: "Zen Murali Sachithanantham", url: "https://youtube.com/@zenmuralisachithanandam8189?si=dbEdlJJmeO8LnbyC" }
+      ]
+    },
+    {
+      subject: "IMCE (Introduction to Mechanical & Civil Engineering)",
+      channels: [
+        { name: "Manoj Kumar Sahoo", url: "https://youtube.com/@manojkumarsahoo?si=twyr_0kQcMgDxD98" },
+        { name: "Tikles Academy", url: "https://youtube.com/@tiklesacademy?si=2PSA63sQUxxkA3SM" },
+        { name: "Gautam Varde", url: "https://youtube.com/@gautamvarde?si=S7bk-4PQzel_rJQ-" }
       ]
     }
   ];
@@ -131,6 +149,14 @@ const ExamPreparation = () => {
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4 space-y-4">
+                  {/* Important Note */}
+                  <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <h4 className="font-semibold text-yellow-900 mb-2">📚 Study Strategy</h4>
+                    <p className="text-sm text-yellow-800">
+                      "Attending classes Regularly + Making Notes + Question Practice from E-Books + Solving previous year papers 3 days before exam" is more than enough to score 9+ SGPA. Refer to these channels when unable to attend class due to genuine reasons.
+                    </p>
+                  </div>
+                  
                   {youtubeChannels.map((subject, index) => (
                     <div key={index} className="p-3 bg-gray-50 rounded-lg">
                       <h4 className="font-semibold text-sm mb-2">{subject.subject}</h4>
@@ -138,22 +164,17 @@ const ExamPreparation = () => {
                         {subject.channels.map((channel, channelIndex) => (
                           <div key={channelIndex} className="flex items-center justify-between">
                             <span className="text-sm">{channel.name}</span>
-                            {channel.url !== "#" && (
-                              <Button asChild size="sm" variant="outline">
-                                <a href={channel.url} target="_blank" rel="noopener noreferrer">
-                                  <Youtube className="h-3 w-3 mr-1" />
-                                  Watch
-                                </a>
-                              </Button>
-                            )}
+                            <Button asChild size="sm" variant="outline">
+                              <a href={channel.url} target="_blank" rel="noopener noreferrer">
+                                <Youtube className="h-3 w-3 mr-1" />
+                                Watch
+                              </a>
+                            </Button>
                           </div>
                         ))}
                       </div>
                     </div>
                   ))}
-                  <div className="text-center p-4 text-gray-500 text-sm">
-                    More subjects and channels will be added soon!
-                  </div>
                 </CollapsibleContent>
               </Collapsible>
             </CardContent>
