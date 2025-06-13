@@ -59,6 +59,46 @@ export const ImportantLinks = () => {
       highlighted: true
     },
     {
+      title: "DSA in C++ (Recommended)",
+      url: "https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&feature=shared",
+      language: "DSA"
+    },
+    {
+      title: "DSA in JAVA (For ICSE Students)",
+      url: "https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&feature=shared",
+      language: "DSA"
+    },
+    {
+      title: "Machine Learning - Krish Naik (Recommended)",
+      url: "https://youtube.com/playlist?list=PLTDARY42LDV7WGmlzZtY-w9pemyPrKNUZ&feature=shared",
+      language: "ML"
+    },
+    {
+      title: "Machine Learning - Campus X (Detailed)",
+      url: "https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&feature=shared",
+      language: "ML"
+    },
+    {
+      title: "Machine Learning - Andrew Ng Course",
+      url: "https://youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&feature=shared",
+      language: "ML"
+    },
+    {
+      title: "Blockchain/Web 3",
+      url: "https://youtu.be/gyMwXuJrbJQ?feature=shared",
+      language: "Blockchain"
+    },
+    {
+      title: "Web Development - Course 1",
+      url: "https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&feature=shared",
+      language: "Web Dev"
+    },
+    {
+      title: "Web Development - Course 2",
+      url: "https://youtube.com/playlist?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&feature=shared",
+      language: "Web Dev"
+    },
+    {
       title: "Python Programming - CodeWithHarry",
       url: "https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&feature=shared",
       language: "Python"
@@ -147,9 +187,8 @@ export const ImportantLinks = () => {
               </Card>
             ))}
 
-            {/* Highlighted Exam Papers Button - positioned in 2nd row after GSV Campus Location */}
+            {/* Highlighted Exam Papers Button */}
             <Card className="border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg hover:shadow-xl transition-all duration-300 relative">
-              {/* Credits Badge */}
               <div className="absolute top-2 right-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full font-medium">
                 Credits: Pratik Ranjan(ECE-II)
               </div>
@@ -177,8 +216,11 @@ export const ImportantLinks = () => {
               </CardContent>
             </Card>
 
-            {/* New GSV Exam Preparation Resources Button */}
-            <Card className="border-2 border-green-300 bg-gradient-to-r from-green-50 to-teal-50 shadow-lg hover:shadow-xl transition-all duration-300">
+            {/* GSV Exam Preparation Resources Button */}
+            <Card className="border-2 border-green-300 bg-gradient-to-r from-green-50 to-teal-50 shadow-lg hover:shadow-xl transition-all duration-300 relative">
+              <div className="absolute top-2 right-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full font-medium">
+                Credits: Pratik Ranjan(ECE-II)
+              </div>
               <CardHeader className="pb-3">
                 <div className="flex items-center space-x-3">
                   <div className="p-3 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg">
@@ -240,7 +282,15 @@ export const ImportantLinks = () => {
                       <span className={`text-xs px-2 py-1 rounded-full font-medium ${
                         resource.highlighted 
                           ? 'bg-purple-100 text-purple-800' 
-                          : 'bg-green-100 text-green-800'
+                          : resource.language === 'DSA'
+                            ? 'bg-red-100 text-red-800'
+                            : resource.language === 'ML'
+                              ? 'bg-blue-100 text-blue-800'
+                              : resource.language === 'Blockchain'
+                                ? 'bg-yellow-100 text-yellow-800'
+                                : resource.language === 'Web Dev'
+                                  ? 'bg-indigo-100 text-indigo-800'
+                                  : 'bg-green-100 text-green-800'
                       }`}>
                         {resource.language}
                       </span>

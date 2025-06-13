@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className="bg-muted py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -42,28 +42,6 @@ export const Footer = () => {
               <li><a href="#hostel" className="text-muted-foreground hover:text-foreground">Hostel Information</a></li>
               <li><a href="#city-guide" className="text-muted-foreground hover:text-foreground">Vadodara Guide</a></li>
             </ul>
-          </div>
-
-          {/* College Information */}
-          <div>
-            <h3 className="font-semibold mb-4">College Info</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-muted-foreground" />
-                <span className="text-muted-foreground">freshers@gsv.ac.in</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-muted-foreground" />
-                <span className="text-muted-foreground">+91-XXXX-XXX-XXX</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
-                <span className="text-muted-foreground">
-                  Gati Shakti Vishwavidyalaya<br />
-                  Vadodara, Gujarat, India
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Newsletter */}
