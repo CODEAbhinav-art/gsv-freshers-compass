@@ -151,12 +151,36 @@ export type Database = {
         }
         Relationships: []
       }
+      website_visits: {
+        Row: {
+          id: string
+          ip_address: unknown | null
+          user_agent: string | null
+          visited_at: string
+        }
+        Insert: {
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
+          visited_at?: string
+        }
+        Update: {
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
+          visited_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_visitor_count: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

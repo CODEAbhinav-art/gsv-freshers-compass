@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GraduationCap, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { VisitorCount } from "./VisitorCount";
 
 export const Footer = () => {
   const handleNewsletterSignup = () => {
@@ -62,10 +63,13 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t mt-12 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 GSV Freshers' Guide. Created with ❤️ for new students at Gati Shakti Vishwavidyalaya.
-          </p>
+        <div className="border-t mt-12 pt-8">
+          <div className="flex flex-col items-center space-y-4">
+            <VisitorCount />
+            <p className="text-sm text-muted-foreground text-center">
+              © 2024 GSV Freshers' Guide. Created with ❤️ for new students at Gati Shakti Vishwavidyalaya.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
