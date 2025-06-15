@@ -1,7 +1,6 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen, GraduationCap } from "lucide-react";
+import { ExternalLink, FileText, MapPin, Youtube, Code, BookOpen, GraduationCap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const ImportantLinks = () => {
@@ -42,106 +41,6 @@ export const ImportantLinks = () => {
       url: "https://maps.app.goo.gl/p4gN3Gi8eyNaKrzb9",
       icon: MapPin,
       category: "Location"
-    }
-  ];
-
-  const programmingResources = [
-    {
-      title: "GSOC Info",
-      url: "https://youtu.be/sPM2WiwA1us?feature=shared",
-      language: "Open Source",
-      highlighted: true
-    },
-    {
-      title: "LinkedIn Profile Guide",
-      url: "https://youtu.be/lzuiuRgwwrc?feature=shared",
-      language: "Professional",
-      highlighted: true
-    },
-    {
-      title: "DSA in C++ (Recommended)",
-      url: "https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&feature=shared",
-      language: "DSA"
-    },
-    {
-      title: "DSA in JAVA (For ICSE Students)",
-      url: "https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&feature=shared",
-      language: "DSA"
-    },
-    {
-      title: "Machine Learning - Krish Naik (Recommended)",
-      url: "https://youtube.com/playlist?list=PLTDARY42LDV7WGmlzZtY-w9pemyPrKNUZ&feature=shared",
-      language: "ML"
-    },
-    {
-      title: "Machine Learning - Campus X (Detailed)",
-      url: "https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&feature=shared",
-      language: "ML"
-    },
-    {
-      title: "Machine Learning - Andrew Ng Course",
-      url: "https://youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&feature=shared",
-      language: "ML"
-    },
-    {
-      title: "Blockchain/Web 3",
-      url: "https://youtu.be/gyMwXuJrbJQ?feature=shared",
-      language: "Blockchain"
-    },
-    {
-      title: "Web Development - Course 1",
-      url: "https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&feature=shared",
-      language: "Web Dev"
-    },
-    {
-      title: "Web Development - Course 2",
-      url: "https://youtube.com/playlist?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&feature=shared",
-      language: "Web Dev"
-    },
-    {
-      title: "Python Programming - CodeWithHarry",
-      url: "https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&feature=shared",
-      language: "Python"
-    },
-    {
-      title: "Python Complete Course",
-      url: "https://youtube.com/playlist?list=PLGjplNEQ1it8-0CmoljS5yeV-GlKSUEt0&feature=shared",
-      language: "Python"
-    },
-    {
-      title: "C Programming",
-      url: "https://youtu.be/sPM2WiwA1us?feature=shared",
-      language: "C"
-    },
-    {
-      title: "C++ Programming",
-      url: "https://youtu.be/e7sAf4SbS_g?feature=shared",
-      language: "C++"
-    },
-    {
-      title: "Java Programming",
-      url: "https://youtu.be/BGTx91t8q50?feature=shared",
-      language: "Java"
-    },
-    {
-      title: "GitHub Tutorial",
-      url: "https://youtu.be/Ez8F0nW6S-w?feature=shared",
-      language: "Git/GitHub"
-    }
-  ];
-
-  const mustWatchVideos = [
-    {
-      title: "Essential Fresher Guide - Part 1",
-      url: "https://youtu.be/l4JlCnDX7wM?feature=shared"
-    },
-    {
-      title: "Essential Fresher Guide - Part 2",
-      url: "https://youtu.be/Pt1KGG26RKU?feature=shared"
-    },
-    {
-      title: "Essential Fresher Guide - Part 3",
-      url: "https://youtu.be/ySEQoryxoF8?feature=shared"
     }
   ];
 
