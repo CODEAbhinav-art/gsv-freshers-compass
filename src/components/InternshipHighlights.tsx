@@ -54,7 +54,7 @@ export const InternshipHighlights = () => {
         <div className="text-center mb-12 animate-fade-in">
           <div className="flex justify-center items-center gap-3 mb-4">
             <h2 className="text-3xl font-bold text-gray-900">
-              GSV Internship Highlights
+              1st Year GSV Internship Highlights
             </h2>
             <Badge className="bg-green-100 text-green-800 border-green-200 animate-pulse-soft">
               Success Stories
