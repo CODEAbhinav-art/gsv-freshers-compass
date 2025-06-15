@@ -165,85 +165,32 @@ export const ImportantLinks = () => {
             </p>
           </div>
 
-          {/* Programming Languages */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Code className="h-6 w-6 mr-2 text-blue-600" />
-              Learn Programming Languages
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {programmingResources.map((resource, index) => (
-                <Card key={index} className={`hover:shadow-md transition-all duration-300 ${
-                  resource.highlighted ? 'border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-pink-50 shadow-lg' : ''
-                }`}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className={`text-xs px-2 py-1 rounded-full font-medium ${
-                        resource.highlighted 
-                          ? 'bg-purple-100 text-purple-800' 
-                          : resource.language === 'DSA'
-                            ? 'bg-red-100 text-red-800'
-                            : resource.language === 'ML'
-                              ? 'bg-blue-100 text-blue-800'
-                              : resource.language === 'Blockchain'
-                                ? 'bg-yellow-100 text-yellow-800'
-                                : resource.language === 'Web Dev'
-                                  ? 'bg-indigo-100 text-indigo-800'
-                                  : 'bg-green-100 text-green-800'
-                      }`}>
-                        {resource.language}
-                      </span>
-                      <Youtube className="h-4 w-4 text-red-600" />
-                    </div>
-                    <h4 className="font-semibold text-sm mb-3">{resource.title}</h4>
-                    <Button 
-                      asChild 
-                      variant={resource.highlighted ? "default" : "outline"} 
-                      size="sm" 
-                      className={`w-full ${
-                        resource.highlighted 
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
-                          : ''
-                      }`}
-                    >
-                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-3 w-3 mr-2" />
-                        Watch
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Must Watch Videos */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <BookOpen className="h-6 w-6 mr-2 text-purple-600" />
-              Must Watch for Freshers
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {mustWatchVideos.map((video, index) => (
-                <Card key={index} className="hover:shadow-md transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <Youtube className="h-5 w-5 text-red-600 mr-2" />
-                      <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full font-medium">
-                        Essential
-                      </span>
-                    </div>
-                    <h4 className="font-semibold mb-4">{video.title}</h4>
-                    <Button asChild className="w-full">
-                      <a href={video.url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Watch Now
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="flex justify-center">
+            <Card className="max-w-md w-full border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-pink-50 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+                    <Code className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">LEARNING HUB</div>
+                    <CardTitle className="text-lg text-gray-900">Start Learning Now</CardTitle>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <CardDescription className="mb-4 text-sm font-medium text-gray-700">
+                  Access our curated list of tutorials and courses for programming, DSA, ML, and more.
+                </CardDescription>
+                <Button 
+                  onClick={() => navigate('/learning-resources')}
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold shadow-md"
+                >
+                  <ArrowRight className="h-4 w-4 mr-2" />
+                  Explore Learning Hub
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
