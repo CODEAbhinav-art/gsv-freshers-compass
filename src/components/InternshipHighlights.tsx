@@ -1,8 +1,12 @@
-
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Eye } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const InternshipHighlights = () => {
+  const navigate = useNavigate();
+
   const internshipImages = [
     {
       src: "/lovable-uploads/b79b4825-f392-4aee-a3b3-1fbc66e8114a.png",
@@ -63,6 +67,17 @@ export const InternshipHighlights = () => {
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Discover how GSV students excel in internships and build successful careers
           </p>
+          
+          {/* View Gallery Button */}
+          <div className="mt-6">
+            <Button 
+              onClick={() => navigate("/internship-gallery")}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg"
+            >
+              <Eye className="h-4 w-4 mr-2" />
+              View Complete Gallery
+            </Button>
+          </div>
         </div>
 
         {/* Image Gallery */}
