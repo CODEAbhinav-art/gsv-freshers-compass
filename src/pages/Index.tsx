@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { FAQSections } from "@/components/FAQSections";
 import { ImportantLinks } from "@/components/ImportantLinks";
 import { InternshipHighlights } from "@/components/InternshipHighlights";
+import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { AskQuestion } from "@/components/AskQuestion";
 import { CommunityForum } from "@/components/CommunityForum";
 import { Footer } from "@/components/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
       <QuickLinks />
       <ImportantLinks />
       <InternshipHighlights />
+      <BranchwiseMentors />
       <FAQSections />
       <CommunityForum />
       <AskQuestion />
