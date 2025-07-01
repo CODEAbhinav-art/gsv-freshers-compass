@@ -1,9 +1,14 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Calendar, CheckCircle, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useState } from "react";
 
 export const UpdateSummary = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   const updates = [
     "Added new FAQs from June 15 - July 1, 2025",
     "Updated Branch Wise Mentors with detailed contact information",
@@ -17,29 +22,38 @@ export const UpdateSummary = () => {
   return (
     <section className="py-8 bg-gradient-to-r from-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="border-2 border-primary/20 shadow-lg">
-          <CardHeader className="text-center">
-            <div className="flex justify-center items-center gap-3 mb-2">
-              <Calendar className="h-6 w-6 text-primary" />
-              <CardTitle className="text-2xl font-bold text-primary">
-                Update Version 2025.7.01
-              </CardTitle>
-            </div>
-            <Badge className="bg-green-100 text-green-800 border-green-200 mx-auto">
-              Next Update: July 7, 2025
-            </Badge>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4">
-              {updates.map((update, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">{update}</span>
+        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+          <CollapsibleTrigger asChild>
+            <Button 
+              variant="outline" 
+              className="w-full flex items-center justify-between p-4 text-left border-2 border-primary/20 hover:bg-primary/5"
+            >
+              <div className="flex items-center gap-3">
+                <Calendar className="h-5 w-5 text-primary" />
+                <span className="font-semibold text-primary">Updates Info - Version 2025.7.01</span>
+                <Badge className="bg-green-100 text-green-800 border-green-200">
+                  Next Update: July 7, 2025
+                </Badge>
+              </div>
+              <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+            </Button>
+          </CollapsibleTrigger>
+          
+          <CollapsibleContent>
+            <Card className="mt-4 border-2 border-primary/20 shadow-lg">
+              <CardContent className="pt-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  {updates.map((update, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-gray-700">{update}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          </CollapsibleContent>
+        </Collapsible>
       </div>
     </section>
   );
