@@ -12,15 +12,17 @@ export const LastUpdated = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const lastUpdatedDate = "January 1, 2025"; // Update this date when you make changes to the website
+  const lastUpdatedDate = "July 1, 2025";
 
   return (
     <div className="bg-primary text-primary-foreground py-2 overflow-hidden">
       <div className="animate-marquee whitespace-nowrap">
         <span className="text-sm font-medium">
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
+          Website updates after every 6 days | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! | 
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
+          Website updates after every 6 days | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! |
         </span>
       </div>

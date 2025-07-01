@@ -12,15 +12,19 @@ import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
 import { SpaceBackground } from "@/components/SpaceBackground";
 import { LastUpdated } from "@/components/LastUpdated";
+import { FeaturedSections } from "@/components/FeaturedSections";
+import { UpdateSummary } from "@/components/UpdateSummary";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <SpaceBackground />
       <LastUpdated />
+      <UpdateSummary />
       <Header />
       <Hero />
       <QuickLinks />
+      <FeaturedSections />
       <ImportantLinks />
       <InternshipHighlights />
       <BranchwiseMentors />

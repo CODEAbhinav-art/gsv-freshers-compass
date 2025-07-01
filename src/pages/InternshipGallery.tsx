@@ -48,6 +48,51 @@ const InternshipGallery = () => {
       src: "/lovable-uploads/a13a77c8-c50f-4faa-9999-41f81deb1e39.png",
       alt: "GSV Gallery Image 8",
       title: "GSV Activities"
+    },
+    {
+      src: "/lovable-uploads/1341f937-b14d-4ce8-8756-0256f09bdb62.png",
+      alt: "GSV Hostel Room",
+      title: "Hostel Facilities"
+    },
+    {
+      src: "/lovable-uploads/d35a5ebb-07c0-40a3-be4a-d573c69cea1e.png",
+      alt: "GSV Student Room",
+      title: "Student Accommodation"
+    },
+    {
+      src: "/lovable-uploads/cdf2a544-c449-4754-83be-c88723d756cd.png",
+      alt: "GSV Hostel Room Interior",
+      title: "Room Interior"
+    },
+    {
+      src: "/lovable-uploads/b0d634ca-0614-4476-93be-6574db19f1a7.png",
+      alt: "GSV Classroom",
+      title: "Academic Facilities"
+    },
+    {
+      src: "/lovable-uploads/a8e2cc43-4eac-4b75-b58e-8b4e8148cac1.png",
+      alt: "GSV Campus Building",
+      title: "Campus Infrastructure"
+    },
+    {
+      src: "/lovable-uploads/f315d192-34ef-4c9b-b8bb-9eac5d126f64.png",
+      alt: "GSV Building at Night",
+      title: "Campus Night View"
+    },
+    {
+      src: "/lovable-uploads/34a026ad-682d-45ce-8c20-508ab9361cef.png",
+      alt: "GSV Dining Hall",
+      title: "Dining Facilities"
+    },
+    {
+      src: "/lovable-uploads/38d45a2b-c01d-433a-ab30-21b59ec3fcb2.png",
+      alt: "GSV Study Hall",
+      title: "Study Areas"
+    },
+    {
+      src: "/lovable-uploads/fa3c41d4-2b24-47b9-b47f-05d33653dddc.png",
+      alt: "GSV Main Building Interior",
+      title: "Main Building"
     }
   ];
 

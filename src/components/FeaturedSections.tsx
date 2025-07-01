@@ -1,120 +1,111 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, Star, TrendingUp } from "lucide-react";
+import { BookOpen, Users, ExternalLink, FileText } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const FeaturedSections = () => {
-  const featuredContent = [
+  const navigate = useNavigate();
+
+  const sections = [
     {
-      title: "Admission Checklist",
-      description: "Complete post-admission formalities with our step-by-step guide",
-      status: "Essential",
-      icon: CheckCircle,
-      items: ["Document verification", "Fee payment", "Medical certificates", "Anti-ragging affidavit"],
-      gradient: "from-red-400 to-pink-500"
+      id: "learning-resources",
+      title: "Get advantage before joining college",
+      description: "Start your learning journey early with curated programming resources",
+      icon: <BookOpen className="h-6 w-6" />,
+      badge: "Essential",
+      badgeColor: "bg-purple-100 text-purple-800",
+      route: "/learning-resources",
+      highlights: [
+        "Programming Languages (Python, Java, C++)",
+        "Data Structures & Algorithms",
+        "Machine Learning Fundamentals",
+        "Web Development Basics"
+      ]
     },
     {
-      title: "Orientation Schedule",
-      description: "Don't miss important orientation sessions and welcome events",
-      status: "Upcoming",
-      icon: Clock,
-      items: ["Department introduction", "Campus tour", "Mentor assignment", "Student activities fair"],
-      gradient: "from-blue-400 to-cyan-500"
-    },
-    {
-      title: "Popular Student Clubs",
-      description: "Join vibrant communities and pursue your interests",
-      status: "Trending",
-      icon: TrendingUp,
-      items: ["Technical societies", "Cultural clubs", "Sports teams", "Entrepreneurship cell"],
-      gradient: "from-green-400 to-emerald-500"
-    },
-    {
-      title: "Campus Facilities",
-      description: "Explore world-class infrastructure and amenities",
-      status: "Featured",
-      icon: Star,
-      items: ["Modern laboratories", "Central library", "Sports complex", "Wi-Fi campus"],
-      gradient: "from-purple-400 to-violet-500"
+      id: "exam-preparation",
+      title: "Exam Preparation Guide",
+      description: "Comprehensive guide for first-year exams and study strategies",
+      icon: <FileText className="h-6 w-6" />,
+      badge: "Academic",
+      badgeColor: "bg-blue-100 text-blue-800",
+      route: "/exam-preparation",
+      highlights: [
+        "Subject-wise preparation tips",
+        "Important topics and chapters",
+        "Previous year questions",
+        "Study schedule templates"
+      ]
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "Essential": return "bg-red-100 text-red-800 border-red-200";
-      case "Upcoming": return "bg-blue-100 text-blue-800 border-blue-200";
-      case "Trending": return "bg-green-100 text-green-800 border-green-200";
-      case "Featured": return "bg-purple-100 text-purple-800 border-purple-200";
-      default: return "bg-gray-100 text-gray-800 border-gray-200";
-    }
-  };
-
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200/20 rounded-full animate-blob"></div>
-        <div className="absolute top-20 right-10 w-24 h-24 bg-purple-200/20 rounded-full animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-20 w-20 h-20 bg-pink-200/20 rounded-full animate-blob animation-delay-4000"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Featured Information for New Students
-            </h2>
-            <Badge className="bg-orange-100 text-orange-800 border-orange-200 animate-pulse-soft">
-              Upcoming
-            </Badge>
-          </div>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Essential information curated specifically for incoming freshers
+    <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Featured Learning Sections</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Essential resources to get you started on the right track at GSV
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {featuredContent.map((item, index) => (
+          {sections.map((section) => (
             <Card 
-              key={item.title} 
-              className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/90 backdrop-blur-sm hover:-translate-y-1 animate-fade-in-staggered"
-              style={{ animationDelay: `${index * 150}ms` }}
+              key={section.id}
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-l-primary"
             >
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className={`p-3 bg-gradient-to-r ${item.gradient} rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                      <item.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl text-gray-900 group-hover:text-primary transition-colors duration-300">
-                        {item.title}
-                      </CardTitle>
-                      <CardDescription className="mt-1 text-gray-700">
-                        {item.description}
-                      </CardDescription>
-                    </div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    {section.icon}
                   </div>
-                  <Badge className={`${getStatusColor(item.status)} animate-pulse-soft`} variant="outline">
-                    {item.status}
+                  <Badge className={section.badgeColor}>
+                    {section.badge}
                   </Badge>
                 </div>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                  {section.title}
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {section.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 mb-6">
-                  {item.items.map((listItem, itemIndex) => (
-                    <li 
-                      key={itemIndex} 
-                      className="flex items-center space-x-3 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                      style={{ transitionDelay: `${itemIndex * 50}ms` }}
-                    >
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-gray-900">{listItem}</span>
-                    </li>
+                <div className="space-y-2 mb-6">
+                  {section.highlights.map((highlight, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">{highlight}</span>
+                    </div>
                   ))}
-                </ul>
-                <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                  <div className={`h-full bg-gradient-to-r ${item.gradient} translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700`}></div>
+                </div>
+                <div className="space-y-3">
+                  <Button 
+                    onClick={() => navigate(section.route)}
+                    className="w-full"
+                  >
+                    Explore {section.title}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                  {section.id === "learning-resources" && (
+                    <Button 
+                      variant="outline"
+                      className="w-full"
+                      asChild
+                    >
+                      <a 
+                        href="https://docs.google.com/spreadsheets/d/1BrFwxqFIp1-ib_VUbJ-DadvquVuxIH8zWlMeBefEowg/edit?usp=drivesdk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Users className="mr-2 h-4 w-4" />
+                        Batchmates Connect
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
