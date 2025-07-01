@@ -36,7 +36,7 @@ const BranchwiseMentors = () => {
             contacts: {
               linkedin: "https://www.linkedin.com/in/abhinavrmishra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "abhinav15102003@gmail.com",
-              telegram: "@Arceus45"
+              telegram: "t.me/Arceus45"
             }
           }
         ],
@@ -173,7 +173,7 @@ const BranchwiseMentors = () => {
             contacts: {
               linkedin: "https://www.linkedin.com/in/ved-vyas-0bb560322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "vedvyas2468@gmail.com",
-              telegram: "@Invisible_V9"
+              telegram: "t.me/Invisible_V9"
             }
           },
           {
