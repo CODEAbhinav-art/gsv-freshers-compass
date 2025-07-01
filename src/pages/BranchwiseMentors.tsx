@@ -215,6 +215,7 @@ const BranchwiseMentors = () => {
         females: [
           {
             name: "Amisha Didi",
+            details: "8.5+ CGPA, SAE Member, Hult Prize OC, Edharth(B-Club)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             }
