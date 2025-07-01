@@ -64,7 +64,7 @@ const BranchwiseMentors = () => {
             contacts: {
               linkedin: "https://www.linkedin.com/in/pratik-ranjan3011?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "pratikranjan3011@gmail.com",
-              phone: "6202269313"
+              WhatsApp: "6202269313"
             }
           },
           {
@@ -100,7 +100,7 @@ const BranchwiseMentors = () => {
             details: "9+ CGPA, Internship coordinator(EE), Co-coordinator Technocrats",
             contacts: {
               linkedin: "https://www.linkedin.com/in/atulyabharat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              phone: "8252632832"
+              WhatsApp: "8252632832"
             }
           },
           {
@@ -138,7 +138,7 @@ const BranchwiseMentors = () => {
               linkedin: "https://www.linkedin.com/in/rupesh-kumar-2627772a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               instagram: "https://www.instagram.com/apt_rupesh?igsh=MWw3bjJ1Mzd2ZWVuncw==",
               twitter: "https://x.com/helloiamrupesh?t=n7yrHD66rSb55WEMNTAP2A&s=09",
-              phone: "7488335578"
+              WhatsApp: "7488335578"
             }
           }
         ],
@@ -147,7 +147,8 @@ const BranchwiseMentors = () => {
             name: "Shreya Didi",
             details: "8.5+ CGPA, Internship coordinator (AE), Technocrats(programming)",
             contacts: {
-              linkedin: "https://www.linkedin.com/in/shreya-singh-106b30312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              linkedin: "https://www.linkedin.com/in/shreya-singh-106b30312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              instagram:"https://www.instagram.com/shreyya4712?igsh=ajE0OWVreTB5ODFu"
             }
           },
           {
@@ -181,7 +182,7 @@ const BranchwiseMentors = () => {
             details: "CR (ME), Music Composer, AAI intern, Malhaar club, Literary Club - Highly Responsive and Probably the best senior to reach out for Admission related Queries",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pushpalgsv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              phone: "6299549112"
+              WhatsApp: "6299549112"
             }
           }
         ],
@@ -208,7 +209,7 @@ const BranchwiseMentors = () => {
             details: "Internship Coordinator (CE), 8+ CGPA, Technocrats(programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/shashank-savarkar-a001a5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              phone: "7410075050"
+              WhatsApp: "7410075050"
             }
           }
         ],
