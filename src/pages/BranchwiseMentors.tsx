@@ -215,7 +215,6 @@ const BranchwiseMentors = () => {
         females: [
           {
             name: "Amisha Didi",
-            details: "8.5+ CGPA, Edharth(B-Club), SAE Member, Hult Prize OC
             contacts: {
               linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             }
@@ -295,28 +294,38 @@ const BranchwiseMentors = () => {
             <div className="flex justify-center items-center gap-3 mb-4">
               <Users className="h-8 w-8 text-primary" />
               <h1 className="text-4xl font-bold text-gray-900">
-                Branchwise Mentors (2nd Year Seniors)
+                Branchwise Mentors (Seniors)
               </h1>
             </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-4xl mx-auto">
-              <div className="flex items-start gap-3">
-                <MessageCircle className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold text-blue-900 mb-2">Important Note</h3>
-                  <p className="text-blue-800 leading-relaxed">
-                    Feel free to reach out to your branchwise seniors in case of <strong>GENUINE doubts</strong> related to:
-                  </p>
-                  <ul className="list-disc list-inside mt-3 text-blue-800 space-y-1">
-                    <li>Career guidance and planning</li>
-                    <li>Exam preparation strategies</li>
-                    <li>Club-related queries and opportunities</li>
-                    <li>College administration matters</li>
-                    <li>Faculty and academic concerns</li>
-                    <li>General counselling and support</li>
-                  </ul>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+              Connect with experienced seniors from your branch for personalized guidance and support
+            </p>
+            
+            <Card className="max-w-4xl mx-auto mb-8 border-l-4 border-l-primary shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-left text-lg text-blue-900">
+                  📢 Important Note
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-left">
+                <p className="text-blue-800 mb-3">
+                  Feel free to reach out to your branchwise seniors in case of <strong>GENUINE doubts</strong> related to:
+                </p>
+                <div className="grid md:grid-cols-2 gap-2 text-blue-800 mb-4">
+                  <div>• Career guidance and planning</div>
+                  <div>• Club-related queries</div>
+                  <div>• Exam preparation strategies</div>
+                  <div>• College administration matters</div>
+                  <div>• Faculty and academic concerns</div>
+                  <div>• General counselling and support</div>
                 </div>
-              </div>
-            </div>
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                  <p className="text-yellow-800 text-sm">
+                    <strong>Note:</strong> Be respectful and genuine while asking your questions. This is for your help and these mentors are unofficial. Seniors are volunteering for this as a helping hand. Apart from these, the college will allot faculty mentors, who will be in-charge of signing documents like medical-leave approval etc.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -357,7 +366,7 @@ const BranchwiseMentors = () => {
                                   <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
-                                      renderContactButton(type, value)
+                                      renderContactButton(type, value as string)
                                     )}
                                   </div>
                                 </div>
@@ -376,7 +385,7 @@ const BranchwiseMentors = () => {
                                   <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
-                                      renderContactButton(type, value)
+                                      renderContactButton(type, value as string)
                                     )}
                                   </div>
                                 </div>
