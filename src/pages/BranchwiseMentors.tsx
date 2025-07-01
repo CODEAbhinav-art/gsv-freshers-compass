@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageCircle } from "lucide-react";
+import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageCircle, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {
   Accordion,
@@ -231,7 +231,7 @@ const BranchwiseMentors = () => {
       switch (type) {
         case 'linkedin': return <ExternalLink className="h-4 w-4" />;
         case 'email': return <Mail className="h-4 w-4" />;
-        case 'phone': return <WhatsApp className="h-4 w-4" />;
+        case 'phone': return <MessageSquare className="h-4 w-4" />;
         case 'instagram': return <Instagram className="h-4 w-4" />;
         case 'telegram': return <MessageCircle className="h-4 w-4" />;
         case 'twitter': return <ExternalLink className="h-4 w-4" />;
