@@ -357,7 +357,7 @@ const BranchwiseMentors = () => {
                                   <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
-                                      renderContactButton(type, value)
+                                      renderContactButton(type, value as string)
                                     )}
                                   </div>
                                 </div>
@@ -376,7 +376,7 @@ const BranchwiseMentors = () => {
                                   <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
-                                      renderContactButton(type, value)
+                                      renderContactButton(type, value as string)
                                     )}
                                   </div>
                                 </div>
