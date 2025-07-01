@@ -126,7 +126,7 @@ const BranchwiseMentors = () => {
     },
     {
       name: "AE Mentors",
-      fullName: "Aerospace Engineering",
+      fullName: "Aviation Engineering",
       icon: "✈️",
       description: "Get guidance from AE seniors on aerospace projects, aviation industry trends, and career paths in aerospace sector.",
       mentors: {
@@ -215,7 +215,6 @@ const BranchwiseMentors = () => {
         females: [
           {
             name: "Amisha Didi",
-            details: "8.5+ CGPA, Edharth(B-Club), Hult Prize OC, SAE Member
             contacts: {
               linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             }
