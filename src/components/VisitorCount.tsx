@@ -9,7 +9,7 @@ export const VisitorCount = () => {
     <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
       <div className="flex items-center space-x-1">
         <Users className="h-4 w-4" />
-        <span>Visitors (24h):</span>
+        <span>Total Visitors:</span>
       </div>
       <div className="flex items-center space-x-1 font-semibold text-primary">
         {loading ? (

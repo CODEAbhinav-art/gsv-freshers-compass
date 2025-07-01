@@ -1,261 +1,153 @@
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, BookOpen, Users, Briefcase, TrendingUp, Building2, Code, Calendar } from "lucide-react";
-import { useState } from "react";
+import { GraduationCap, Home, Briefcase } from "lucide-react";
 
 export const FAQSections = () => {
-  const [openSections, setOpenSections] = useState<string[]>([]);
-
-  const toggleSection = (sectionId: string) => {
-    setOpenSections(prev => 
-      prev.includes(sectionId) 
-        ? prev.filter(id => id !== sectionId)
-        : [...prev, sectionId]
-    );
-  };
-
-  const faqCategories = [
+  const faqSections = [
     {
-      id: "placements",
-      title: "Placements & Career Stats",
-      icon: TrendingUp,
-      description: "Complete placement statistics and career guidance for GSV students",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-500",
+      id: "academic-faqs",
+      title: "Academic FAQs",
+      icon: <GraduationCap className="h-6 w-6" />,
+      description: "Everything about academics, exams, and studies",
       faqs: [
         {
-          question: "What are the median placement packages for 2025 batch?",
-          answer: "Civil Engineering: 4.0 LPA, ECE: 4.8 LPA, Mechanical Engineering: 5.0 LPA"
+          question: "What is the grading system at GSV?",
+          answer: "GSV follows a 10-point CGPA system. The grading scale includes: O (Outstanding) = 10, A+ = 9, A = 8, B+ = 7, B = 6, C = 5, F (Fail) = 0. You need a minimum CGPA of 5.0 to pass each semester."
         },
         {
-          question: "What are the highest CTC packages achieved?",
-          answer: "Civil Engineering: 5.0 LPA, ECE: 6.57 LPA, Mechanical Engineering: 6.57 LPA"
+          question: "How many subjects are there in the first year?",
+          answer: "First year typically has 8-10 subjects per semester including core subjects like Mathematics, Physics, Chemistry, Basic Electrical Engineering, Engineering Drawing, and Communication Skills along with practical/lab sessions."
         },
         {
-          question: "When will the first batch of AI-DS and Electrical Engineering graduate?",
-          answer: "The first batch of AI-DS and Electrical Engineering branch started in 2023, will graduate in 2027."
+          question: "What is the attendance requirement?",
+          answer: "Minimum 75% attendance is mandatory for each subject. Students with less than 75% attendance may not be allowed to appear for end-semester examinations. Medical leaves are considered separately with proper documentation."
         },
         {
-          question: "When will Aviation Engineering students graduate?",
-          answer: "The Aviation Engineering (30 seats) branch started in 2024, will graduate in 2028."
+          question: "Are there any inter college sports events or any intra college branch wise competition?",
+          answer: "Inter College sports events are very rare but intra college branch wise competitions happen every semester."
         },
         {
-          question: "Do GSV students get extra reservation at Indian Railways?",
-          answer: "MYTHBUSTER: GSV students are neither guaranteed nor get any extra reservation at any job in INDIAN RAILWAYS. One has to qualify the traditional examinations conducted by RRB."
+          question: "Will Airbus provide internships to aviation branch students if yes then in which semesters?",
+          answer: "Yes, specific semesters are yet to be declared by the college authorities."
         },
         {
-          question: "Which companies visit GSV for placements?",
-          answer: "To know about companies visiting GSV, refer to the Admission Brochure above for detailed information."
-        },
-        {
-          question: "If the college is good, why are placements not up to that reputation?",
-          answer: "GSV established in 2022 (formerly NRTI). So the higher percentiles/rank students started joining after that and the JOSAA mode of admission started in 2024. Therefore the first batch of students who joined GSV not NRTI will have their placements from 2026 afterwards."
-        },
-        {
-          question: "Do good companies visit GSV?",
-          answer: "Yes, refer to the admission brochure and more good companies are expected to visit at the time of AI-DS graduation."
-        },
-        {
-          question: "Does GSV guarantee me a placement?",
-          answer: "No, Any college can't assure your placement except your own dedicated efforts like Networking with other people, improving the communication skills, domain specific expertise, building a strong resume/cv, a good CGPA (8+). These are some of the things a RECRUITER looks into a candidate, interestingly these skills rely on your own motivated efforts."
+          question: "Are the professors well qualified and do they teach well?",
+          answer: "Yes they all are mostly from IITs or reputed industry veterans. But teaching skills has nothing to do with qualification, it's a subjective thing, some students always complain while there are also students who never. So it's how you perceive the surroundings depending upon your interest and caliber."
         }
       ]
     },
     {
-      id: "admission-process",
-      title: "After CSAB Admission Process",
-      icon: BookOpen,
-      description: "Everything you need to know after getting a seat in CSAB",
-      color: "bg-green-50 border-green-200",
-      iconColor: "text-green-500",
+      id: "non-academic-faqs",
+      title: "Campus Life FAQs",
+      icon: <Home className="h-6 w-6" />,
+      description: "Hostel, mess, campus facilities, and daily life",
       faqs: [
         {
-          question: "How many days of physical reporting after CSAB allocation?",
-          answer: "Last year, the CSAB round 2 ended on 10th August, we were asked to do physical reporting on 3rd September onwards for hostel allotment and induction programme on 5th September, so one gets enough time to make ticket and travel arrangements."
+          question: "What are the hostel facilities available?",
+          answer: "GSV provides separate hostels for boys and girls with basic amenities including WiFi, mess facility, common rooms, and study areas. Rooms are typically shared (2-3 students per room) with basic furniture provided."
+        },
+        {
+          question: "What is the mess food like?",
+          answer: "The mess serves vegetarian meals with a rotating weekly menu. The food quality is decent with North Indian and Gujarati cuisine. Mess timings are usually: Breakfast (7:30-9:30 AM), Lunch (12:30-2:30 PM), Snacks (4:30-6:00 PM), Dinner (7:30-9:30 PM)."
+        },
+        {
+          question: "Are mobile phones allowed in hostels?",
+          answer: "Yes, mobile phones are allowed in hostels. However, there might be restrictions during study hours or late night hours as per hostel rules. WiFi is available in most hostel areas."
+        },
+        {
+          question: "What are the library facilities and timings?",
+          answer: "The central library is well-equipped with textbooks, reference books, journals, and digital resources. Library timings are usually 8:00 AM to 8:00 PM on weekdays and 9:00 AM to 5:00 PM on weekends. Students can issue up to 3-4 books at a time."
+        },
+        {
+          question: "How are the medical facilities in gsv campus and in the first year hostel for students in case of sickness?",
+          answer: "For Males, Sumandeep Hospital(A government medical college, approx 5 km from stanza, towards parul university) is nearest to them, a medical store and clinic(morning:-9-12, evening:- 3-5) is also opposite to stanza. Also while in college one can go and get medicines from a GSV doctor for free AND in case of severe sickness railway command hospital is accessible by GSV Students only after being referred by GSV doctor.\n\nFemales:- except sumandeep point rest is the same for girls, and also since college in the main city one can go to manjalpur and get treated in private clinics in case college doctor is not available."
+        },
+        {
+          question: "What are the in-campus hostel restrictions.. like is it allowed to stay outside campus for full day-night or any sort?!",
+          answer: "In GSV Campus strict 12 AM night.\nIn stanza:- refer to seniors."
+        },
+        {
+          question: "Do college students hold any authority like does college elect sports general captains.. or the general secretary of college who holds authority over the things in college?",
+          answer: "Yes, GSV Has its Student Council , you can reach out to him whenever needed. Especially our student cell president (vivek bhaiya-4th year(ex coordinator-Technocrats)) is very helpful in nature. The club heads and other positions are elected by the current seniormost person of that particular club who is going to retire from that position (It's like passing the baton on to the next trusted teammate). Meanwhile in GSV Clubs, collaboration and collective growth is the utmost priority therefore club positions are insignificant, every club member holds his/her voice equally in constructive manner whether he is coordinator or a support member. These positions are meant to guide the juniors and take the final decisions since they are the most experienced in the club."
+        },
+        {
+          question: "I have heard in some reviews that college only allows for a certain time inside a sports complex. Does somebody else also share that with us?!",
+          answer: "It was until this 31st march which was shared with NAIR officials, Now NAIR has completely left the college and handed over all the infrastructure to GSV including that sports complex, new code of conduct for the sports facilities will be announced in the upcoming Induction/orientation program."
         }
       ]
     },
     {
-      id: "coding-culture",
-      title: "Coding Culture & Technical Activities",
-      icon: Code,
-      description: "Technical clubs, coding culture, and skill development opportunities",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-500",
+      id: "internship-faqs",
+      title: "Internship & Placement FAQs",
+      icon: <Briefcase className="h-6 w-6" />,
+      description: "Career guidance, internships, and placement information",
       faqs: [
         {
-          question: "How is the coding culture in GSV?",
-          answer: "It is decent, the AI branch started in 2023 due to which coding oriented people are constantly growing every year. Lot of great seniors will be there for guidance from 3rd and 2nd year."
+          question: "When do internships start for first-year students?",
+          answer: "First-year students typically get opportunities for summer internships after completing their first year. However, some voluntary internships and workshops are available throughout the year. The college placement cell organizes orientation sessions about internships."
         },
         {
-          question: "What about Technocrats club?",
-          answer: "The tech club of GSV and probably the most active club of GSV in tech with 3 domains: 1)Programming, 2) Profile Development, 3)Robotics. In programming Domain Junior seniors are formed in a team especially to help juniors gain exposure with seniors for a group project. THEREFORE A MUST JOIN FOR CODING ORIENTED PEOPLE."
+          question: "What companies visit GSV for placements?",
+          answer: "GSV has partnerships with various railway companies, engineering firms, and tech companies. Major recruiters include Indian Railways, BHEL, L&T, TCS, Infosys, and several core engineering companies. The placement cell regularly updates the list of visiting companies."
         },
         {
-          question: "Do people try for GSOC (Google Summer of Code)?",
-          answer: "Yes, GSOC is actively promoted. Meanwhile GSV is yet to get its first GSOC Qualifier. If interested upskill yourself in a particular tech stack, Web development (Django, MERN stack), Web 3, Machine Learning, etc."
-        }
-      ]
-    },
-    {
-      id: "general-faqs",
-      title: "General College Information",
-      icon: Building2,
-      description: "Dress code, scholarships, academic guidance, and general policies",
-      color: "bg-orange-50 border-orange-200",
-      iconColor: "text-orange-500",
-      faqs: [
-        {
-          question: "Any dress code in college?",
-          answer: "No, casuals are allowed but Formals are recommended during project presentations."
+          question: "Is there support for competitive exam preparation?",
+          answer: "Yes, GSV provides guidance and resources for competitive exams like GATE, ESE, and railway recruitment exams. There are faculty members who provide additional coaching and the library has relevant study materials."
         },
         {
-          question: "How to apply for scholarships?",
-          answer: "For scholarships, refer to college website: gsv.ac.in and admission brochure, all the scholarships are NEED CUM MERIT BASED."
-        },
-        {
-          question: "Which branch should I choose for easier scholarships?",
-          answer: "AVIATION. Airbus last year gave scholarships to all aviation students whoever applied, if seats get vacant then get distributed among other branch students like AI(4 seats), ECE(4 seats), etc."
-        },
-        {
-          question: "Can I develop extra skills alongside academics?",
-          answer: "Yes, It depends on your time management skills and dedication."
-        },
-        {
-          question: "What do students do during free time when class is not happening?",
-          answer: "Some Study in the library, some play sports, some go and sleep in the high speed hostel common rooms."
-        },
-        {
-          question: "How is the alumni network?",
-          answer: "Check out the GSV LinkedIn Page/people section."
-        },
-        {
-          question: "How are the professors? Are they helpful towards students?",
-          answer: "Professors are mostly cool and chill. They are helpful towards students in every possible way. Until you're sincere and respectful with them, no need to worry. But crossing the line is never recommended. Medium workload one can expect, neither too much nor too less."
-        },
-        {
-          question: "Are there chess tournaments?",
-          answer: "Yes in the AUJUSYA(Sports fest), lot of good chess players are there in GSV like up to 1500 elo types."
-        },
-        {
-          question: "Do we receive funding for projects using electronics? What about lab equipment?",
-          answer: "Sufficient equipment is there in the labs according to COURSE CURRICULUM. Also a new LAB Building Under construction for better facilities. For funding, do reach out to respective faculties if they find your work and thesis genuine, you're sure to receive funding. E-CELL of GSV provides seed funding of up to Rs 1 Lakh/-."
-        }
-      ]
-    },
-    {
-      id: "hostel-facilities",
-      title: "Hostel & Campus Facilities",
-      icon: Users,
-      description: "Accommodation, mess, library, and campus amenities information",
-      color: "bg-red-50 border-red-200",
-      iconColor: "text-red-500",
-      faqs: [
-        {
-          question: "Do we get single rooms? What about roommate allocation?",
-          answer: "As of now, nobody is given single rooms with current infra. Since the new hostel building is under construction, this facility will be given to 4th year students once completed. Roommate Allotment is random process based on your reporting time and day, if you wish to change roommate get signature from warden and submit to stanza caretaker."
-        },
-        {
-          question: "What are the library timings?",
-          answer: "8:30 Am to 7:30 Pm Monday-Friday. Timing and days get increased during exam times. Library has a vast collection of books from multiple genres. One can issue the books for a maximum of 10 days, then submit/extend for another 10 day else pay a fine 5 Rs/day if not submitted/extended within 10 days."
-        },
-        {
-          question: "What about hostel facilities - washing machines and mess food?",
-          answer: "There are 5 washing machines in stanza hostels. Mess food will feel good in the starting, later one gets bored. The food is absolutely normal, no added sugar in all stuff. Non veg is not served in stanza mess but in GSV mess, nearby shops are there in front of college."
-        },
-        {
-          question: "Is hostel wifi unlimited or is there a monthly limit?",
-          answer: "75 GB per day/24 hours."
-        },
-        {
-          question: "Are newspapers available in English?",
-          answer: "Multiple newspapers and magazines are available in the library, all in English language only! If you wish to add any book in library, write a formal mail to the library incharge."
-        }
-      ]
-    },
-    {
-      id: "certification-events",
-      title: "Certifications & College Events",
-      icon: Calendar,
-      description: "Certification courses, college events, and extracurricular activities",
-      color: "bg-yellow-50 border-yellow-200",
-      iconColor: "text-yellow-500",
-      faqs: [
-        {
-          question: "What certification courses does the college provide?",
-          answer: "There is a NVIDIA course provided by the college itself if yes then how many processes does the college provide in a whole academy year? The course is provided by Respected. Vipul sir(Associate professor, AI-DS) as he is a NVIDIA DEEP LEARNING INSTITUTE(DLI) Ambassador. There are other certification courses provided by the college also but for senior years not for the first year."
-        },
-        {
-          question: "What are the major college events?",
-          answer: "AGNEE(CULTURAL FEST): https://www.youtube.com/live/SJAm2a6KGOM?feature=shared, https://www.youtube.com/live/90y5nvQmPH4?feature=shared. EPITOME(Tech fest): https://www.youtube.com/live/oSykTGbwvv4?feature=shared. GSV YT channel: https://youtube.com/@gsv.vadodara?feature=shared"
+          question: "What is the average package offered to GSV graduates?",
+          answer: "The average package varies by branch and market conditions. Core engineering branches typically see packages ranging from 3-8 LPA, while some students in specialized fields or through off-campus placements achieve higher packages. The placement cell provides detailed statistics annually."
         }
       ]
     }
   ];
 
   return (
-    <section id="faqs" className="py-16 bg-background">
+    <section className="py-16 bg-background" id="faqs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-extrabold">
-            Comprehensive GSV Student Guide
-          </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-semibold">
-            Complete information for GSV freshers - From admissions to placements
+          <h2 className="text-3xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Find answers to the most common questions about life at GSV, academics, and campus facilities.
           </p>
         </div>
 
-        <div className="grid gap-8">
-          {faqCategories.map((category) => (
-            <Card key={category.id} id={category.id} className="space-card-light border-2 bg-white/95 shadow-lg">
-              <Collapsible 
-                open={openSections.includes(category.id)}
-                onOpenChange={() => toggleSection(category.id)}
-              >
-                <CollapsibleTrigger asChild>
-                  <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg shadow-sm border border-blue-400/30">
-                          <category.icon className={`h-6 w-6 ${category.iconColor}`} />
-                        </div>
-                        <div className="text-left">
-                          <CardTitle className="text-xl text-gray-900 font-bold">{category.title}</CardTitle>
-                          <CardDescription className="mt-1 text-gray-700 font-semibold">{category.description}</CardDescription>
-                        </div>
-                      </div>
-                      <ChevronDown 
-                        className={`h-5 w-5 transition-transform text-gray-900 ${
-                          openSections.includes(category.id) ? 'rotate-180' : ''
-                        }`} 
-                      />
-                    </div>
-                  </CardHeader>
-                </CollapsibleTrigger>
-                
-                <CollapsibleContent>
-                  <CardContent className="pt-0">
-                    <div className="space-y-4">
-                      {category.faqs.map((faq, index) => (
-                        <Card key={index} className="bg-white/90 border shadow-sm">
-                          <CardContent className="p-4">
-                            <h4 className="font-bold text-gray-900 mb-2 text-base">{faq.question}</h4>
-                            <p className="text-sm text-gray-800 leading-relaxed font-medium whitespace-pre-line">{faq.answer}</p>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                    <div className="mt-6 text-center">
-                      <Button variant="outline" className="leetcode-btn bg-blue-600 text-white font-bold hover:bg-blue-700 border-blue-400/50">
-                        <category.icon className="h-4 w-4 mr-2 text-white" />
-                        View More {category.title}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </CollapsibleContent>
-              </Collapsible>
+        <div className="grid gap-8 lg:gap-12">
+          {faqSections.map((section) => (
+            <Card key={section.id} className="shadow-lg">
+              <CardHeader className="bg-primary/5">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    {section.icon}
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl">{section.title}</CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      {section.description}
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <Accordion type="single" collapsible className="w-full">
+                  {section.faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`${section.id}-${index}`}>
+                      <AccordionTrigger className="text-left">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground whitespace-pre-line">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
             </Card>
           ))}
         </div>

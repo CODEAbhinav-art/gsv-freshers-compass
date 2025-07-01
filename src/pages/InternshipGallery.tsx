@@ -8,42 +8,46 @@ import { useNavigate } from "react-router-dom";
 const InternshipGallery = () => {
   const navigate = useNavigate();
 
-  const internshipImages = [
+  const galleryImages = [
     {
       src: "/lovable-uploads/b79b4825-f392-4aee-a3b3-1fbc66e8114a.png",
       alt: "GSV students at Container Corporation internship",
-      title: "Corporate Internships",
-      description: "Students gaining real-world experience at leading companies"
+      title: "Corporate Internships"
     },
     {
       src: "/lovable-uploads/610c4917-176a-40b6-ad03-4f6947297627.png",
       alt: "GSV students at educational visit",
-      title: "Educational Visits",
-      description: "Learning through field visits and practical exposure"
+      title: "Educational Visits"
     },
     {
       src: "/lovable-uploads/63d365f7-0af5-49aa-84f5-e2b1b19b35ef.png",
       alt: "GSV students in institutional meeting",
-      title: "Institutional Partnerships",
-      description: "Building connections with industry and academic institutions"
+      title: "Institutional Partnerships"
     },
     {
       src: "/lovable-uploads/2f7f226d-0534-4a28-9bfd-d531fa6c3195.png",
       alt: "GSV students at Railway Manager office",
-      title: "Government Sector Exposure",
-      description: "Exploring opportunities in public sector organizations"
+      title: "Government Sector Exposure"
     },
     {
       src: "/lovable-uploads/4514667e-36a7-4bdf-81fa-a22cb2bc26d3.png",
       alt: "GSV students in professional setting",
-      title: "Professional Development",
-      description: "Developing industry-ready skills and professional etiquette"
+      title: "Professional Development"
     },
     {
       src: "/lovable-uploads/8afc2dda-6153-40b1-85e3-61f3ad35ac4a.png",
       alt: "GSV student operating train controls",
-      title: "Hands-on Training",
-      description: "Practical experience with real-world equipment and systems"
+      title: "Hands-on Training"
+    },
+    {
+      src: "/lovable-uploads/111a24c2-1a22-4c39-a577-a518ae04f0cb.png",
+      alt: "GSV Gallery Image 7",
+      title: "GSV Campus Life"
+    },
+    {
+      src: "/lovable-uploads/a13a77c8-c50f-4faa-9999-41f81deb1e39.png",
+      alt: "GSV Gallery Image 8",
+      title: "GSV Activities"
     }
   ];
 
@@ -63,20 +67,20 @@ const InternshipGallery = () => {
           <div className="text-center mb-12">
             <div className="flex justify-center items-center gap-3 mb-4">
               <h1 className="text-4xl font-bold text-gray-900">
-                1st Year GSV Internship Gallery
+                GSV Gallery
               </h1>
               <Badge className="bg-green-100 text-green-800 border-green-200">
-                Success Stories
+                Student Life
               </Badge>
             </div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Explore the complete collection of GSV student internship experiences and achievements
+              Explore the complete collection of GSV student experiences and campus life
             </p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {internshipImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <Card 
               key={index}
               className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
@@ -93,9 +97,6 @@ const InternshipGallery = () => {
                 <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
                   {image.title}
                 </CardTitle>
-                <CardDescription className="text-base group-hover:text-gray-800 transition-colors duration-300">
-                  {image.description}
-                </CardDescription>
               </CardHeader>
             </Card>
           ))}
