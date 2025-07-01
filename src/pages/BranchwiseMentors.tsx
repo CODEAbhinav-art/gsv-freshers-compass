@@ -214,10 +214,10 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Tanisha Didi",
-            details: "9+ CGPA, Internship Coordinator(CE), Co-coordinator Edharth(B-Club)",
+            name: "Amisha Didi",
+            details: "8.5+ CGPA, Edharth(B-Club), Hult Prize OC, SAE Member
             contacts: {
-              linkedin: "https://www.linkedin.com/in/tanisha-kapila-786a78329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             }
           }
         ]
