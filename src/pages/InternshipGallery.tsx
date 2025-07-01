@@ -117,14 +117,17 @@ const InternshipGallery = () => {
                 Student Life
               </Badge>
             </div>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
               Explore the complete collection of GSV student experiences and campus life
+            </p>
+            <p className="text-sm text-gray-600 mb-8">
+              Credits: Pratik Ranjan, Harivarun Bandi
             </p>
             
             <Button 
               asChild
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg border-2 border-blue-300"
             >
               <a 
                 href="https://drive.google.com/file/d/14cBowpc0CfHL_9b01fNgqZhl4RYbLiWp/view?usp=drivesdk"
@@ -135,6 +138,9 @@ const InternshipGallery = () => {
                 GSV Library
               </a>
             </Button>
+            <p className="text-xs text-gray-500 mt-2">
+              Credits: Harivarun Bandi (ECE-II)
+            </p>
           </div>
         </div>
 
