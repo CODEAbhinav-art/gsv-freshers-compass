@@ -36,7 +36,8 @@ const BranchwiseMentors = () => {
             contacts: {
               linkedin: "https://www.linkedin.com/in/abhinavrmishra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "abhinav15102003@gmail.com",
-              telegram: "https://t.me/Arceus45"
+              telegram: "https://t.me/Arceus45",
+              WhatsApp: "https://wa.me/qr/BZ2FTIANNR3ZM1"
             }
           }
         ],
