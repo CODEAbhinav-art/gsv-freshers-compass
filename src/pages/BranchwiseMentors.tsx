@@ -43,7 +43,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Sakshi Didi",
+            name: "Sakshi Didi[DAY SCHOLAR]",
             details: "Dronathon Winner, Lead Singer of Music Club(MALHAR), 8.5+ SGPA",
             contacts: {
               linkedin: "https://www.linkedin.com/in/sakshi-salot"
@@ -101,7 +101,7 @@ const BranchwiseMentors = () => {
             details: "9+ CGPA, Internship coordinator(EE), Co-coordinator Technocrats",
             contacts: {
               linkedin: "https://www.linkedin.com/in/atulyabharat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              WhatsApp: "8252632832"
+              WhatsApp: "https://wa.me/qr/CDSAFPBMZOCVN1"
             }
           },
           {
@@ -170,7 +170,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Ved Bhaiya",
+            name: "Ved Bhaiya[DAY SCHOLAR]",
             details: "9+ CGPA, Dronathon winner, SAE Member, Literary Club",
             contacts: {
               linkedin: "https://www.linkedin.com/in/ved-vyas-0bb560322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -183,7 +183,7 @@ const BranchwiseMentors = () => {
             details: "CR (ME), Music Composer, AAI intern, Malhaar club, Literary Club - Highly Responsive and Probably the best senior to reach out for Admission related Queries",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pushpalgsv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              WhatsApp: "6299549112"
+              WhatsApp: "https://wa.me/qr/MROOI2DLPDLTH1"
             }
           }
         ],
