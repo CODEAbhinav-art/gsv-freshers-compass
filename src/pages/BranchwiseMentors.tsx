@@ -43,7 +43,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Sakshi Didi[DAY SCHOLAR]",
+            name: "Sakshi Didi [DAY SCHOLAR]",
             details: "Dronathon Winner, Lead Singer of Music Club(MALHAR), 8.5+ SGPA",
             contacts: {
               linkedin: "https://www.linkedin.com/in/sakshi-salot"
@@ -170,7 +170,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Ved Bhaiya[DAY SCHOLAR]",
+            name: "Ved Bhaiya [DAY SCHOLAR]",
             details: "9+ CGPA, Dronathon winner, SAE Member, Literary Club",
             contacts: {
               linkedin: "https://www.linkedin.com/in/ved-vyas-0bb560322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
