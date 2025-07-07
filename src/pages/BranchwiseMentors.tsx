@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageCircle, MessageSquare } from "lucide-react";
+import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {
   Accordion,

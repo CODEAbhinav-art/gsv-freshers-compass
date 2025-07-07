@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, Users, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown } from "lucide-react";
+import { BookOpen, FileText, Users, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -257,6 +257,114 @@ export const ImportantLinks = () => {
                   </div>
                 </CollapsibleContent>
               </Collapsible>
+            </CardContent>
+          </Card>
+
+          {/* Future GSV Campus */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Home className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-xl">Future GSV Campus</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Explore the future vision of GSV campus development
+              </p>
+              <Button
+                variant="default"
+                className="w-full"
+                asChild
+              >
+                <a href="https://www.linkedin.com/posts/durgeshlegha_%F0%9D%90%84%F0%9D%90%AF%F0%9D%90%9E%F0%9D%90%AB-%F0%9D%90%A2%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A0%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%B0%F0%9D%90%A2%F0%9D%90%AD%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A0-ugcPost-7330174411821441024-I3pj?utm_source=share&utm_medium=member_android&rcm=ACoAAEGJ6lMB6_f4vAk7pvF_mBuWzkqcBTb8JEc" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View Future Campus
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* GSV Campus Tour */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Video className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-xl">GSV Campus Tour</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Take a virtual tour of the GSV campus
+              </p>
+              <Button
+                variant="default"
+                className="w-full"
+                asChild
+              >
+                <a href="https://youtu.be/O9JHRjcw1kE?feature=shared" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Watch Campus Tour
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Jobs and Internships Updates */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Briefcase className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-xl">Jobs and Internships Updates</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Stay updated with latest job and internship opportunities
+              </p>
+              <Button
+                variant="default"
+                className="w-full"
+                asChild
+              >
+                <a href="https://www.talentd.in/redirect.php?url=whatsapp-community" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Join Updates Community
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* First Year Hostel Location */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-xl">First Year Hostel (Stanza) Location</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Find the exact location of first year hostel on maps
+              </p>
+              <Button
+                variant="default"
+                className="w-full"
+                asChild
+              >
+                <a href="https://maps.app.goo.gl/hL6FYQFcRfZ91rJq6" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View on Maps
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>

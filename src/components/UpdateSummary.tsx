@@ -10,13 +10,13 @@ export const UpdateSummary = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const updates = [
-    "Added new FAQs from June 15 - July 1, 2025",
-    "Updated Branch Wise Mentors with detailed contact information",
-    "Added new GSV Gallery images",
-    "Created Batchmates Connect feature",
-    "Updated website last modified date and ribbon",
-    "Restored 'Get advantage before joining college' section",
-    "Fixed Important Links section to original form"
+    "Added 4 new important links: Future GSV Campus, Campus Tour, Jobs & Internships, Hostel Location",
+    "Enhanced website design with new moon-inspired color scheme",
+    "Removed Community Forum section for cleaner interface",
+    "Added new GSV Gallery images with credits",
+    "Updated BEE book link and GSV Library resources",
+    "Enhanced Important Links section with better organization",
+    "Updated website last modified date to July 7, 2025"
   ];
 
   return (
@@ -30,9 +30,9 @@ export const UpdateSummary = () => {
             >
               <div className="flex items-center gap-3">
                 <Calendar className="h-5 w-5 text-primary" />
-                <span className="font-semibold text-primary">Updates Info - Version 2025.7.01</span>
+                <span className="font-semibold text-primary">Updates Info - Version 2025.7.07</span>
                 <Badge className="bg-green-100 text-green-800 border-green-200">
-                  Next Update: July 7, 2025
+                  Next Update: July 13, 2025
                 </Badge>
               </div>
               <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
