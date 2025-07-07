@@ -67,7 +67,7 @@ export const Footer = () => {
           <div className="flex flex-col items-center space-y-4">
             <VisitorCount />
             <p className="text-sm text-muted-foreground text-center">
-              © 2024 GSV Freshers' Guide. Created with ❤️ for new students at Gati Shakti Vishwavidyalaya.
+               By the GSVians For the GSVians
             </p>
           </div>
         </div>
