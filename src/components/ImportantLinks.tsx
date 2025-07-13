@@ -367,6 +367,41 @@ export const ImportantLinks = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* Calculator Recommendation */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-amber-400/30 bg-gradient-to-br from-amber-50 to-yellow-50">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-amber-100 rounded-lg">
+                  <GraduationCap className="h-5 w-5 text-amber-600" />
+                </div>
+                <CardTitle className="text-xl text-amber-800">Which Calculator to Buy?</CardTitle>
+              </div>
+              <Badge className="bg-amber-200 text-amber-800 border-amber-300 w-fit">
+                Recommended
+              </Badge>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Essential calculator for engineering studies
+              </p>
+              <Button
+                variant="default"
+                className="w-full mb-2 bg-amber-600 hover:bg-amber-700"
+                asChild
+              >
+                <a href="https://amzn.in/d/1luAcMr" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View Calculator
+                </a>
+              </Button>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                <p className="text-xs text-red-800 font-medium text-center">
+                  📌 This model is strictly recommended
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

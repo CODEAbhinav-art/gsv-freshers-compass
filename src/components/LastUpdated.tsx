@@ -12,7 +12,7 @@ export const LastUpdated = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const lastUpdatedDate = "July 7, 2025";
+  const lastUpdatedDate = "July 13, 2025";
 
   return (
     <div className="bg-primary text-primary-foreground py-2 overflow-hidden">
