@@ -265,7 +265,7 @@ const BranchwiseMentors = () => {
         key={type}
         variant="outline"
         size="sm"
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-card/80 hover:bg-primary/20 border-primary/30 text-foreground"
         asChild
       >
         <a 
@@ -287,7 +287,7 @@ const BranchwiseMentors = () => {
           <Button 
             variant="outline" 
             onClick={() => navigate("/")}
-            className="mb-4"
+            className="mb-4 bg-card/80 hover:bg-primary/20 border-primary/30 text-foreground"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
@@ -296,25 +296,25 @@ const BranchwiseMentors = () => {
           <div className="text-center mb-12">
             <div className="flex justify-center items-center gap-3 mb-4">
               <Users className="h-8 w-8 text-primary" />
-              <h1 className="text-4xl font-bold text-gray-900">
+              <h1 className="text-4xl font-bold text-foreground">
                 Branchwise Mentors (Seniors)
               </h1>
             </div>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
               Connect with experienced seniors from your branch for personalized guidance and support
             </p>
             
-            <Card className="max-w-4xl mx-auto mb-8 border-l-4 border-l-primary shadow-lg">
+            <Card className="max-w-4xl mx-auto mb-8 border-2 border-primary/30 bg-card/95 backdrop-blur-sm shadow-lg">
               <CardHeader>
-                <CardTitle className="text-left text-lg text-blue-900">
+                <CardTitle className="text-left text-lg text-foreground">
                   📢 Important Note
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-left">
-                <p className="text-blue-800 mb-3">
+                <p className="text-foreground/90 mb-3">
                   Feel free to reach out to your branchwise seniors in case of <strong>GENUINE doubts</strong> related to:
                 </p>
-                <div className="grid md:grid-cols-2 gap-2 text-blue-800 mb-4">
+                <div className="grid md:grid-cols-2 gap-2 text-foreground/80 mb-4">
                   <div>• Career guidance and planning</div>
                   <div>• Club-related queries</div>
                   <div>• Exam preparation strategies</div>
@@ -322,8 +322,8 @@ const BranchwiseMentors = () => {
                   <div>• Faculty and academic concerns</div>
                   <div>• General counselling and support</div>
                 </div>
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
-                  <p className="text-yellow-800 text-sm">
+                <div className="bg-muted/50 border border-border rounded-lg p-4 mt-4">
+                  <p className="text-sm text-foreground/90 font-medium">
                     <strong>Note:</strong> Be respectful and genuine while asking your questions. This is for your help and these mentors are unofficial. Seniors are volunteering for this as a helping hand. Apart from these, the college will allot faculty mentors, who will be in-charge of signing documents like medical-leave approval etc.
                   </p>
                 </div>
@@ -336,37 +336,37 @@ const BranchwiseMentors = () => {
           {branches.map((branch, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-l-primary"
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-primary/30 bg-card/95 backdrop-blur-sm"
             >
               <CardHeader className="text-center pb-4">
                 <div className="text-4xl mb-3">{branch.icon}</div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300 text-foreground">
                   {branch.name}
                 </CardTitle>
-                <CardDescription className="text-sm font-medium text-muted-foreground">
+                <CardDescription className="text-sm font-medium text-foreground/70">
                   {branch.fullName}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                   {branch.description}
                 </p>
                 
                 <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="mentors">
-                    <AccordionTrigger className="text-sm font-medium">
+                  <AccordionItem value="mentors" className="border-primary/20">
+                    <AccordionTrigger className="text-sm font-medium text-foreground hover:text-primary">
                       View Mentors Contact Details
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="space-y-4">
                         {branch.mentors.males.length > 0 && (
                           <div>
-                            <h4 className="font-semibold text-sm mb-2 text-blue-700">For Males:</h4>
+                            <h4 className="font-semibold text-sm mb-2 text-primary">For Males:</h4>
                             <div className="space-y-3">
                               {branch.mentors.males.map((mentor, mentorIndex) => (
-                                <div key={mentorIndex} className="bg-blue-50 p-3 rounded-lg">
-                                  <h5 className="font-medium text-sm mb-1">{mentor.name}</h5>
-                                  <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
+                                <div key={mentorIndex} className="bg-primary/10 border border-primary/20 p-3 rounded-lg">
+                                  <h5 className="font-bold text-base mb-1 text-foreground">{mentor.name}</h5>
+                                  <p className="text-sm text-foreground/80 mb-2 font-medium">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
                                       renderContactButton(type, value as string)
@@ -380,12 +380,12 @@ const BranchwiseMentors = () => {
                         
                         {branch.mentors.females.length > 0 && (
                           <div>
-                            <h4 className="font-semibold text-sm mb-2 text-pink-700">For Females:</h4>
+                            <h4 className="font-semibold text-sm mb-2 text-primary">For Females:</h4>
                             <div className="space-y-3">
                               {branch.mentors.females.map((mentor, mentorIndex) => (
-                                <div key={mentorIndex} className="bg-pink-50 p-3 rounded-lg">
-                                  <h5 className="font-medium text-sm mb-1">{mentor.name}</h5>
-                                  <p className="text-xs text-gray-600 mb-2">{mentor.details}</p>
+                                <div key={mentorIndex} className="bg-primary/10 border border-primary/20 p-3 rounded-lg">
+                                  <h5 className="font-bold text-base mb-1 text-foreground">{mentor.name}</h5>
+                                  <p className="text-sm text-foreground/80 mb-2 font-medium">{mentor.details}</p>
                                   <div className="flex flex-wrap gap-1">
                                     {Object.entries(mentor.contacts).map(([type, value]) => 
                                       renderContactButton(type, value as string)
