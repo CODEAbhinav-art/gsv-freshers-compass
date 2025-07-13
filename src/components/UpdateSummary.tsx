@@ -10,13 +10,14 @@ export const UpdateSummary = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const updates = [
-    "Added 'For Aspiring Entrepreneurs' section with Hult Prize information and pitching resources",
-    "Added calculator recommendation button with strict model guidance",
-    "Updated website theme to dark, minimalist design inspired by modern architecture",
-    "Enhanced Important Links section with calculator and entrepreneur resources",
-    "Added credits for contributors: Pratik Ranjan, Harivarun Bandi, Mandeep Nehra",
-    "Improved visual hierarchy with new dark color scheme and better contrast",
-    "Updated website last modified date to July 13, 2025"
+    "Replaced FAQ date bar with 'Freshers Handbook (More FAQs)' button linking to comprehensive guide",
+    "Enhanced GSV Gallery section visibility with improved gradient background and prominent heading",
+    "Reorganized Learning Resources with new 'Must Watch Before Joining College' category",
+    "Added special note about optional resources vs mandatory pre-September tutorials",
+    "Moved essential tutorials (DSA C++, GSOC Info, LinkedIn Guide, GitHub) to priority section",
+    "Added 'Updated' tags to modified sections for better user awareness",
+    "Improved color schemes and visual hierarchy across updated components",
+    "Enhanced button styling and hover effects for better user interaction"
   ];
 
   return (

@@ -1,4 +1,3 @@
-
 import {
   Accordion,
   AccordionContent,
@@ -6,13 +5,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Home, Briefcase } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Home, Briefcase, ExternalLink } from "lucide-react";
 
 export const FAQSections = () => {
   const faqSections = [
     {
       id: "academic-faqs",
-      title: "Academic FAQs",
+      title: "Academic FAQs", 
       icon: <GraduationCap className="h-6 w-6" />,
       description: "Everything about academics, exams, and studies",
       faqs: [
@@ -128,15 +129,30 @@ export const FAQSections = () => {
     <section className="py-16 bg-background" id="faqs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <h2 className="text-3xl font-bold text-foreground">Frequently Asked Questions</h2>
+            <Badge className="bg-orange-100 text-orange-800 border-orange-200">
+              Updated
+            </Badge>
+          </div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
             Find answers to the most common questions about life at GSV, academics, and campus facilities.
           </p>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-            <p className="text-blue-800 font-semibold">
-              📅 FAQs: Asked between 15 June and 1 July 2025
-            </p>
-          </div>
+          
+          <Button 
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg border-2 border-blue-300"
+          >
+            <a 
+              href="https://docs.google.com/document/d/13YuD2ca50u0O9QdQvL57jnYND2_IguF97lpmH1xK2Xo/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Freshers Handbook (More FAQs)
+            </a>
+          </Button>
         </div>
 
         <div className="grid gap-8 lg:gap-12">

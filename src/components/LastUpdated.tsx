@@ -19,10 +19,10 @@ export const LastUpdated = () => {
       <div className="animate-marquee whitespace-nowrap">
         <span className="text-sm font-medium">
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
-          Website updates after every 6 days | 
+          Latest Updates: FAQ Section Enhanced, GSV Gallery Improved, Learning Resources Reorganized | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! | 
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
-          Website updates after every 6 days | 
+          Latest Updates: FAQ Section Enhanced, GSV Gallery Improved, Learning Resources Reorganized | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! |
         </span>
       </div>
