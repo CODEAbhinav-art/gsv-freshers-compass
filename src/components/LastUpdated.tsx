@@ -12,17 +12,17 @@ export const LastUpdated = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const lastUpdatedDate = "July 13, 2025";
+  const lastUpdatedDate = "July 20, 2025";
 
   return (
     <div className="bg-primary text-primary-foreground py-2 overflow-hidden">
       <div className="animate-marquee whitespace-nowrap">
         <span className="text-sm font-medium">
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
-          Latest Updates: FAQ Section Enhanced, GSV Gallery Improved, Learning Resources Reorganized | 
+          Latest Updates: New GSV Gallery Images Added, Hackathon Postings Section Created, Text Visibility Enhanced | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! | 
           🕒 Website Last Updated: {lastUpdatedDate} | Current Time: {currentTime.toLocaleString()} | 
-          Latest Updates: FAQ Section Enhanced, GSV Gallery Improved, Learning Resources Reorganized | 
+          Latest Updates: New GSV Gallery Images Added, Hackathon Postings Section Created, Text Visibility Enhanced | 
           Welcome to GSV Freshers' Guide - Your Complete Resource Hub! |
         </span>
       </div>

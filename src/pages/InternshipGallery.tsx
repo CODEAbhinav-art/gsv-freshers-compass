@@ -92,6 +92,38 @@ const InternshipGallery = () => {
     {
       src: "/lovable-uploads/55651ea7-c292-4933-9a8b-c191d77a7c8d.png",
       alt: "GSV Gallery Image 21"
+    },
+    {
+      src: "/lovable-uploads/800ef7a3-5807-4aad-b670-d2ea73736642.png",
+      alt: "GSV Campus Building - NAIR"
+    },
+    {
+      src: "/lovable-uploads/139e1092-be98-43ad-aeff-8de2fe5618e8.png",
+      alt: "GSV Students Team Building Activity"
+    },
+    {
+      src: "/lovable-uploads/e8098d54-8324-41ae-9fb1-79137c78f3e6.png",
+      alt: "GSV Students Yoga Session"
+    },
+    {
+      src: "/lovable-uploads/3c3ef71f-1dab-4c7f-89ff-b3c7e3aab67e.png",
+      alt: "GSV Palace Night View with Reflection"
+    },
+    {
+      src: "/lovable-uploads/9c6315b7-b364-494a-9708-ce80c883cf5e.png",
+      alt: "GSV Indoor Sports - Badminton Court"
+    },
+    {
+      src: "/lovable-uploads/653e28bd-5874-4f35-8686-e5b0b06ef471.png",
+      alt: "GSV Campus Night View with Fireworks"
+    },
+    {
+      src: "/lovable-uploads/2af31233-846b-451f-8ea6-ce1856583d3e.png",
+      alt: "GSV Indoor Facilities - Staircase"
+    },
+    {
+      src: "/lovable-uploads/b7aebffa-9f91-4f9d-b476-777564f3aa12.png",
+      alt: "GSV Campus Main Building Evening View"
     }
   ];
 
@@ -115,6 +147,9 @@ const InternshipGallery = () => {
               </h1>
               <Badge className="bg-green-100 text-green-800 border-green-200">
                 Student Life
+              </Badge>
+              <Badge className="bg-orange-100 text-orange-800 border-orange-200">
+                Updated
               </Badge>
             </div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
