@@ -22,7 +22,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Abhinav Bhaiya",
+            name: "Abhinav Mishra",
             details: "Ex Class Representative(CR), Domain Head-profile development domain(Technocrats), Co-Coordinator of D&Q Club, 8.5+ SGPA, Dron-a-thon 3rd position",
             contacts: {
               instagram: "abhinav.msh",
@@ -31,7 +31,7 @@ const BranchwiseMentors = () => {
             }
           },
           {
-            name: "Abhinav Bhaiya",
+            name: "Abhinav Mishra",
             details: "9 CGPA, Hult Prize OC, Internship Coordinator(AI-DS), In Top 5 Hult Prize GSV 2025",
             contacts: {
               linkedin: "https://www.linkedin.com/in/abhinavrmishra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -43,7 +43,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Sakshi Didi [DAY SCHOLAR]",
+            name: "Sakshi Salot [DAY SCHOLAR]",
             details: "Dronathon Winner, Lead Singer of Music Club(MALHAR), 8.5+ SGPA",
             contacts: {
               linkedin: "https://www.linkedin.com/in/sakshi-salot"
@@ -60,7 +60,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Pratik Bhaiya",
+            name: "Pratik Ranjan",
             details: "9.8 SGPA(GSV Highest(males)), Technocrats(Programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pratik-ranjan3011?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -69,7 +69,7 @@ const BranchwiseMentors = () => {
             }
           },
           {
-            name: "Aditya Bhaiya",
+            name: "Aditya Raj",
             details: "9+ SGPA",
             contacts: {
               linkedin: "https://www.linkedin.com/in/aditya-raj-74a426327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -79,7 +79,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Devika Didi",
+            name: "Devika",
             details: "9.9 SGPA(GSV Highest), Hult Prize OC",
             contacts: {
               linkedin: "https://www.linkedin.com/in/devika-gulia-525598327",
@@ -97,7 +97,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Atulya Bhaiya",
+            name: "Atulya Bharat",
             details: "9+ CGPA, Internship coordinator(EE), Co-coordinator Technocrats",
             contacts: {
               linkedin: "https://www.linkedin.com/in/atulyabharat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -105,7 +105,7 @@ const BranchwiseMentors = () => {
             }
           },
           {
-            name: "Anshul Bhaiya",
+            name: "Anshul Pareek",
             details: "9+ CGPA, Ex CR (EE), Literary Club, Business Club",
             contacts: {
               linkedin: "https://www.linkedin.com/in/anshulpareek54?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -114,7 +114,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Anusha Didi",
+            name: "Anusha Sharma",
             details: "9+ CGPA, SAE member, Business Club, Literary Club",
             contacts: {
               linkedin: "https://www.linkedin.com/in/anusha-sharma-92a833215?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -133,7 +133,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Rupesh Bhaiya",
+            name: "Rupesh Singh",
             details: "8.5+ CGPA, Co-coordinator EMC, Technocrats(programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/rupesh-kumar-2627772a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -145,7 +145,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Shreya Didi",
+            name: "Shreya Singh",
             details: "8.5+ CGPA, Internship coordinator (AE), Technocrats(programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/shreya-singh-106b30312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -153,7 +153,7 @@ const BranchwiseMentors = () => {
             }
           },
           {
-            name: "Hrishita Didi",
+            name: "Hrishita",
             details: "Lead Singer of MALHAR, 8+ SGPA",
             contacts: {
               linkedin: "https://www.linkedin.com/in/hrishita-saswade-023455370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -170,7 +170,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Ved Bhaiya [DAY SCHOLAR]",
+            name: "Ved Vyas [DAY SCHOLAR]",
             details: "9+ CGPA, Dronathon winner, SAE Member, Literary Club",
             contacts: {
               linkedin: "https://www.linkedin.com/in/ved-vyas-0bb560322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -179,7 +179,7 @@ const BranchwiseMentors = () => {
             }
           },
           {
-            name: "Pushpal Bhaiya",
+            name: "Pushpal Sanyal",
             details: "CR (ME), Music Composer, AAI intern, Malhaar club, Literary Club - Highly Responsive and Probably the best senior to reach out for Admission related Queries",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pushpalgsv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -189,7 +189,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Aarti Didi",
+            name: "Aarti Sinha",
             details: "Internship Coordinator (ME), 8+ CGPA, EMC",
             contacts: {
               linkedin: "https://www.linkedin.com/in/aarti-sinha-198273346"
@@ -206,7 +206,7 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Shashank Bhaiya",
+            name: "Shashank Savarkar",
             details: "Internship Coordinator (CE), 8+ CGPA, Technocrats(programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/shashank-savarkar-a001a5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -216,7 +216,7 @@ const BranchwiseMentors = () => {
         ],
         females: [
           {
-            name: "Amisha Didi",
+            name: "Amisha Singh ",
             details: "8.5+ CGPA, SAE Member, Hult Prize OC, Edharth(B-Club)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
