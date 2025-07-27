@@ -6,9 +6,17 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Users, Plus, MessageCircle, Heart, Clock, Filter } from "lucide-react";
+import { Users, Plus, MessageCircle, Heart, Clock, Filter, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { 
+  validateEmail, 
+  validateName, 
+  validatePostTitle, 
+  validatePostContent, 
+  sanitizeInput, 
+  rateLimitCheck 
+} from "@/utils/validation";
 
 interface ForumPost {
   id: string;
@@ -33,6 +41,7 @@ export const CommunityForum = () => {
     author_email: "",
     category: ""
   });
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
   const categories = [
@@ -86,22 +95,68 @@ export const CommunityForum = () => {
     fetchPosts();
   }, [selectedCategory]);
 
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {};
+
+    if (!validateName(newPost.author_name)) {
+      errors.author_name = "Name must be 2-50 characters and contain only letters, spaces, hyphens, and apostrophes";
+    }
+
+    if (!validateEmail(newPost.author_email)) {
+      errors.author_email = "Please enter a valid email address";
+    }
+
+    if (!validatePostTitle(newPost.title)) {
+      errors.title = "Title must be 5-200 characters long";
+    }
+
+    if (!validatePostContent(newPost.content)) {
+      errors.content = "Content must be 10-5000 characters long";
+    }
+
+    if (!newPost.category) {
+      errors.category = "Please select a category";
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleCreatePost = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!newPost.title || !newPost.content || !newPost.author_name || !newPost.author_email || !newPost.category) {
+    // Rate limiting check
+    if (!rateLimitCheck('forum_post', 3, 300000)) { // 3 posts per 5 minutes
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Rate Limit Exceeded",
+        description: "Please wait before creating another post.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!validateForm()) {
+      toast({
+        title: "Validation Error",
+        description: "Please fix the errors in the form.",
         variant: "destructive",
       });
       return;
     }
 
     try {
+      // Sanitize inputs
+      const sanitizedPost = {
+        title: sanitizeInput(newPost.title),
+        content: sanitizeInput(newPost.content),
+        author_name: sanitizeInput(newPost.author_name),
+        author_email: newPost.author_email.toLowerCase().trim(),
+        category: newPost.category
+      };
+
       const { error } = await supabase
         .from('forum_posts')
-        .insert([newPost]);
+        .insert([sanitizedPost]);
 
       if (error) {
         throw error;
@@ -119,6 +174,7 @@ export const CommunityForum = () => {
         author_email: "",
         category: ""
       });
+      setValidationErrors({});
       setShowCreateForm(false);
       fetchPosts();
     } catch (error) {
@@ -141,10 +197,29 @@ export const CommunityForum = () => {
       return;
     }
 
+    if (!validateEmail(userEmail)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please provide a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Rate limiting for likes
+    if (!rateLimitCheck('forum_like', 10, 60000)) { // 10 likes per minute
+      toast({
+        title: "Rate Limit Exceeded",
+        description: "Please wait before liking more posts.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
       const { error } = await supabase
         .from('forum_likes')
-        .insert([{ post_id: postId, user_email: userEmail }]);
+        .insert([{ post_id: postId, user_email: userEmail.toLowerCase().trim() }]);
 
       if (error) {
         if (error.code === '23505') { // Unique constraint violation
@@ -174,6 +249,13 @@ export const CommunityForum = () => {
     });
   };
 
+  const renderValidationError = (field: string) => {
+    if (validationErrors[field]) {
+      return <p className="text-sm text-red-600 mt-1">{validationErrors[field]}</p>;
+    }
+    return null;
+  };
+
   return (
     <section id="community" className="py-16 bg-background relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,6 +271,10 @@ export const CommunityForum = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Connect with fellow students, share experiences, ask questions, and help each other succeed at GSV!
           </p>
+          <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
+            <Shield className="h-4 w-4 mr-1" />
+            <span>Protected by security measures</span>
+          </div>
         </div>
 
         {/* Action Bar */}
@@ -224,6 +310,7 @@ export const CommunityForum = () => {
               <CardTitle>Create New Post</CardTitle>
               <CardDescription>
                 Share your thoughts, ask questions, or start a discussion with the community.
+                All content is moderated for safety.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -237,7 +324,9 @@ export const CommunityForum = () => {
                       onChange={(e) => setNewPost({...newPost, author_name: e.target.value})}
                       placeholder="Enter your name"
                       required
+                      maxLength={50}
                     />
+                    {renderValidationError('author_name')}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="author_email">Your Email *</Label>
@@ -248,7 +337,9 @@ export const CommunityForum = () => {
                       onChange={(e) => setNewPost({...newPost, author_email: e.target.value})}
                       placeholder="your.email@example.com"
                       required
+                      maxLength={100}
                     />
+                    {renderValidationError('author_email')}
                   </div>
                 </div>
 
@@ -261,7 +352,9 @@ export const CommunityForum = () => {
                       onChange={(e) => setNewPost({...newPost, title: e.target.value})}
                       placeholder="Enter post title"
                       required
+                      maxLength={200}
                     />
+                    {renderValidationError('title')}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="post_category">Category *</Label>
@@ -279,6 +372,7 @@ export const CommunityForum = () => {
                         </option>
                       ))}
                     </select>
+                    {renderValidationError('category')}
                   </div>
                 </div>
 
@@ -291,7 +385,12 @@ export const CommunityForum = () => {
                     placeholder="Write your post content here..."
                     rows={4}
                     required
+                    maxLength={5000}
                   />
+                  <div className="text-sm text-muted-foreground">
+                    {newPost.content.length}/5000 characters
+                  </div>
+                  {renderValidationError('content')}
                 </div>
 
                 <div className="flex gap-4">
