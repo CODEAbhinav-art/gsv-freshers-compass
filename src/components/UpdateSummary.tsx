@@ -35,7 +35,7 @@ export const UpdateSummary = () => {
                   Minor Updates
                 </Badge>
                 <Badge className="bg-green-100 text-green-800 border-green-200">
-                  Next Update: July 30, 2025
+                  Next Update: August 10, 2025
                 </Badge>
               </div>
               <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
