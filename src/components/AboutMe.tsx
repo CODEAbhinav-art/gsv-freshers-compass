@@ -9,7 +9,6 @@ export const AboutMe = () => {
     <section className="py-16 bg-gradient-to-br from-background to-muted/20" id="about-me">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Learn more about this platform, its creators, and our mission to help GSV students
           </p>
@@ -32,7 +31,7 @@ export const AboutMe = () => {
               <div className="p-3 bg-primary/10 rounded-lg border border-primary/30">
                 <h4 className="font-semibold text-primary mb-2 flex items-center">
                   <User className="h-4 w-4 mr-2" />
-                  Ideation and Maintainers
+                  Creators and Maintainers
                 </h4>
                 <div className="text-sm text-foreground space-y-1">
                   <p>• Abhinav Mishra [AI-DS II Yr]</p>
