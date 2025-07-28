@@ -9,7 +9,6 @@ import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { BatchmatesConnect } from "@/components/BatchmatesConnect";
 import { AskQuestion } from "@/components/AskQuestion";
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
-import { AboutMe } from "@/components/AboutMe";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
 import { SpaceBackground } from "@/components/SpaceBackground";
@@ -31,7 +30,6 @@ const Index = () => {
       <BranchwiseMentors />
       <FAQSections />
       <AskQuestion />
-      <AboutMe />
       <UpdateSummary />
       <Footer />
       <Watermark />

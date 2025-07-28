@@ -11,6 +11,8 @@ import ExamPreparation from "./pages/ExamPreparation";
 import LearningResources from "./pages/LearningResources";
 import InternshipGallery from "./pages/InternshipGallery";
 import BranchwiseMentors from "./pages/BranchwiseMentors";
+import MechanicalEngineering from "./pages/MechanicalEngineering";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/learning-resources" element={<LearningResources />} />
           <Route path="/internship-gallery" element={<InternshipGallery />} />
           <Route path="/branchwise-mentors" element={<BranchwiseMentors />} />
+          <Route path="/mechanical-engineering" element={<MechanicalEngineering />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

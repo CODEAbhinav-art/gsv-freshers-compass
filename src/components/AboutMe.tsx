@@ -152,7 +152,7 @@ export const AboutMe = () => {
                 className="w-full mt-4 font-semibold"
                 asChild
               >
-                <a href="https://github.com/gsv-studentportal" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/CODEAbhinav-art/gsv-freshers-compass.git" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4 mr-2" />
                   View on GitHub
                 </a>
