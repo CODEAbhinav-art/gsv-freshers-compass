@@ -8,9 +8,6 @@ export const AboutMe = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-background to-muted/20" id="about-me">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-        </div>
-
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Credits Section */}
           <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/50 bg-card backdrop-blur-sm">
