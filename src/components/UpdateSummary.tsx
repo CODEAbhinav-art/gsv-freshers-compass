@@ -10,12 +10,12 @@ export const UpdateSummary = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const updates = [
-    "System maintenance and minor bug fixes completed",
-    "Performance optimizations applied across all sections",
-    "Database cleanup and optimization performed",
-    "Security updates and patches applied",
-    "All existing features functioning normally",
-    "Regular backup and monitoring procedures completed"
+    "Added Mechanical Engineering exam papers section with 1st and 2nd semester papers",
+    "Created comprehensive 'About Me' section with team credits and mission statement",
+    "Enhanced exam preparation resources with branch-specific materials",
+    "Added GitHub repository link for open-source contributions",
+    "Improved navigation and user experience across all sections",
+    "Updated contributor credits and acknowledgments"
   ];
 
   return (
@@ -29,13 +29,13 @@ export const UpdateSummary = () => {
             >
               <div className="flex items-center gap-3">
                 <Calendar className="h-5 w-5 text-primary" />
-                <span className="font-semibold text-primary">Updates Info - Version 2025.7.27</span>
-                <Badge className="bg-blue-100 text-blue-800 border-blue-200">
-                  <Info className="h-3 w-3 mr-1" />
-                  Minor Updates
-                </Badge>
+                <span className="font-semibold text-primary">Updates Info - Version 2025.7.28</span>
                 <Badge className="bg-green-100 text-green-800 border-green-200">
-                  Next Update: August 10, 2025
+                  <Info className="h-3 w-3 mr-1" />
+                  Major Updates
+                </Badge>
+                <Badge className="bg-blue-100 text-blue-800 border-blue-200">
+                  Next Update: August 15, 2025
                 </Badge>
               </div>
               <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
@@ -47,7 +47,7 @@ export const UpdateSummary = () => {
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-gray-700 flex items-center gap-2">
                   <Info className="h-5 w-5 text-blue-600" />
-                  Maintenance & Minor Updates
+                  New Features & Content Updates
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -59,9 +59,9 @@ export const UpdateSummary = () => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <p className="text-sm text-blue-800 font-medium">
-                    ℹ️ No major feature updates this time. The system is running smoothly with regular maintenance completed.
+                <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                  <p className="text-sm text-green-800 font-medium">
+                    🎉 Major content update with new exam papers, About Me section, and enhanced user experience. Special thanks to all contributors!
                   </p>
                 </div>
               </CardContent>

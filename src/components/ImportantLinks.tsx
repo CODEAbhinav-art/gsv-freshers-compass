@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy } from "lucide-react";
+import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy, Settings } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ export const ImportantLinks = () => {
   const navigate = useNavigate();
   const [isMessMenuOpen, setIsMessMenuOpen] = useState(false);
   const [isHackathonOpen, setIsHackathonOpen] = useState(false);
+  const [isMechanicalOpen, setIsMechanicalOpen] = useState(false);
 
   return (
     <section className="py-16 bg-muted/30" id="important-links">
@@ -55,6 +55,80 @@ export const ImportantLinks = () => {
               <div className="bg-red-100 border border-red-300 rounded-lg p-3">
                 <p className="text-xs text-red-800 font-bold text-center">
                   <strong>Credits:</strong> Pratik Ranjan (ECE-II)
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Mechanical Engineering Exam Papers */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-orange-500/70 bg-orange-50 backdrop-blur-sm">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-3 bg-orange-500/30 rounded-lg border border-orange-500/50">
+                  <Settings className="h-6 w-6 text-orange-700 font-bold" />
+                </div>
+                <div>
+                  <CardTitle className="text-xl text-orange-700 font-bold">Mechanical Engineering</CardTitle>
+                  <Badge className="bg-orange-500 text-white mt-1 font-semibold border-orange-600">
+                    Branch Specific
+                  </Badge>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-800 mb-4 font-semibold">
+                Access mechanical engineering specific exam papers
+              </p>
+              <Collapsible open={isMechanicalOpen} onOpenChange={setIsMechanicalOpen}>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline"
+                    className="w-full border-2 border-orange-300 bg-white hover:bg-orange-50 text-orange-800 font-semibold mb-3"
+                  >
+                    <Settings className="mr-2 h-4 w-4" />
+                    View ME Papers
+                    <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 ${isMechanicalOpen ? 'rotate-180' : ''}`} />
+                  </Button>
+                </CollapsibleTrigger>
+                
+                <CollapsibleContent>
+                  <div className="space-y-2 mb-3">
+                    <Button 
+                      variant="default"
+                      size="sm"
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold"
+                      asChild
+                    >
+                      <a 
+                        href="https://drive.google.com/file/d/1nJpIXuI0nbQi9GNxd5HcKCYGahvzauF9/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-3 w-3" />
+                        1st Sem Papers
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="default"
+                      size="sm"
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold"
+                      asChild
+                    >
+                      <a 
+                        href="https://drive.google.com/file/d/1JXDKgoiaFmCSHRw90mOEsKU-U_vrca6s/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-3 w-3" />
+                        2nd Sem Papers
+                      </a>
+                    </Button>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+              <div className="bg-orange-100 border border-orange-300 rounded-lg p-3">
+                <p className="text-xs text-orange-800 font-bold text-center">
+                  <strong>Credits:</strong> Ved Vyas (ME-II Yr)
                 </p>
               </div>
             </CardContent>
