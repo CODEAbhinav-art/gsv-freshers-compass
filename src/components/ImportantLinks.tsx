@@ -286,49 +286,6 @@ export const ImportantLinks = () => {
             </CardContent>
           </Card>
 
-          {/* About GSV Freshers Compass */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-blue-500/70 bg-blue-50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-3 bg-blue-500/30 rounded-lg border border-blue-500/50">
-                  <Info className="h-6 w-6 text-blue-700 font-bold" />
-                </div>
-                <div>
-                  <CardTitle className="text-xl text-blue-700 font-bold">About GSV Freshers Compass</CardTitle>
-                  <Badge className="bg-blue-500 text-white mt-1 font-semibold border-blue-600">
-                    Platform Info
-                  </Badge>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-800 mb-4 font-semibold">
-                Learn about the team, mission, and open-source nature of this platform
-              </p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Meet the creators and contributors</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Platform mission and vision</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Open source GitHub repository</span>
-                </div>
-              </div>
-              <Button
-                onClick={() => navigate("/about")}
-                className="w-full mb-3 bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg"
-              >
-                <Info className="h-4 w-4 mr-2" />
-                Learn More About Us
-              </Button>
-            </CardContent>
-          </Card>
-
           {/* Future GSV Campus */}
           <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
             <CardHeader>
