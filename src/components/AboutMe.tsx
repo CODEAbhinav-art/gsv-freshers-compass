@@ -9,9 +9,6 @@ export const AboutMe = () => {
     <section className="py-16 bg-gradient-to-br from-background to-muted/20" id="about-me">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Learn more about this platform, its creators, and our mission to help GSV students
-          </p>
         </div>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
