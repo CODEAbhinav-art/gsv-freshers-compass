@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy, Settings, Info } from "lucide-react";
+import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy, Settings, Info, DollarSign } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ export const ImportantLinks = () => {
   const navigate = useNavigate();
   const [isMessMenuOpen, setIsMessMenuOpen] = useState(false);
   const [isHackathonOpen, setIsHackathonOpen] = useState(false);
+  const [isScholarshipOpen, setIsScholarshipOpen] = useState(false);
 
   return (
     <section className="py-16 bg-muted/30" id="important-links">
@@ -65,6 +65,60 @@ export const ImportantLinks = () => {
                   <strong>General Papers Credits:</strong> Pratik Ranjan (ECE-II)
                 </p>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Documents required for Scholarship in GSV */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-green-500/70 bg-green-50 backdrop-blur-sm">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-3 bg-green-500/30 rounded-lg border border-green-500/50">
+                  <DollarSign className="h-6 w-6 text-green-700 font-bold" />
+                </div>
+                <div>
+                  <CardTitle className="text-xl text-green-700 font-bold">Documents required for Scholarship in GSV</CardTitle>
+                  <Badge className="bg-green-500 text-white mt-1 font-semibold border-green-600">
+                    Financial Aid
+                  </Badge>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-800 mb-4 font-semibold">
+                Essential documents and timeline for GSV scholarship applications
+              </p>
+              <Collapsible open={isScholarshipOpen} onOpenChange={setIsScholarshipOpen}>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline"
+                    className="w-full border-2 border-green-300 bg-white hover:bg-green-50 text-green-800 font-semibold"
+                  >
+                    <DollarSign className="mr-2 h-4 w-4" />
+                    View Scholarship Details
+                    <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 ${isScholarshipOpen ? 'rotate-180' : ''}`} />
+                  </Button>
+                </CollapsibleTrigger>
+                
+                <CollapsibleContent>
+                  <div className="mt-4 space-y-4">
+                    <div className="bg-green-100 border border-green-300 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">Required Documents:</h4>
+                      <ul className="space-y-1 text-sm text-green-700">
+                        <li>• Income Tax Return (Financial Year 2025-2026) [Mandatory Document]</li>
+                        <li>• Aay Praman Patra (Income Certificate)</li>
+                      </ul>
+                    </div>
+                    <div className="bg-blue-100 border border-blue-300 rounded-lg p-4">
+                      <h4 className="font-semibold text-blue-800 mb-2">Timeline:</h4>
+                      <ul className="space-y-1 text-sm text-blue-700">
+                        <li>• <strong>Nov-Dec:</strong> Application forms out</li>
+                        <li>• <strong>January:</strong> Shortlisted students announced via Gmail</li>
+                        <li>• <strong>Jan-Feb:</strong> Amount starts getting refunded into students account</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
             </CardContent>
           </Card>
 
