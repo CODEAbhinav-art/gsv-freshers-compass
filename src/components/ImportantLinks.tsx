@@ -1,4 +1,5 @@
 
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -125,7 +126,7 @@ export const ImportantLinks = () => {
                     <div className="bg-orange-100 border border-orange-300 rounded-lg p-4">
                       <h4 className="font-semibold text-orange-800 mb-2">Shortlisting Criteria:</h4>
                       <p className="text-sm text-orange-800 font-semibold">
-                        Shortlisting of candidates in 1st Year will be based on Jee mains Percentile. From 2nd Year onwards it'll be based on CGPA. <span className="text-red-800">[Also Students with CGPA less than 8 or Backlog in any subject are just ineligible to avail GSV Financial Aid therefore it is strongly recommended to maintain CGPA>8 if someone wants GSV Financial Aid]</span>
+                        Shortlisting of candidates in 1st Year will be based on Jee mains Percentile. From 2nd Year onwards it'll be based on CGPA. <span className="text-red-800">[Also Students with CGPA less than 8 or Backlog in any subject are just ineligible to avail GSV Financial Aid therefore it is strongly recommended to maintain CGPA&gt;8 if someone wants GSV Financial Aid]</span>
                       </p>
                     </div>
                   </div>
