@@ -107,6 +107,11 @@ export const ImportantLinks = () => {
                         <li>• Income Tax Return (Financial Year 2025-2026) [Mandatory Document]</li>
                         <li>• Aay Praman Patra (Income Certificate)</li>
                       </ul>
+                      <div className="mt-3 bg-yellow-50 border border-yellow-300 rounded-lg p-3">
+                        <p className="text-sm text-yellow-800 font-semibold">
+                          <strong>Important Note:</strong> Even if your income is lesser than 1 Lakh, still the ITR will be required. Reach out to a CA, since this is issued by a registered CA (Chartered accountant) only.
+                        </p>
+                      </div>
                     </div>
                     <div className="bg-blue-100 border border-blue-300 rounded-lg p-4">
                       <h4 className="font-semibold text-blue-800 mb-2">Timeline:</h4>
