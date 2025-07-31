@@ -18,10 +18,6 @@ export const FAQSections = () => {
       description: "Everything about academics, exams, and studies",
       faqs: [
         {
-          question: "What is the grading system at GSV?",
-          answer: "GSV follows a 10-point CGPA system. The grading scale includes: O (Outstanding) = 10, A+ = 9, A = 8, B+ = 7, B = 6, C = 5, F (Fail) = 0. You need a minimum CGPA of 5.0 to pass each semester."
-        },
-        {
           question: "How many subjects are there in the first year?",
           answer: "First year typically has 8-10 subjects per semester including core subjects like Mathematics, Physics, Chemistry, Basic Electrical Engineering, Engineering Drawing, and Communication Skills along with practical/lab sessions."
         },
@@ -51,19 +47,11 @@ export const FAQSections = () => {
       faqs: [
         {
           question: "What are the hostel facilities available?",
-          answer: "GSV provides separate hostels for boys and girls with basic amenities including WiFi, mess facility, common rooms, and study areas. Rooms are typically shared (2-3 students per room) with basic furniture provided."
+          answer: "Double Sharing AC rooms in stanza hostels(males)\nSame for females but the hostels will be in campus(Pahune)"
         },
         {
           question: "What is the mess food like?",
-          answer: "The mess serves vegetarian meals with a rotating weekly menu. The food quality is decent with North Indian and Gujarati cuisine. Mess timings are usually: Breakfast (7:30-9:30 AM), Lunch (12:30-2:30 PM), Snacks (4:30-6:00 PM), Dinner (7:30-9:30 PM)."
-        },
-        {
-          question: "Are mobile phones allowed in hostels?",
-          answer: "Yes, mobile phones are allowed in hostels. However, there might be restrictions during study hours or late night hours as per hostel rules. WiFi is available in most hostel areas."
-        },
-        {
-          question: "What are the library facilities and timings?",
-          answer: "The central library is well-equipped with textbooks, reference books, journals, and digital resources. Library timings are usually 8:00 AM to 8:00 PM on weekdays and 9:00 AM to 5:00 PM on weekends. Students can issue up to 3-4 books at a time."
+          answer: "Refer to Mess Menu and student handbook for detailed response"
         },
         {
           question: "How are the medical facilities in gsv campus and in the first year hostel for students in case of sickness?",
@@ -99,15 +87,11 @@ export const FAQSections = () => {
         },
         {
           question: "What companies visit GSV for placements?",
-          answer: "GSV has partnerships with various railway companies, engineering firms, and tech companies. Major recruiters include Indian Railways, BHEL, L&T, TCS, Infosys, and several core engineering companies. The placement cell regularly updates the list of visiting companies."
-        },
-        {
-          question: "Is there support for competitive exam preparation?",
-          answer: "Yes, GSV provides guidance and resources for competitive exams like GATE, ESE, and railway recruitment exams. There are faculty members who provide additional coaching and the library has relevant study materials."
+          answer: "Refer to gsv website and brochure for detailed list"
         },
         {
           question: "What is the average package offered to GSV graduates?",
-          answer: "The average package varies by branch and market conditions. Core engineering branches typically see packages ranging from 3-8 LPA, while some students in specialized fields or through off-campus placements achieve higher packages. The placement cell provides detailed statistics annually."
+          answer: "Refer to Freshers handbook Placements Section"
         },
         {
           question: "Are there any inter college sports events or any intra college branch wise competition?",
