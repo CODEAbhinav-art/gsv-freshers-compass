@@ -61,7 +61,7 @@ const BranchwiseMentors = () => {
         males: [
           {
             name: "Pratik Ranjan",
-            details: "9.8 SGPA(GSV Highest(males)), Technocrats(Programming)",
+            details: "9+ CGPA, Technocrats(Programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pratik-ranjan3011?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "pratikranjan3011@gmail.com",
@@ -80,7 +80,7 @@ const BranchwiseMentors = () => {
         females: [
           {
             name: "Devika",
-            details: "9.9 SGPA(GSV Highest), Hult Prize OC",
+            details: "9+ CGPA, Hult Prize OC",
             contacts: {
               linkedin: "https://www.linkedin.com/in/devika-gulia-525598327",
               email: "devikagulia2023@gmail.com"
