@@ -12,8 +12,6 @@ import { EntrepreneurSection } from "@/components/EntrepreneurSection";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
 import { SpaceBackground } from "@/components/SpaceBackground";
-import { LastUpdated } from "@/components/LastUpdated";
-import { UpdateSummary } from "@/components/UpdateSummary";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +22,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <SpaceBackground />
-      <LastUpdated />
       <Header />
       <Hero />
       <QuickLinks />
@@ -35,7 +32,6 @@ const Index = () => {
       <BranchwiseMentors />
       <FAQSections />
       <AskQuestion />
-      <UpdateSummary />
       
       {/* About GSV Freshers Compass Button */}
       <section className="py-8 bg-gradient-to-r from-primary/20 to-secondary/20">
