@@ -76,6 +76,15 @@ const BranchwiseMentors = () => {
               linkedin: "https://www.linkedin.com/in/devika-gulia-525598327",
               email: "devikagulia2023@gmail.com"
             }
+          },
+          {
+            name: "Anusha Sharma",
+            details: "9+ CGPA, SAE member, Business Club, Literary Club",
+            contacts: {
+              linkedin: "https://www.linkedin.com/in/anusha-sharma-92a833215?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              instagram: "https://www.instagram.com/anusha.654305?igsh=amJsemN5bWw5eGNu",
+              email: "sharma65anusha@gmail.com"
+          }
           }
         ]
       }
@@ -103,17 +112,7 @@ const BranchwiseMentors = () => {
             }
           }
         ],
-        females: [
-          {
-            name: "Anusha Sharma",
-            details: "9+ CGPA, SAE member, Business Club, Literary Club",
-            contacts: {
-              linkedin: "https://www.linkedin.com/in/anusha-sharma-92a833215?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              instagram: "https://www.instagram.com/anusha.654305?igsh=amJsemN5bWw5eGNu",
-              email: "sharma65anusha@gmail.com"
-            }
-          }
-        ]
+      
       }
     },
     {
@@ -178,44 +177,9 @@ const BranchwiseMentors = () => {
             }
           }
         ],
-        females: [
-          {
-            name: "Aarti Sinha",
-            details: "Internship Coordinator (ME), 8+ CGPA, EMC",
-            contacts: {
-              linkedin: "https://www.linkedin.com/in/aarti-sinha-198273346"
-            }
-          }
-        ]
       }
     },
-    {
-      name: "CE Mentors",
-      fullName: "Civil Engineering",
-      icon: "🏗️",
-      description: "Reach out to CE seniors for construction projects, infrastructure development, and opportunities in civil engineering field.",
-      mentors: {
-        males: [
-          {
-            name: "Shashank Savarkar",
-            details: "Internship Coordinator (CE), 8+ CGPA, Technocrats(programming)",
-            contacts: {
-              linkedin: "https://www.linkedin.com/in/shashank-savarkar-a001a5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              WhatsApp: "7410075050"
-            }
-          }
-        ],
-        females: [
-          {
-            name: "Amisha Singh ",
-            details: "8.5+ CGPA, SAE Member, Hult Prize OC, Edharth(B-Club)",
-            contacts: {
-              linkedin: "https://www.linkedin.com/in/amisha-singh-82b48b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            }
-          }
-        ]
-      }
-    }
+    
   ];
 
   const renderContactButton = (type: string, value: string) => {
