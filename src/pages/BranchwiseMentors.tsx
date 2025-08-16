@@ -30,17 +30,7 @@ const BranchwiseMentors = () => {
               email: "2005.abhinavmishra@gmail.com"
             }
           },
-          {
-            name: "Abhinav Mishra",
-            details: "9 CGPA, Hult Prize OC, Internship Coordinator(AI-DS), In Top 5 Hult Prize GSV 2025",
-            contacts: {
-              linkedin: "https://www.linkedin.com/in/abhinavrmishra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              email: "abhinav15102003@gmail.com",
-              telegram: "https://t.me/Arceus45",
-              WhatsApp: "https://wa.me/qr/BZ2FTIANNR3ZM1"
-            }
-          }
-        ],
+          
         females: [
           {
             name: "Sakshi Salot [DAY SCHOLAR]",
