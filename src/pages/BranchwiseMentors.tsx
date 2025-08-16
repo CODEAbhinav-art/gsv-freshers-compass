@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageSquare } from "lucide-react";
@@ -16,7 +15,7 @@ const BranchwiseMentors = () => {
   const branches = [
     {
       name: "AI-DS Mentors",
-      fullName: "Artificial Intelligence & Data Science",
+      fullName: "Artificial Intelligence & Data Science", 
       icon: "🤖",
       description: "Connect with AI-DS seniors for guidance on machine learning, data science projects, and career paths in tech industry.",
       mentors: {
@@ -30,8 +29,7 @@ const BranchwiseMentors = () => {
               email: "2005.abhinavmishra@gmail.com"
             }
           }
-          ],
-          
+        ],
         females: [
           {
             name: "Sakshi Salot [DAY SCHOLAR]",
@@ -56,7 +54,6 @@ const BranchwiseMentors = () => {
             contacts: {
               linkedin: "https://www.linkedin.com/in/pratik-ranjan3011?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               email: "pratikranjan3011@gmail.com"
-              
             }
           },
           {
@@ -84,7 +81,7 @@ const BranchwiseMentors = () => {
               linkedin: "https://www.linkedin.com/in/anusha-sharma-92a833215?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               instagram: "https://www.instagram.com/anusha.654305?igsh=amJsemN5bWw5eGNu",
               email: "sharma65anusha@gmail.com"
-          }
+            }
           }
         ]
       }
@@ -112,7 +109,7 @@ const BranchwiseMentors = () => {
             }
           }
         ],
-      
+        females: []
       }
     },
     {
@@ -177,9 +174,9 @@ const BranchwiseMentors = () => {
             }
           }
         ],
+        females: []
       }
-    },
-    
+    }
   ];
 
   const renderContactButton = (type: string, value: string) => {
@@ -314,7 +311,7 @@ const BranchwiseMentors = () => {
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="space-y-4">
-                        {branch.mentors.males.length > 0 && (
+                        {branch.mentors.males && branch.mentors.males.length > 0 && (
                           <div>
                             <h4 className="font-semibold text-sm mb-2 text-primary">For Males:</h4>
                             <div className="space-y-3">
@@ -333,7 +330,7 @@ const BranchwiseMentors = () => {
                           </div>
                         )}
                         
-                        {branch.mentors.females.length > 0 && (
+                        {branch.mentors.females && branch.mentors.females.length > 0 && (
                           <div>
                             <h4 className="font-semibold text-sm mb-2 text-primary">For Females:</h4>
                             <div className="space-y-3">
