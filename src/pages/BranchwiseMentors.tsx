@@ -55,8 +55,8 @@ const BranchwiseMentors = () => {
             details: "9+ CGPA, Technocrats(Programming)",
             contacts: {
               linkedin: "https://www.linkedin.com/in/pratik-ranjan3011?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              email: "pratikranjan3011@gmail.com",
-              WhatsApp: "6202269313"
+              email: "pratikranjan3011@gmail.com"
+              
             }
           },
           {
