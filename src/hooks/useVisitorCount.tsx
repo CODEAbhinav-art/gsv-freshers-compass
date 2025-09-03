@@ -7,13 +7,19 @@ export const useVisitorCount = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Track the current visit
+    // Track the current visit only on initial site load (not on navigation)
     const trackVisit = async () => {
       try {
-        // This will work with RLS as we allow public INSERT
-        await supabase.from('website_visits').insert({
-          user_agent: navigator.userAgent,
-        });
+        // Check if this is a new session
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        if (!hasVisited) {
+          // This will work with RLS as we allow public INSERT
+          await supabase.from('website_visits').insert({
+            user_agent: navigator.userAgent,
+          });
+          // Mark this session as visited
+          sessionStorage.setItem('hasVisited', 'true');
+        }
       } catch (error) {
         console.error('Error tracking visit:', error);
       }

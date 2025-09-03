@@ -7,7 +7,7 @@ import { ImportantLinks } from "@/components/ImportantLinks";
 import { InternshipHighlights } from "@/components/InternshipHighlights";
 import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { BatchmatesConnect } from "@/components/BatchmatesConnect";
-import { AskQuestion } from "@/components/AskQuestion";
+
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
@@ -31,7 +31,6 @@ const Index = () => {
       <InternshipHighlights />
       <BranchwiseMentors />
       <FAQSections />
-      <AskQuestion />
       
       {/* About GSV Freshers Compass Button */}
       <section className="py-8 bg-gradient-to-r from-primary/20 to-secondary/20">

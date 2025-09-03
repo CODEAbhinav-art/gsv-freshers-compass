@@ -108,21 +108,21 @@ const ExamPreparation = () => {
                     <ChevronDown className={`h-4 w-4 transition-transform ${openEBooks ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4 space-y-3">
-                  {eBooks.map((book, index) => (
-                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium text-sm">{book.title}</span>
-                        <Button asChild size="sm" variant="outline">
-                          <a href={book.url} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            Download
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  ))}
-                </CollapsibleContent>
+                 <CollapsibleContent className="mt-4 space-y-3">
+                   {eBooks.map((book, index) => (
+                     <div key={index} className="p-3 bg-white border border-gray-200 rounded-lg shadow-sm">
+                       <div className="flex items-center justify-between">
+                         <span className="font-medium text-sm text-gray-900">{book.title}</span>
+                         <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                           <a href={book.url} target="_blank" rel="noopener noreferrer">
+                             <ExternalLink className="h-3 w-3 mr-1" />
+                             Download
+                           </a>
+                         </Button>
+                       </div>
+                     </div>
+                   ))}
+                 </CollapsibleContent>
               </Collapsible>
             </CardContent>
           </Card>
@@ -157,24 +157,24 @@ const ExamPreparation = () => {
                     </p>
                   </div>
                   
-                  {youtubeChannels.map((subject, index) => (
-                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                      <h4 className="font-semibold text-sm mb-2">{subject.subject}</h4>
-                      <div className="space-y-2">
-                        {subject.channels.map((channel, channelIndex) => (
-                          <div key={channelIndex} className="flex items-center justify-between">
-                            <span className="text-sm">{channel.name}</span>
-                            <Button asChild size="sm" variant="outline">
-                              <a href={channel.url} target="_blank" rel="noopener noreferrer">
-                                <Youtube className="h-3 w-3 mr-1" />
-                                Watch
-                              </a>
-                            </Button>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+                   {youtubeChannels.map((subject, index) => (
+                     <div key={index} className="p-3 bg-white border border-gray-200 rounded-lg shadow-sm">
+                       <h4 className="font-semibold text-sm mb-2 text-gray-900">{subject.subject}</h4>
+                       <div className="space-y-2">
+                         {subject.channels.map((channel, channelIndex) => (
+                           <div key={channelIndex} className="flex items-center justify-between">
+                             <span className="text-sm text-gray-700">{channel.name}</span>
+                             <Button asChild size="sm" className="bg-red-600 hover:bg-red-700 text-white">
+                               <a href={channel.url} target="_blank" rel="noopener noreferrer">
+                                 <Youtube className="h-3 w-3 mr-1" />
+                                 Watch
+                               </a>
+                             </Button>
+                           </div>
+                         ))}
+                       </div>
+                     </div>
+                   ))}
                 </CollapsibleContent>
               </Collapsible>
             </CardContent>
