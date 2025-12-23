@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.3 (519615d)"
@@ -159,19 +159,19 @@ export type Database = {
       website_visits: {
         Row: {
           id: string
-          ip_address: unknown | null
+          ip_address: unknown
           user_agent: string | null
           visited_at: string
         }
         Insert: {
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           user_agent?: string | null
           visited_at?: string
         }
         Update: {
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           user_agent?: string | null
           visited_at?: string
         }
@@ -182,10 +182,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_visitor_count: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
+      get_visitor_count: { Args: never; Returns: number }
     }
     Enums: {
       [_ in never]: never

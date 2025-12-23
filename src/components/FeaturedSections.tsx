@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Users, ExternalLink, FileText } from "lucide-react";
+import { BookOpen, Users, ExternalLink, FileText, Briefcase } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const FeaturedSections = () => {
@@ -38,6 +38,22 @@ export const FeaturedSections = () => {
         "Previous year questions",
         "Study schedule templates"
       ]
+    },
+    {
+      id: "placement-resources",
+      title: "Placement and Internship Resources",
+      description: "Essential resources for internships and placements preparation",
+      icon: <Briefcase className="h-6 w-6" />,
+      badge: "Career",
+      badgeColor: "bg-green-100 text-green-800",
+      externalLink: "https://www.notion.so/Engineering-Milestones-off-campus-2cb5ee4946da8059be4cc1c316badfbe?source=copy_link",
+      note: "Useful from the 2nd Semester",
+      highlights: [
+        "Off-campus opportunities",
+        "Engineering milestones",
+        "Career preparation tips",
+        "Industry resources"
+      ]
     }
   ];
 
@@ -51,7 +67,7 @@ export const FeaturedSections = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sections.map((section) => (
             <Card 
               key={section.id}
@@ -82,14 +98,35 @@ export const FeaturedSections = () => {
                     </div>
                   ))}
                 </div>
+                {section.note && (
+                  <p className="text-sm text-amber-600 font-medium mb-4 flex items-center">
+                    <span className="mr-2">📌</span> {section.note}
+                  </p>
+                )}
                 <div className="space-y-3">
-                  <Button 
-                    onClick={() => navigate(section.route)}
-                    className="w-full"
-                  >
-                    Explore {section.title}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
+                  {section.route ? (
+                    <Button 
+                      onClick={() => navigate(section.route!)}
+                      className="w-full"
+                    >
+                      Explore {section.title}
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  ) : section.externalLink && (
+                    <Button 
+                      className="w-full"
+                      asChild
+                    >
+                      <a 
+                        href={section.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Explore {section.title}
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                   {section.id === "learning-resources" && (
                     <Button 
                       variant="outline"
