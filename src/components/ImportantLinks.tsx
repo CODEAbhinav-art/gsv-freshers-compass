@@ -495,6 +495,57 @@ export const ImportantLinks = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Placement and Internship Resources */}
+          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-green-500/50 bg-green-50/80 backdrop-blur-sm">
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-green-500/20 rounded-lg">
+                  <Briefcase className="h-5 w-5 text-green-600" />
+                </div>
+                <CardTitle className="text-xl text-green-800 font-bold">Placement and Internship Resources</CardTitle>
+              </div>
+              <Badge className="bg-green-100 text-green-800 w-fit border border-green-300 font-semibold">Career</Badge>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-700 mb-4 font-medium">
+                Essential resources for internships and placements preparation
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-700 font-medium">Off-campus opportunities</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-700 font-medium">Engineering milestones</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-700 font-medium">Career preparation tips</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-700 font-medium">Industry resources</span>
+                </div>
+              </div>
+              <Button
+                variant="default"
+                className="w-full mb-2 bg-green-600 hover:bg-green-700 font-semibold"
+                asChild
+              >
+                <a href="https://www.notion.so/Engineering-Milestones-off-campus-2cb5ee4946da8059be4cc1c316badfbe?source=copy_link" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View Resources
+                </a>
+              </Button>
+              <div className="bg-amber-100 border border-amber-300 rounded-lg p-3">
+                <p className="text-xs text-amber-800 font-bold text-center">
+                  📌 Useful from the 2nd Semester
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
