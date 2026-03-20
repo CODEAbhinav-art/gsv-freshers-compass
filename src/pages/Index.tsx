@@ -33,6 +33,7 @@ const Index = () => {
       <EntrepreneurSection />
       <InternshipHighlights />
       <BranchwiseMentors />
+      <ClubsAtGSV />
       <FAQSections />
       
       {/* About GSV Freshers Compass Button */}
