@@ -16,6 +16,15 @@ import mediaTechLogo from "@/assets/clubs/media-tech.png";
 import debateQuizLogo from "@/assets/clubs/debate-quiz.png";
 import saeLogo from "@/assets/clubs/saeindia.png";
 import emcLogo from "@/assets/clubs/emc.png";
+import aaghazLogo from "@/assets/clubs/aaghaz-drama.png";
+import businessLogo from "@/assets/clubs/business-club.png";
+import malhaarLogo from "@/assets/clubs/malhaar-music.png";
+import nrityaLogo from "@/assets/clubs/nritya-dance.png";
+import literaryLogo from "@/assets/clubs/literary-club.png";
+import mediaTechLogo from "@/assets/clubs/media-tech.png";
+import debateQuizLogo from "@/assets/clubs/debate-quiz.png";
+import saeLogo from "@/assets/clubs/saeindia.png";
+import emcLogo from "@/assets/clubs/emc.png";
 
 const clubs = [
   {
