@@ -16,6 +16,7 @@ import mediaTechLogo from "@/assets/clubs/media-tech.png";
 import debateQuizLogo from "@/assets/clubs/debate-quiz.png";
 import saeLogo from "@/assets/clubs/saeindia.png";
 import emcLogo from "@/assets/clubs/emc.png";
+import aaghazLogo from "@/assets/clubs/aaghaz-drama.png";
 
 const clubs = [
   {
@@ -116,6 +117,16 @@ const clubs = [
       "Developing critical thinking and argumentation",
       "Broadening knowledge through competitive quizzing",
       "Hosting inter-college debate and quiz events",
+    ],
+  },
+  {
+    name: "Aaghaz — The Drama Club",
+    logo: aaghazLogo,
+    objectives: [
+      "Artistic expression & storytelling through acting, scriptwriting, and stagecraft",
+      "Nurturing public speaking, emotional intelligence, and self-confidence",
+      "Bridging students from 22+ states through theatrical collaboration",
+      "Organizing street plays (Nukkad Natak), stage dramas, and workshops",
     ],
   },
 ];
