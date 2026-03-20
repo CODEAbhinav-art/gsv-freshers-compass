@@ -119,6 +119,16 @@ const clubs = [
       "Hosting inter-college debate and quiz events",
     ],
   },
+  {
+    name: "Aaghaz — The Drama Club",
+    logo: aaghazLogo,
+    objectives: [
+      "Artistic expression & storytelling through acting, scriptwriting, and stagecraft",
+      "Nurturing public speaking, emotional intelligence, and self-confidence",
+      "Bridging students from 22+ states through theatrical collaboration",
+      "Organizing street plays (Nukkad Natak), stage dramas, and workshops",
+    ],
+  },
 ];
 
 export const ClubsAtGSV = () => {
