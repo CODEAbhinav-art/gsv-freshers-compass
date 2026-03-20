@@ -6,6 +6,7 @@ import { FAQSections } from "@/components/FAQSections";
 import { ImportantLinks } from "@/components/ImportantLinks";
 import { InternshipHighlights } from "@/components/InternshipHighlights";
 import { BranchwiseMentors } from "@/components/BranchwiseMentors";
+import { ClubsAtGSV } from "@/components/ClubsAtGSV";
 import { BatchmatesConnect } from "@/components/BatchmatesConnect";
 
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
@@ -32,6 +33,7 @@ const Index = () => {
       <EntrepreneurSection />
       <InternshipHighlights />
       <BranchwiseMentors />
+      <ClubsAtGSV />
       <FAQSections />
       
       {/* About GSV Freshers Compass Button */}
