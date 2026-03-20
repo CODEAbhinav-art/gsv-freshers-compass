@@ -9,6 +9,7 @@ import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { BatchmatesConnect } from "@/components/BatchmatesConnect";
 
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
+import { GsvFutureSection } from "@/components/GsvFutureSection";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
 import { SpaceBackground } from "@/components/SpaceBackground";
