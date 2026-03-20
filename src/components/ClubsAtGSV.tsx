@@ -19,7 +19,7 @@ import emcLogo from "@/assets/clubs/emc.png";
 
 const clubs = [
   {
-    name: "Aeromodelling Club (Garuda)",
+    name: "Aeromodelling Club",
     logo: garudaLogo,
     objectives: [
       "Developing hands-on technical skills in aeromodelling",
