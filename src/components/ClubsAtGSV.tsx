@@ -39,7 +39,7 @@ const clubs = [
     ],
   },
   {
-    name: "Business Club (Siddhartha)",
+    name: "Business Club",
     logo: businessLogo,
     objectives: [
       "Fostering entrepreneurship and startup culture",
