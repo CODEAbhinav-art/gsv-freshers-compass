@@ -25,6 +25,7 @@ const Index = () => {
       <SpaceBackground />
       <Header />
       <Hero />
+      <GsvFutureSection />
       <QuickLinks />
       <ImportantLinks />
       <BatchmatesConnect />
