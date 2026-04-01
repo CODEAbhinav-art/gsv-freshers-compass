@@ -1,9 +1,8 @@
 
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy, Settings, Info, DollarSign } from "lucide-react";
+import { BookOpen, FileText, MapPin, Building2, GraduationCap, ExternalLink, ChevronDown, Briefcase, Video, Home, Code2, Trophy, Settings, DollarSign } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,229 +14,155 @@ export const ImportantLinks = () => {
   const [isScholarshipOpen, setIsScholarshipOpen] = useState(false);
 
   return (
-    <section className="py-16 bg-muted/30" id="important-links">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-secondary/30" id="important-links">
+      <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Important Links & Resources</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Quick access to all essential resources, portals, and information you'll need during your time at GSV.
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+            Important Links & Resources
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Quick access to all essential resources, portals, and information you'll need.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* 1st Year Exam Papers */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-red-500/70 bg-red-50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-3 bg-red-500/30 rounded-lg border border-red-500/50">
-                  <FileText className="h-6 w-6 text-red-700 font-bold" />
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-destructive/10 text-destructive">
+                  <FileText className="h-5 w-5" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl text-red-700 font-bold">1st Year Exam Papers</CardTitle>
-                  <Badge className="bg-red-500 text-white mt-1 font-semibold border-red-600">
-                    Important
-                  </Badge>
+                  <CardTitle className="text-base">1st Year Exam Papers</CardTitle>
+                  <Badge variant="destructive" className="mt-1 text-xs">Important</Badge>
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-800 mb-4 font-semibold">
-                Access previous year question papers for better exam preparation
-              </p>
-              <Button
-                variant="default"
-                className="w-full mb-3 bg-red-600 hover:bg-red-700 text-white font-bold shadow-lg"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Access previous year question papers for exam prep</p>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://drive.google.com/file/d/164-p3SOpgocOJUkK2zDGvE4V9IP_0vTa/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View General Papers
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View General Papers
                 </a>
               </Button>
-              <Button
-                onClick={() => navigate("/mechanical-engineering")}
-                variant="outline"
-                className="w-full border-2 border-orange-300 bg-white hover:bg-orange-50 text-orange-800 font-semibold"
-              >
-                <Settings className="mr-2 h-4 w-4" />
-                Mechanical Engineering
+              <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/mechanical-engineering")}>
+                <Settings className="h-3.5 w-3.5 mr-1.5" /> Mechanical Engineering
               </Button>
-              <div className="bg-red-100 border border-red-300 rounded-lg p-3 mt-3">
-                <p className="text-xs text-red-800 font-bold text-center">
-                  <strong>General Papers Credits:</strong> Pratik Ranjan (ECE-II)
-                </p>
-              </div>
+              <p className="text-xs text-muted-foreground text-center pt-1">Credits: Pratik Ranjan (ECE-II)</p>
             </CardContent>
           </Card>
 
-          {/* Documents required for Scholarship in GSV */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-green-500/70 bg-green-50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-3 bg-green-500/30 rounded-lg border border-green-500/50">
-                  <DollarSign className="h-6 w-6 text-green-700 font-bold" />
+          {/* Scholarship */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-green-500/10 text-green-600">
+                  <DollarSign className="h-5 w-5" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl text-green-700 font-bold">Documents required for Scholarship in GSV</CardTitle>
-                  <Badge className="bg-green-500 text-white mt-1 font-semibold border-green-600">
-                    Financial Aid
-                  </Badge>
+                  <CardTitle className="text-base">Scholarship Documents</CardTitle>
+                  <Badge className="mt-1 text-xs bg-green-100 text-green-700 border-green-200">Financial Aid</Badge>
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-800 mb-4 font-semibold">
-                Essential documents and timeline for GSV scholarship applications
-              </p>
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Essential documents and timeline for scholarship applications</p>
               <Collapsible open={isScholarshipOpen} onOpenChange={setIsScholarshipOpen}>
                 <CollapsibleTrigger asChild>
-                  <Button 
-                    variant="outline"
-                    className="w-full border-2 border-green-300 bg-white hover:bg-green-50 text-green-800 font-semibold"
-                  >
-                    <DollarSign className="mr-2 h-4 w-4" />
-                    View Scholarship Details
-                    <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 ${isScholarshipOpen ? 'rotate-180' : ''}`} />
+                  <Button variant="outline" size="sm" className="w-full">
+                    View Details
+                    <ChevronDown className={`ml-auto h-3.5 w-3.5 transition-transform ${isScholarshipOpen ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
-                
                 <CollapsibleContent>
-                  <div className="mt-4 space-y-4">
-                    <div className="bg-green-100 border border-green-300 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">Required Documents:</h4>
-                      <ul className="space-y-1 text-sm text-green-700">
-                        <li>• Income Tax Return (Financial Year 2025-2026) [Mandatory Document]</li>
+                  <div className="mt-3 space-y-3 text-sm">
+                    <div className="rounded-lg border bg-secondary/50 p-3">
+                      <p className="font-medium text-foreground mb-1.5">Required Documents</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Income Tax Return (FY 2025-2026) [Mandatory]</li>
                         <li>• Aay Praman Patra (Income Certificate)</li>
                       </ul>
-                      <div className="mt-3 bg-yellow-50 border border-yellow-300 rounded-lg p-3">
-                        <p className="text-sm text-yellow-800 font-semibold">
-                          <strong>Important Note:</strong> Even if your income is lesser than 1 Lakh, still the ITR will be required. Reach out to a CA, since this is issued by a registered CA (Chartered accountant) only.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="bg-blue-100 border border-blue-300 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-800 mb-2">Timeline:</h4>
-                      <ul className="space-y-1 text-sm text-blue-700">
-                        <li>• <strong>Nov-Dec:</strong> Application forms out</li>
-                        <li>• <strong>January:</strong> Shortlisted students announced via Gmail</li>
-                        <li>• <strong>Jan-Feb:</strong> Amount starts getting refunded into students account</li>
-                      </ul>
-                    </div>
-                    <div className="bg-orange-100 border border-orange-300 rounded-lg p-4">
-                      <h4 className="font-semibold text-orange-800 mb-2">Shortlisting Criteria:</h4>
-                      <p className="text-sm text-orange-800 font-semibold">
-                        Shortlisting of candidates in 1st Year will be based on Jee mains Percentile. From 2nd Year onwards it'll be based on CGPA. <span className="text-red-800">[Also Students with CGPA less than 8 or Backlog in any subject are just ineligible to avail GSV Financial Aid therefore it is strongly recommended to maintain CGPA&gt;8 if someone wants GSV Financial Aid]</span>
+                      <p className="text-xs text-muted-foreground mt-2 p-2 bg-background rounded border">
+                        <strong>Note:</strong> Even if income &lt; ₹1 Lakh, ITR is required. Reach out to a CA.
                       </p>
                     </div>
+                    <div className="rounded-lg border bg-secondary/50 p-3">
+                      <p className="font-medium text-foreground mb-1.5">Timeline</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• <strong>Nov-Dec:</strong> Applications open</li>
+                        <li>• <strong>January:</strong> Shortlist announced via Gmail</li>
+                        <li>• <strong>Jan-Feb:</strong> Refunds to student accounts</li>
+                      </ul>
+                    </div>
+                    <div className="rounded-lg border bg-secondary/50 p-3">
+                      <p className="font-medium text-foreground mb-1.5">Shortlisting Criteria</p>
+                      <p className="text-muted-foreground">1st Year: JEE Mains Percentile. 2nd Year+: CGPA. Maintain CGPA &gt; 8 and no backlogs for eligibility.</p>
+                    </div>
                   </div>
                 </CollapsibleContent>
               </Collapsible>
             </CardContent>
           </Card>
 
-          {/* Get Advantage Before Joining College */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <BookOpen className="h-5 w-5 text-primary" />
+          {/* Learning Resources */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <BookOpen className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">Get advantage before joining college</CardTitle>
+                <div>
+                  <CardTitle className="text-base">Pre-College Learning</CardTitle>
+                  <Badge className="mt-1 text-xs">Essential</Badge>
+                </div>
               </div>
-              <Badge className="bg-primary/20 text-primary w-fit border border-primary/30 font-semibold">Essential</Badge>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Start your learning journey early with curated programming resources
-              </p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Programming Languages (Python, Java, C++)</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Data Structures & Algorithms</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Machine Learning Fundamentals</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Web Development Basics</span>
-                </div>
-              </div>
-              <Button 
-                onClick={() => navigate("/learning-resources")}
-                className="w-full mb-3 font-semibold"
-              >
-                Explore Learning Resources
-                <ExternalLink className="ml-2 h-4 w-4" />
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Start your learning journey early with curated resources</p>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Python, Java, C++</li>
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Data Structures & Algorithms</li>
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Web Development Basics</li>
+              </ul>
+              <Button size="sm" className="w-full" onClick={() => navigate("/learning-resources")}>
+                Explore Resources <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
               </Button>
             </CardContent>
           </Card>
 
-          {/* Hackathon Postings */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-purple-500/50 bg-purple-50/80 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-purple-500/20 rounded-lg">
-                  <Trophy className="h-5 w-5 text-purple-600" />
+          {/* Hackathon */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/10 text-purple-600">
+                  <Trophy className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-purple-800 font-bold">Hackathon Postings</CardTitle>
+                <div>
+                  <CardTitle className="text-base">Hackathon Postings</CardTitle>
+                  <Badge className="mt-1 text-xs bg-purple-100 text-purple-700 border-purple-200">Competition</Badge>
+                </div>
               </div>
-              <Badge className="bg-purple-100 text-purple-800 w-fit border border-purple-300 font-semibold">Competition</Badge>
-              <Badge className="bg-orange-100 text-orange-800 border-orange-200 font-semibold">
-                Updated
-              </Badge>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Discover and participate in exciting hackathons and coding competitions
-              </p>
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Discover and participate in hackathons and coding competitions</p>
               <Collapsible open={isHackathonOpen} onOpenChange={setIsHackathonOpen}>
                 <CollapsibleTrigger asChild>
-                  <Button 
-                    variant="outline"
-                    className="w-full border-2 border-purple-300 bg-white hover:bg-purple-50 text-purple-800 font-semibold"
-                  >
-                    <Code2 className="mr-2 h-4 w-4" />
-                    View Hackathon Platforms
-                    <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 ${isHackathonOpen ? 'rotate-180' : ''}`} />
+                  <Button variant="outline" size="sm" className="w-full">
+                    <Code2 className="h-3.5 w-3.5 mr-1.5" /> View Platforms
+                    <ChevronDown className={`ml-auto h-3.5 w-3.5 transition-transform ${isHackathonOpen ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
-                
                 <CollapsibleContent>
-                  <div className="mt-2 space-y-2">
-                    <Button 
-                      variant="default"
-                      size="sm"
-                      className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold"
-                      asChild
-                    >
-                      <a 
-                        href="https://hack2skill.com/dashboard/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-3 w-3" />
-                        Hack2Skill Dashboard
+                  <div className="mt-2 space-y-1.5">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://hack2skill.com/dashboard/" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-3 w-3 mr-1.5" /> Hack2Skill
                       </a>
                     </Button>
-                    <Button 
-                      variant="default"
-                      size="sm"
-                      className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold"
-                      asChild
-                    >
-                      <a 
-                        href="https://devfolio.co/discover?auth=signin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-3 w-3" />
-                        Devfolio Discover
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://devfolio.co/discover?auth=signin" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-3 w-3 mr-1.5" /> Devfolio
                       </a>
                     </Button>
                   </div>
@@ -246,105 +171,58 @@ export const ImportantLinks = () => {
             </CardContent>
           </Card>
 
-          {/* Exam Preparation Guide */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <FileText className="h-5 w-5 text-primary" />
+          {/* Exam Prep */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <FileText className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">Exam Preparation Guide</CardTitle>
+                <CardTitle className="text-base">Exam Preparation Guide</CardTitle>
               </div>
-              <Badge className="bg-secondary/20 text-secondary w-fit border border-secondary/30 font-semibold">Academic</Badge>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Comprehensive guide for first-year exams and study strategies
-              </p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Subject-wise preparation tips</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Important topics and chapters</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Previous year questions</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Study schedule templates</span>
-                </div>
-              </div>
-              <Button 
-                onClick={() => navigate("/exam-preparation")}
-                className="w-full font-semibold"
-              >
-                Explore Exam Preparation
-                <ExternalLink className="ml-2 h-4 w-4" />
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Comprehensive guide for first-year exams and study strategies</p>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Subject-wise tips</li>
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Previous year questions</li>
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-primary" /> Study schedule templates</li>
+              </ul>
+              <Button size="sm" className="w-full" onClick={() => navigate("/exam-preparation")}>
+                Explore Guide <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
               </Button>
             </CardContent>
           </Card>
 
-          {/* GSV Mess Menu Samples */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Building2 className="h-5 w-5 text-primary" />
+          {/* Mess Menu */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <Building2 className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">GSV Mess Menu Samples</CardTitle>
+                <CardTitle className="text-base">Mess Menu Samples</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                View sample mess menus to know what to expect
-              </p>
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">View sample mess menus to know what to expect</p>
               <Collapsible open={isMessMenuOpen} onOpenChange={setIsMessMenuOpen}>
                 <CollapsibleTrigger asChild>
-                  <Button 
-                    variant="outline"
-                    className="w-full border-2 border-primary/30 bg-card hover:bg-primary/10 font-semibold"
-                  >
-                    <Building2 className="mr-2 h-4 w-4" />
-                    View Mess Menus
-                    <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 ${isMessMenuOpen ? 'rotate-180' : ''}`} />
+                  <Button variant="outline" size="sm" className="w-full">
+                    View Menus
+                    <ChevronDown className={`ml-auto h-3.5 w-3.5 transition-transform ${isMessMenuOpen ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
-                
                 <CollapsibleContent>
-                  <div className="mt-2 space-y-2">
-                    <Button 
-                      variant="default"
-                      size="sm"
-                      className="w-full font-semibold"
-                      asChild
-                    >
-                      <a 
-                        href="https://drive.google.com/file/d/1-D3T2OaSNkFwX430Rr6cEft6UncY9C3R/view?usp=drivesdk"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-3 w-3" />
-                        Special Dinner Menu
+                  <div className="mt-2 space-y-1.5">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://drive.google.com/file/d/1-D3T2OaSNkFwX430Rr6cEft6UncY9C3R/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-3 w-3 mr-1.5" /> Special Dinner Menu
                       </a>
                     </Button>
-                    <Button 
-                      variant="default"
-                      size="sm"
-                      className="w-full font-semibold"
-                      asChild
-                    >
-                      <a 
-                        href="https://drive.google.com/file/d/1-6c1cBVXtXk_qBjsAl7UI8Q7FpbRpaMB/view?usp=drivesdk"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-3 w-3" />
-                        General Menu
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://drive.google.com/file/d/1-6c1cBVXtXk_qBjsAl7UI8Q7FpbRpaMB/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-3 w-3 mr-1.5" /> General Menu
                       </a>
                     </Button>
                   </div>
@@ -353,197 +231,135 @@ export const ImportantLinks = () => {
             </CardContent>
           </Card>
 
-          {/* Future GSV Campus */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Home className="h-5 w-5 text-primary" />
+          {/* Future Campus */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <Home className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">Future GSV Campus</CardTitle>
+                <CardTitle className="text-base">Future GSV Campus</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Explore the future vision of GSV campus development
-              </p>
-              <Button
-                variant="default"
-                className="w-full font-semibold"
-                asChild
-              >
-                <a href="https://www.linkedin.com/posts/durgeshlegha_%F0%9D%90%84%F0%9D%90%AF%F0%9D%90%9E%F0%9D%90%AB-%F0%9D%90%A2%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A0%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%B0%F0%9D%90%A2%F0%9D%90%AD%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A0-ugcPost-7330174411821441024-I3pj?utm_source=share&utm_medium=member_android&rcm=ACoAAEGJ6lMB6_f4vAk7pvF_mBuWzkqcBTb8JEc" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Future Campus
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Explore the future vision of GSV campus development</p>
+              <Button size="sm" className="w-full" asChild>
+                <a href="https://www.linkedin.com/posts/durgeshlegha_%F0%9D%90%84%F0%9D%90%AF%F0%9D%90%9E%F0%9D%90%AB-%F0%9D%90%A2%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A0%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%B0%F0%9D%90%A2%F0%9D%90%AD%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A0-ugcPost-7330174411821441024-I3pj" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View Future Campus
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          {/* GSV Campus Tour */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Video className="h-5 w-5 text-primary" />
+          {/* Campus Tour */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <Video className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">GSV Campus Tour</CardTitle>
+                <CardTitle className="text-base">GSV Campus Tour</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Take a virtual tour of the GSV campus
-              </p>
-              <Button
-                variant="default"
-                className="w-full font-semibold"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Take a virtual tour of the GSV campus</p>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://youtu.be/O9JHRjcw1kE?feature=shared" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Watch Campus Tour
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> Watch Tour
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          {/* Jobs and Internships Updates */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Briefcase className="h-5 w-5 text-primary" />
+          {/* Jobs & Internships */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <Briefcase className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">Jobs and Internships Updates</CardTitle>
+                <CardTitle className="text-base">Jobs & Internships</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Stay updated with latest job and internship opportunities
-              </p>
-              <Button
-                variant="default"
-                className="w-full font-semibold"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Stay updated with latest job and internship opportunities</p>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://www.talentd.in/redirect.php?url=whatsapp-community" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Join Updates Community
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> Join Community
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          {/* First Year Hostel Location */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/30 bg-card/90 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <MapPin className="h-5 w-5 text-primary" />
+          {/* Hostel Location */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <MapPin className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">First Year Hostel (Stanza) Location</CardTitle>
+                <CardTitle className="text-base">Hostel (Stanza) Location</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Find the exact location of first year hostel on maps
-              </p>
-              <Button
-                variant="default"
-                className="w-full font-semibold"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Find the exact hostel location on maps</p>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://maps.app.goo.gl/hL6FYQFcRfZ91rJq6" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View on Maps
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View on Maps
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          {/* Calculator Recommendation */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/50 bg-primary/5 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <GraduationCap className="h-5 w-5 text-primary" />
+          {/* Calculator */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                  <GraduationCap className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-foreground font-bold">Which Calculator to Buy?</CardTitle>
+                <div>
+                  <CardTitle className="text-base">Which Calculator to Buy?</CardTitle>
+                  <Badge className="mt-1 text-xs">Recommended</Badge>
+                </div>
               </div>
-              <Badge className="bg-primary text-primary-foreground w-fit font-semibold">
-                Recommended
-              </Badge>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Essential calculator for engineering studies
-              </p>
-              <Button
-                variant="default"
-                className="w-full mb-2 bg-primary hover:bg-primary/90 font-semibold"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Essential calculator for engineering studies</p>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://amzn.in/d/1luAcMr" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Calculator
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View Calculator
                 </a>
               </Button>
-              <div className="bg-red-100 border border-red-300 rounded-lg p-3">
-                <p className="text-xs text-red-800 font-bold text-center">
-                  📌 This model is strictly recommended
-                </p>
-              </div>
+              <p className="text-xs text-center text-muted-foreground bg-secondary rounded-md p-2">📌 This model is strictly recommended</p>
             </CardContent>
           </Card>
 
-          {/* Placement and Internship Resources */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-green-500/50 bg-green-50/80 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-green-500/20 rounded-lg">
-                  <Briefcase className="h-5 w-5 text-green-600" />
+          {/* Placement Resources */}
+          <Card className="hover:shadow-md hover:border-primary/30 transition-all duration-200">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-green-500/10 text-green-600">
+                  <Briefcase className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl text-green-800 font-bold">Placement and Internship Resources</CardTitle>
+                <div>
+                  <CardTitle className="text-base">Placement Resources</CardTitle>
+                  <Badge className="mt-1 text-xs bg-green-100 text-green-700 border-green-200">Career</Badge>
+                </div>
               </div>
-              <Badge className="bg-green-100 text-green-800 w-fit border border-green-300 font-semibold">Career</Badge>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-4 font-medium">
-                Essential resources for internships and placements preparation
-              </p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Off-campus opportunities</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Engineering milestones</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Career preparation tips</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-gray-700 font-medium">Industry resources</span>
-                </div>
-              </div>
-              <Button
-                variant="default"
-                className="w-full mb-2 bg-green-600 hover:bg-green-700 font-semibold"
-                asChild
-              >
+            <CardContent className="pt-0 space-y-2">
+              <p className="text-sm text-muted-foreground">Essential resources for internships and placements</p>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-green-500" /> Off-campus opportunities</li>
+                <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-green-500" /> Career preparation tips</li>
+              </ul>
+              <Button size="sm" className="w-full" asChild>
                 <a href="https://www.notion.so/Engineering-Milestones-off-campus-2cb5ee4946da8059be4cc1c316badfbe?source=copy_link" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Resources
+                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View Resources
                 </a>
               </Button>
-              <div className="bg-amber-100 border border-amber-300 rounded-lg p-3">
-                <p className="text-xs text-amber-800 font-bold text-center">
-                  📌 Useful from the 2nd Semester
-                </p>
-              </div>
+              <p className="text-xs text-center text-muted-foreground bg-secondary rounded-md p-2">📌 Useful from the 2nd Semester</p>
             </CardContent>
           </Card>
         </div>
