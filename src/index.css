@@ -3,39 +3,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 220 13% 8%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 220 14% 10%;
 
-    --card: 220 13% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 10%;
 
-    --popover: 220 13% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 10%;
 
-    --primary: 45 93% 60%;
-    --primary-foreground: 220 13% 8%;
+    --primary: 220 72% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 10%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 215 28% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 14% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 45 93% 60%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 72% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.9% 10%;
@@ -53,283 +53,51 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    background: radial-gradient(ellipse at center, hsl(220 13% 12%) 0%, hsl(220 13% 8%) 50%, hsl(220 13% 6%) 100%);
-    min-height: 100vh;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
   }
 }
 
-/* Enhanced animations and effects */
+/* Subtle animations */
 @layer utilities {
-  /* Floating animations */
-  @keyframes float-slow {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-  }
-
-  @keyframes float-medium {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(90deg); }
-  }
-
-  @keyframes float-fast {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(270deg); }
-  }
-
-  /* Gradient animations */
-  @keyframes gradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  @keyframes gradient-x {
-    0%, 100% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
-  }
-
-  /* Slide animations */
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(50px); }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes slide-up-delayed {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
   }
 
-  /* Fade animations */
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
 
-  @keyframes fade-in-delayed {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-in-delayed-2 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-in-delayed-3 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-in-delayed-4 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-in-delayed-5 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-in-staggered {
-    from { opacity: 0; transform: translateY(30px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  /* Blob animation */
-  @keyframes blob {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(20px, -50px) scale(1.1); }
-    50% { transform: translate(-20px, 20px) scale(0.9); }
-    75% { transform: translate(50px, 50px) scale(1.05); }
-  }
-
-  /* Pulse animations */
-  @keyframes pulse-soft {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-  }
-
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Apply animations */
-  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
-  .animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
-  .animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
-  
-  .animate-gradient { 
-    background-size: 400% 400%;
-    animation: gradient 3s ease infinite;
-  }
-  
-  .animate-gradient-x { animation: gradient-x 3s ease-in-out infinite; }
-  
-  .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
-  .animate-slide-up-delayed { animation: slide-up-delayed 1s ease-out 0.3s forwards; opacity: 0; }
-  
-  .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
-  .animate-fade-in-delayed { animation: fade-in-delayed 0.8s ease-out 0.2s forwards; opacity: 0; }
-  .animate-fade-in-delayed-2 { animation: fade-in-delayed-2 0.8s ease-out 0.4s forwards; opacity: 0; }
-  .animate-fade-in-delayed-3 { animation: fade-in-delayed-3 0.8s ease-out 0.6s forwards; opacity: 0; }
-  .animate-fade-in-delayed-4 { animation: fade-in-delayed-4 0.8s ease-out 0.8s forwards; opacity: 0; }
-  .animate-fade-in-delayed-5 { animation: fade-in-delayed-5 0.8s ease-out 1s forwards; opacity: 0; }
-  .animate-fade-in-staggered { animation: fade-in-staggered 0.6s ease-out forwards; opacity: 0; }
-  
-  .animate-blob { animation: blob 7s infinite; }
-  .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
-  .animate-spin-slow { animation: spin-slow 3s linear infinite; }
-
-  /* Animation delays */
-  .animation-delay-2000 { animation-delay: 2s; }
-  .animation-delay-4000 { animation-delay: 4s; }
-
-  /* Enhanced hover effects */
-  .hover\:shadow-3xl:hover {
-    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 }
 
-/* Space theme animations for background */
-@layer utilities {
-  .bg-gradient-radial {
-    background: radial-gradient(circle, var(--tw-gradient-stops));
-  }
-
-  @keyframes scan {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-  }
-
-  @keyframes scan-reverse {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(-100%); }
-  }
-
-  @keyframes shooting-star {
-    0% {
-      transform: translateX(-100px) translateY(-100px);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(400px) translateY(400px);
-      opacity: 0;
-    }
-  }
-
-  @keyframes spin-slow-bg {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @keyframes spin-reverse {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
-  }
-
-  .animate-scan {
-    animation: scan 3s linear infinite;
-  }
-
-  .animate-scan-reverse {
-    animation: scan-reverse 4s linear infinite;
-  }
-
-  .animate-spin-slow-bg {
-    animation: spin-slow-bg 10s linear infinite;
-  }
-
-  .animate-spin-reverse {
-    animation: spin-reverse 8s linear infinite;
-  }
-
-  .shooting-star {
-    animation: shooting-star 4s linear infinite;
-  }
-
-  .shooting-star:nth-child(2) {
-    animation-delay: 1s;
-  }
-
-  .shooting-star:nth-child(3) {
-    animation-delay: 2s;
-  }
-
-  .shooting-star:nth-child(4) {
-    animation-delay: 3s;
-  }
-
-  /* Hologram text effect */
-  .hologram-text {
-    position: relative;
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor,
-      0 0 20px currentColor;
-  }
-
-  .hologram-text::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: rgba(0, 255, 255, 0.5);
-    animation: glitch 2s infinite;
-  }
-
-  @keyframes glitch {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-2px); }
-    40% { transform: translateX(2px); }
-    60% { transform: translateX(-1px); }
-    80% { transform: translateX(1px); }
-  }
-
-  /* Black hole effect */
-  .black-hole {
-    filter: blur(1px);
-  }
-
-  .black-hole::before {
-    content: '';
-    position: absolute;
-    inset: -20px;
-    border-radius: 50%;
-    background: radial-gradient(circle, transparent 40%, rgba(75, 0, 130, 0.3) 70%, rgba(25, 25, 112, 0.5) 100%);
-    animation: black-hole-distortion 4s ease-in-out infinite;
-  }
-
-  @keyframes black-hole-distortion {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(180deg); }
-  }
+/* Section spacing */
+.section-container {
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Card transparency and text enhancement for dark theme */
-.backdrop-blur-sm {
-  backdrop-filter: blur(4px);
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Enhanced visibility for cards and components */
-.space-card {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-}
-
-.space-card-light {
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-}
+/* Keep legacy class names as no-ops so nothing breaks */
+.animate-float-slow, .animate-float-medium, .animate-float-fast,
+.animate-gradient, .animate-gradient-x,
+.animate-slide-up, .animate-slide-up-delayed,
+.animate-fade-in, .animate-fade-in-delayed, .animate-fade-in-delayed-2,
+.animate-fade-in-delayed-3, .animate-fade-in-delayed-4, .animate-fade-in-delayed-5,
+.animate-fade-in-staggered, .animate-blob, .animate-pulse-soft, .animate-spin-slow,
+.animate-scan, .animate-scan-reverse, .animate-spin-slow-bg, .animate-spin-reverse,
+.shooting-star, .hologram-text, .black-hole, .space-card, .space-card-light,
+.bg-gradient-radial, .leetcode-btn, .button-text-enhanced { }

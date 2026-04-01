@@ -5,74 +5,45 @@ import { Trophy, ExternalLink, Play } from "lucide-react";
 
 export const EntrepreneurSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-950 to-slate-900" id="entrepreneur-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-secondary/30" id="entrepreneur-section">
+      <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">For Aspiring Entrepreneurs</h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Embark on your entrepreneurial journey with global competitions and opportunities
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+            For Aspiring Entrepreneurs
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Embark on your entrepreneurial journey with global competitions
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-amber-400/30 shadow-2xl">
-            <CardHeader className="text-center pb-6">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl shadow-lg">
-                  <Trophy className="h-12 w-12 text-white" />
-                </div>
+        <div className="max-w-2xl mx-auto">
+          <Card className="hover:shadow-md transition-shadow">
+            <CardHeader className="text-center pb-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto mb-3">
+                <Trophy className="h-6 w-6" />
               </div>
-              <CardTitle className="text-3xl text-white mb-2">Hult Prize</CardTitle>
-              <Badge className="bg-amber-500/20 text-amber-300 border-amber-400/30 text-lg px-4 py-1">
-                World's Largest Student Startup Competition
-              </Badge>
+              <CardTitle className="text-xl">Hult Prize</CardTitle>
+              <Badge className="mx-auto mt-2">World's Largest Student Startup Competition</Badge>
             </CardHeader>
-            
-            <CardContent className="space-y-6">
-              <div className="text-center">
-                <p className="text-slate-200 text-lg leading-relaxed">
-                  GSV Hult Prize may happen in January-February 2026. Get ready to pitch your 
-                  innovative ideas and compete on a global stage!
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <Button
-                  variant="outline"
-                  className="w-full bg-transparent border-2 border-amber-400 text-amber-300 hover:bg-amber-400 hover:text-slate-900 transition-all duration-300"
-                  asChild
-                >
-                  <a 
-                    href="https://www.canva.com/design/DAGecT6cmmU/jRfJyfzlHi4x465iKIWFew/edit?utm_content=DAGecT6cmmU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Hult Prize Design
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">
+                GSV Hult Prize may happen in January-February 2026. Get ready to pitch your innovative ideas!
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://www.canva.com/design/DAGecT6cmmU/jRfJyfzlHi4x465iKIWFew/edit?utm_content=DAGecT6cmmU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> Hult Prize Design
                   </a>
                 </Button>
-                
-                <Button
-                  className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-lg"
-                  asChild
-                >
-                  <a 
-                    href="https://youtube.com/playlist?list=PLgQiedPDknpVGfSaYaNjJJLVOn6tqHRSA&feature=shared" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Play className="h-4 w-4 mr-2" />
-                    Pitching Tutorial
+                <Button size="sm" asChild>
+                  <a href="https://youtube.com/playlist?list=PLgQiedPDknpVGfSaYaNjJJLVOn6tqHRSA&feature=shared" target="_blank" rel="noopener noreferrer">
+                    <Play className="h-3.5 w-3.5 mr-1.5" /> Pitching Tutorial
                   </a>
                 </Button>
               </div>
-
-              <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                <p className="text-slate-300 text-sm text-center">
-                  💡 <strong>Tip:</strong> Start preparing your innovative ideas now! 
-                  The competition focuses on solving world's most pressing challenges.
-                </p>
-              </div>
+              <p className="text-xs text-muted-foreground text-center bg-secondary rounded-lg p-3">
+                💡 <strong>Tip:</strong> Start preparing your ideas now! The competition focuses on solving world's most pressing challenges.
+              </p>
             </CardContent>
           </Card>
         </div>
