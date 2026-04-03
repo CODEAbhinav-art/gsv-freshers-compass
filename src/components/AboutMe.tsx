@@ -28,8 +28,9 @@ export const AboutMe = () => {
                   Creators and Maintainers
                 </h4>
                 <div className="text-sm text-foreground space-y-1">
-                  <p>• Abhinav Mishra [AI-DS II Yr]</p>
-                  <p>• Pratik Ranjan [ECE-II Yr]</p>
+                  <p>• Abhinav Mishra [AI-DS'2028]</p>
+                  <p>• Pratik Ranjan [ECE'2028]</p>
+                  <p>• Rudransh Mishra [AI-DS'2029]</p>
                 </div>
               </div>
 
@@ -40,8 +41,8 @@ export const AboutMe = () => {
                   Exam Papers
                 </h4>
                 <div className="text-sm text-foreground space-y-1">
-                  <p>• Ved Vyas [ME-II Yr]</p>
-                  <p>• Pratik Ranjan [ECE-II Yr]</p>
+                  <p>• Ved Vyas [ME'2028]</p>
+                  <p>• Pratik Ranjan [ECE'2028]</p>
                 </div>
               </div>
 
@@ -52,7 +53,7 @@ export const AboutMe = () => {
                   Pictures and Videos
                 </h4>
                 <div className="text-sm text-foreground">
-                  <p>• Harivarun Bandi [ECE-II Yr]</p>
+                  <p>• Harivarun Bandi [ECE'2028]</p>
                 </div>
               </div>
 
@@ -63,8 +64,8 @@ export const AboutMe = () => {
                   Additional Features
                 </h4>
                 <div className="text-sm text-foreground space-y-1">
-                  <p>• Mandeep Nehra [AI-DS II Yr]</p>
-                  <p>• Tushar Sabharwal [AI-DS II Yr]</p>
+                  <p>• Mandeep Nehra [AI-DS'2028]</p>
+                  <p>• Tushar Sabharwal [AI-DS'2028]</p>
                 </div>
               </div>
             </CardContent>
