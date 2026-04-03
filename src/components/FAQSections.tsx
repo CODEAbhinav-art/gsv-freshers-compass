@@ -1,3 +1,4 @@
+
 import {
   Accordion,
   AccordionContent,
@@ -7,8 +8,11 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Home, Briefcase, ExternalLink } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const FAQSections = () => {
+  const ref = useScrollReveal();
+
   const faqSections = [
     {
       id: "academic-faqs",
@@ -51,16 +55,16 @@ export const FAQSections = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/30" id="faqs">
+    <section className="py-24 bg-secondary/30 dark:bg-secondary/10" id="faqs" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-8 text-base">
             Find answers to the most common questions about life at GSV
           </p>
-          <Button asChild>
+          <Button asChild className="hover:scale-[1.02] transition-all duration-200">
             <a href="https://docs.google.com/document/d/13YuD2ca50u0O9QdQvL57jnYND2_IguF97lpmH1xK2Xo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4 mr-2" /> Freshers Handbook (More FAQs)
             </a>
@@ -70,7 +74,7 @@ export const FAQSections = () => {
         <div className="space-y-6">
           {faqSections.map((section) => (
             <Card key={section.id} className="overflow-hidden">
-              <CardHeader className="bg-secondary/50 pb-4">
+              <CardHeader className="bg-secondary/40 dark:bg-secondary/20 pb-4">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary">
                     {section.icon}
@@ -84,8 +88,8 @@ export const FAQSections = () => {
               <CardContent className="p-4 sm:p-6">
                 <Accordion type="single" collapsible className="w-full">
                   {section.faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`${section.id}-${index}`} className="border-border/60">
-                      <AccordionTrigger className="text-left text-sm hover:no-underline py-3">
+                    <AccordionItem key={index} value={`${section.id}-${index}`} className="border-border/40">
+                      <AccordionTrigger className="text-left text-sm hover:no-underline py-3.5">
                         {faq.question}
                       </AccordionTrigger>
                       <AccordionContent className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">

@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 14% 10%;
+    --background: 0 0% 99%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 220 72% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 14% 10%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 14% 10%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 72% 50%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
@@ -45,6 +45,45 @@
     --sidebar-accent-foreground: 220 8.9% 46.1%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 213 31% 91%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 224 76% 48%;
+
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 216 34% 17%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 216 34% 17%;
+    --sidebar-ring: 224 76% 48%;
   }
 }
 
@@ -61,18 +100,24 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
-/* Subtle animations */
+/* Section spacing */
+.section-container {
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Scroll-triggered fade-in */
 @layer utilities {
   @keyframes fade-up {
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .animate-fade-up {
-    animation: fade-up 0.5s ease-out forwards;
+    animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @keyframes accordion-down {
@@ -84,11 +129,26 @@
     from { height: var(--radix-accordion-content-height); }
     to { height: 0; }
   }
-}
 
-/* Section spacing */
-.section-container {
-  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* Subtle gradient blob animation for background */
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -50px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(20px, 50px) scale(1.05); }
+  }
+
+  .animate-blob {
+    animation: blob 20s infinite ease-in-out;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }
 
 /* Keep legacy class names as no-ops so nothing breaks */
@@ -97,7 +157,12 @@
 .animate-slide-up, .animate-slide-up-delayed,
 .animate-fade-in, .animate-fade-in-delayed, .animate-fade-in-delayed-2,
 .animate-fade-in-delayed-3, .animate-fade-in-delayed-4, .animate-fade-in-delayed-5,
-.animate-fade-in-staggered, .animate-blob, .animate-pulse-soft, .animate-spin-slow,
+.animate-fade-in-staggered, .animate-pulse-soft, .animate-spin-slow,
 .animate-scan, .animate-scan-reverse, .animate-spin-slow-bg, .animate-spin-reverse,
 .shooting-star, .hologram-text, .black-hole, .space-card, .space-card-light,
 .bg-gradient-radial, .leetcode-btn, .button-text-enhanced { }
+
+/* Theme transition for cards and borders */
+.dark * {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+}

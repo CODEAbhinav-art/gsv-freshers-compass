@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from "react";
-import { GraduationCap, Menu, X } from "lucide-react";
+import { GraduationCap, Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/useTheme";
 
 const navLinks = [
   { label: "Resources", href: "#important-links" },
@@ -14,6 +15,7 @@ const navLinks = [
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,11 +44,11 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="section-container">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground shadow-sm">
               <GraduationCap className="h-5 w-5" />
             </div>
             <span className="text-lg font-bold tracking-tight text-foreground">
@@ -60,7 +62,7 @@ export const Header = () => {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200
                   ${activeSection === link.href
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
@@ -70,8 +72,17 @@ export const Header = () => {
               </button>
             ))}
             <Button
+              variant="ghost"
+              size="icon"
+              className="ml-1 h-9 w-9"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
+            <Button
               size="sm"
-              className="ml-2"
+              className="ml-2 shadow-sm"
               onClick={() =>
                 window.open(
                   "https://docs.google.com/forms/d/e/1FAIpQLSeRTcJSaN4XZxJz0LJmiVK1HM2ltPQMpO6KEpjA3gCQoJhquA/viewform?usp=dialog",
@@ -84,24 +95,35 @@ export const Header = () => {
           </nav>
 
           {/* Mobile toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          <div className="flex items-center gap-1 md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-9 w-9"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-9 w-9"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile nav */}
         {mobileOpen && (
-          <div className="md:hidden pb-4 space-y-1">
+          <div className="md:hidden pb-4 space-y-1 animate-fade-up">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors
+                className={`block w-full text-left px-3 py-2.5 text-sm font-medium rounded-md transition-colors
                   ${activeSection === link.href
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"

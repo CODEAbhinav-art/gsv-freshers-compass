@@ -12,23 +12,17 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative py-24 lg:py-36 overflow-hidden bg-secondary/30">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-        backgroundSize: '32px 32px'
-      }} />
-
+    <section className="relative py-28 lg:py-40 overflow-hidden">
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Freshers 2025 — Your onboarding starts here
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.08]">
             Welcome to{" "}
-            <span className="text-primary">
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Gati Shakti Vishwavidyalaya
             </span>
           </h1>
@@ -38,10 +32,10 @@ export const Hero = () => {
             curated by current students to help you settle in smoothly.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
               size="lg"
-              className="text-base px-8 h-12 shadow-md hover:shadow-lg transition-shadow"
+              className="text-base px-8 h-12 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
               onClick={scrollToResources}
             >
               Start Here
@@ -50,7 +44,7 @@ export const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-base px-8 h-12"
+              className="text-base px-8 h-12 hover:scale-[1.02] transition-all duration-200"
               onClick={scrollToQuickLinks}
             >
               Explore Sections
