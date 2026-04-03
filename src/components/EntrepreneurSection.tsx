@@ -1,23 +1,27 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, ExternalLink, Play } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const EntrepreneurSection = () => {
+  const ref = useScrollReveal();
+
   return (
-    <section className="py-20 bg-secondary/30" id="entrepreneur-section">
+    <section className="py-24 bg-secondary/30 dark:bg-secondary/10" id="entrepreneur-section" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             For Aspiring Entrepreneurs
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base">
             Embark on your entrepreneurial journey with global competitions
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <Card className="hover:shadow-md transition-shadow">
+          <Card className="hover:shadow-lg transition-all duration-300">
             <CardHeader className="text-center pb-4">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto mb-3">
                 <Trophy className="h-6 w-6" />
@@ -41,7 +45,7 @@ export const EntrepreneurSection = () => {
                   </a>
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground text-center bg-secondary rounded-lg p-3">
+              <p className="text-xs text-muted-foreground text-center bg-secondary/50 dark:bg-secondary/30 rounded-lg p-3">
                 💡 <strong>Tip:</strong> Start preparing your ideas now! The competition focuses on solving world's most pressing challenges.
               </p>
             </CardContent>

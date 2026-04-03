@@ -4,24 +4,26 @@ import { Button } from "@/components/ui/button";
 import { Users, ExternalLink, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const BatchmatesConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useScrollReveal();
 
   return (
-    <section className="py-20" id="batchmates">
+    <section className="py-24" id="batchmates" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Connect with Your Batchmates
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base">
             Build connections with fellow students and create lasting friendships
           </p>
         </div>
 
         <div className="max-w-lg mx-auto">
-          <Card className="hover:shadow-md transition-shadow">
+          <Card className="hover:shadow-lg transition-all duration-300">
             <CardHeader className="text-center pb-4">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto mb-3">
                 <Users className="h-6 w-6" />
@@ -37,7 +39,7 @@ export const BatchmatesConnect = () => {
                   <Button className="w-full">
                     <Users className="h-4 w-4 mr-2" />
                     Batchmates Connect
-                    <ChevronDown className={`ml-auto h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`ml-auto h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>

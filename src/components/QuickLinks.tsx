@@ -1,8 +1,11 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, MapPin } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const QuickLinks = () => {
+  const ref = useScrollReveal();
+
   const quickLinks = [
     {
       title: "Campus Life",
@@ -33,13 +36,13 @@ export const QuickLinks = () => {
   };
 
   return (
-    <section id="quick-links" className="py-20">
+    <section id="quick-links" className="py-24" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Quick Access
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base">
             Jump directly to the information you need most as a new student
           </p>
         </div>
@@ -49,11 +52,11 @@ export const QuickLinks = () => {
             <Card
               key={link.title}
               onClick={() => scrollTo(link.href)}
-              className="cursor-pointer group hover:shadow-md hover:border-primary/30 transition-all duration-200"
+              className="cursor-pointer group hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
             >
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     <link.icon className="h-5 w-5" />
                   </div>
                   <CardTitle className="text-lg">{link.title}</CardTitle>
@@ -61,7 +64,7 @@ export const QuickLinks = () => {
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="mb-4">{link.description}</CardDescription>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {link.details.map((detail, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />

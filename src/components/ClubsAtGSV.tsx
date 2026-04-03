@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -5,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 import garudaLogo from "@/assets/clubs/garuda-aeromodelling.png";
 import technocratsLogo from "@/assets/clubs/technocrats.png";
@@ -33,26 +35,28 @@ const clubs = [
 ];
 
 export const ClubsAtGSV = () => {
+  const ref = useScrollReveal();
+
   return (
-    <section className="py-20" id="clubs">
+    <section className="py-24" id="clubs" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Student Life: Clubs at GSV
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base">
             Find your passion, build skills, and make lasting connections
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {clubs.map((club) => (
             <Card
               key={club.name}
-              className="group hover:shadow-md hover:border-primary/30 transition-all duration-200"
+              className="group hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
             >
-              <CardContent className="p-5 flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden bg-secondary border border-border flex items-center justify-center mb-4 group-hover:border-primary/30 transition-colors">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-secondary dark:bg-secondary/50 border border-border flex items-center justify-center mb-4 group-hover:border-primary/30 transition-colors duration-300">
                   <img src={club.logo} alt={`${club.name} logo`} className="w-16 h-16 object-contain" loading="lazy" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{club.name}</h3>
@@ -62,7 +66,7 @@ export const ClubsAtGSV = () => {
                       View Objectives
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="text-left space-y-1.5 text-sm text-muted-foreground pt-1">
+                      <ul className="text-left space-y-2 text-sm text-muted-foreground pt-1">
                         {club.objectives.map((obj, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="mt-1.5 h-1 w-1 rounded-full bg-primary shrink-0" />
