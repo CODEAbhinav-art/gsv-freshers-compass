@@ -93,11 +93,11 @@ export const AboutMe = () => {
                   <Sparkles className="h-5 w-5 text-amber-500 dark:text-amber-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg text-foreground">Rising Contributors (2025–29)</CardTitle>
+                  <CardTitle className="text-lg text-foreground">present Contributors (2025–29)</CardTitle>
                   <p className="text-xs text-muted-foreground mt-0.5">The next generation carrying the torch</p>
                 </div>
                 <Badge variant="outline" className="ml-auto border-amber-300/60 dark:border-amber-700/50 text-amber-600 dark:text-amber-400">
-                  New Wave
+                  Contd.
                 </Badge>
               </div>
             </CardHeader>
