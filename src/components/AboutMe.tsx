@@ -48,7 +48,7 @@ export const AboutMe = () => {
           <div className="text-center space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 dark:bg-amber-900/30 border border-amber-300/50 dark:border-amber-700/50 text-amber-700 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">
               <Crown className="h-3.5 w-3.5" />
-              CREDITS
+              Thanks!
             </div>
             <h2 className="text-3xl font-bold text-foreground">Hall of Contributors</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
