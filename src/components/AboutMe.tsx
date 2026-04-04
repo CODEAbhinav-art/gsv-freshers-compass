@@ -1,151 +1,161 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Heart, Users, Target, Code2, Camera, Star, User } from "lucide-react";
+import { Github, Heart, Users, Target, Code2, Camera, Star, User, Crown, Sparkles } from "lucide-react";
+
+interface ContributorProps {
+  name: string;
+  subtitle: string;
+  placeholder?: boolean;
+}
+
+const ContributorPill = ({ name, subtitle, placeholder = false }: ContributorProps) => (
+  <div
+    className={`group relative px-4 py-3 rounded-xl border transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+      placeholder
+        ? "border-dashed border-amber-400/40 bg-amber-50/30 dark:bg-amber-900/10 hover:border-amber-400/60 hover:shadow-amber-200/20 dark:hover:shadow-amber-800/20"
+        : "border-amber-400/50 bg-card hover:border-amber-400/80 hover:shadow-amber-200/30 dark:hover:shadow-amber-800/20"
+    }`}
+  >
+    <p className={`font-medium text-sm ${placeholder ? "text-muted-foreground italic" : "text-foreground"}`}>
+      {name}
+    </p>
+    <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
+  </div>
+);
+
+const foundingBatch = [
+  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creator & Maintainer" },
+  { name: "Pratik Ranjan", subtitle: "ECE'2028 · Creator & Maintainer" },
+  { name: "Ved Vyas", subtitle: "ME'2028 · Exam Papers" },
+  { name: "Harivarun Bandi", subtitle: "ECE'2028 · Media" },
+  { name: "Mandeep Nehra", subtitle: "AI-DS'2028 · Features" },
+  { name: "Tushar Sabharwal", subtitle: "AI-DS'2028 · Features" },
+];
+
+const risingContributors = [
+  { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Maintainer", placeholder: false },
+  { name: "Your Name Here", subtitle: "Contribute to get featured", placeholder: true },
+  { name: "Earn Your Place", subtitle: "Join the hall of contributors", placeholder: true },
+];
 
 export const AboutMe = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-background to-muted/20" id="about-me">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Credits Section */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/50 bg-card backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Heart className="h-5 w-5 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-foreground font-bold">Credits</CardTitle>
-              </div>
-              <Badge className="bg-primary/30 text-primary-foreground w-fit border border-primary/50 font-semibold">Team</Badge>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {/* Ideation and Maintainers */}
-              <div className="p-3 bg-primary/10 rounded-lg border border-primary/30">
-                <h4 className="font-semibold text-primary mb-2 flex items-center">
-                  <User className="h-4 w-4 mr-2" />
-                  Creators and Maintainers
-                </h4>
-                <div className="text-sm text-foreground space-y-1">
-                  <p>• Abhinav Mishra [AI-DS'2028]</p>
-                  <p>• Pratik Ranjan [ECE'2028]</p>
-                  <p>• Rudransh Mishra [AI-DS'2029]</p>
-                </div>
-              </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-              {/* Exam Papers */}
-              <div className="p-3 bg-secondary/10 rounded-lg border border-secondary/30">
-                <h4 className="font-semibold text-secondary-foreground mb-2 flex items-center">
-                  <Code2 className="h-4 w-4 mr-2" />
-                  Exam Papers
-                </h4>
-                <div className="text-sm text-foreground space-y-1">
-                  <p>• Ved Vyas [ME'2028]</p>
-                  <p>• Pratik Ranjan [ECE'2028]</p>
-                </div>
-              </div>
+        {/* Hall of Contributors */}
+        <div className="space-y-8">
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 dark:bg-amber-900/30 border border-amber-300/50 dark:border-amber-700/50 text-amber-700 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">
+              <Crown className="h-3.5 w-3.5" />
+              Recognition
+            </div>
+            <h2 className="text-3xl font-bold text-foreground">Hall of Contributors</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              The people who built and maintain this platform for every fresher at GSV.
+            </p>
+          </div>
 
-              {/* Pictures and Videos */}
-              <div className="p-3 bg-accent/10 rounded-lg border border-accent/30">
-                <h4 className="font-semibold text-accent-foreground mb-2 flex items-center">
-                  <Camera className="h-4 w-4 mr-2" />
-                  Pictures and Videos
-                </h4>
-                <div className="text-sm text-foreground">
-                  <p>• Harivarun Bandi [ECE'2028]</p>
+          {/* Founding Batch */}
+          <Card className="relative overflow-hidden border-amber-400/50 dark:border-amber-600/40 shadow-sm hover:shadow-md transition-shadow duration-300 bg-card">
+            <div className="absolute inset-0 rounded-lg pointer-events-none animate-gold-shimmer" style={{
+              background: "linear-gradient(120deg, transparent 30%, hsl(45 93% 60% / 0.06) 50%, transparent 70%)",
+              backgroundSize: "200% 100%",
+            }} />
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/40">
+                  <Crown className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                 </div>
+                <div>
+                  <CardTitle className="text-lg text-foreground">Founding Batch (2024–28)</CardTitle>
+                  <p className="text-xs text-muted-foreground mt-0.5">Original creators of GSV Freshers Compass</p>
+                </div>
+                <Badge className="ml-auto bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 border border-amber-300/60 dark:border-amber-700/50 hover:bg-amber-100">
+                  Founders
+                </Badge>
               </div>
-
-              {/* Additional Features */}
-              <div className="p-3 bg-muted/20 rounded-lg border border-muted/40">
-                <h4 className="font-semibold text-muted-foreground mb-2 flex items-center">
-                  <Star className="h-4 w-4 mr-2" />
-                  Additional Features
-                </h4>
-                <div className="text-sm text-foreground space-y-1">
-                  <p>• Mandeep Nehra [AI-DS'2028]</p>
-                  <p>• Tushar Sabharwal [AI-DS'2028]</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* What is the need of this website? */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/50 bg-card backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Target className="h-5 w-5 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-foreground font-bold">What is the need of this website?</CardTitle>
-              </div>
-              <Badge className="bg-secondary/30 text-secondary-foreground w-fit border border-secondary/50 font-semibold">Our Mission</Badge>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-sm text-foreground space-y-3">
-                <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p>To provide a centralized, one-stop resource platform for all first-year students.</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p>To increase awareness of important campus events, academic deadlines, and essential information.</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p>To facilitate connections with senior students for guidance and query resolution through multiple channels.</p>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p>To foster a culture of collaboration and community support among current and future GSV students. This platform is a legacy passed down through batches, and the 2025-2029 batch will be responsible for continuing this tradition for their juniors.</p>
-                </div>
-              </div>
-              
-              <div className="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/30">
-                <p className="text-sm text-foreground font-medium">
-                  <strong>Note:</strong> The selection process for new student maintainers from the incoming batch will commence during their second semester. Application details will be announced in due course.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* GitHub Repo Link */}
-          <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-primary/50 bg-card backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Github className="h-5 w-5 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-foreground font-bold">GitHub Repo Link</CardTitle>
-              </div>
-              <Badge className="bg-secondary/30 text-secondary-foreground w-fit border border-secondary/50 font-semibold">Open Source</Badge>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-foreground mb-4 font-medium">
-                This project is open source and available on GitHub. Feel free to contribute, report issues, or suggest improvements!
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>✨ Open Source Project</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                  <span>🔧 Built with React & TypeScript</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span>🎨 Styled with Tailwind CSS</span>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {foundingBatch.map((c) => (
+                  <ContributorPill key={c.name} name={c.name} subtitle={c.subtitle} />
+                ))}
               </div>
+            </CardContent>
+          </Card>
 
-              <Button
-                variant="default"
-                className="w-full mt-4 font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
-                asChild
-              >
+          {/* Rising Contributors */}
+          <Card className="border-amber-300/40 dark:border-amber-700/30 shadow-sm hover:shadow-md transition-shadow duration-300 bg-card">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-amber-50 dark:bg-amber-900/20">
+                  <Sparkles className="h-5 w-5 text-amber-500 dark:text-amber-400" />
+                </div>
+                <div>
+                  <CardTitle className="text-lg text-foreground">Rising Contributors (2025–29)</CardTitle>
+                  <p className="text-xs text-muted-foreground mt-0.5">The next generation carrying the torch</p>
+                </div>
+                <Badge variant="outline" className="ml-auto border-amber-300/60 dark:border-amber-700/50 text-amber-600 dark:text-amber-400">
+                  New Wave
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {risingContributors.map((c, i) => (
+                  <ContributorPill key={i} name={c.name} subtitle={c.subtitle} placeholder={c.placeholder} />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Mission & GitHub - 2 col */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Mission */}
+          <Card className="border-border/60 hover:shadow-md transition-shadow duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Target className="h-5 w-5 text-primary" />
+                </div>
+                <CardTitle className="text-lg text-foreground">Our Mission</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>• Centralized, one-stop resource platform for all first-year students.</p>
+              <p>• Increase awareness of campus events, deadlines, and essential info.</p>
+              <p>• Connect freshers with senior mentors for guidance and support.</p>
+              <p>• Foster collaboration—this platform is a legacy passed between batches.</p>
+              <div className="mt-4 p-3 bg-muted/40 rounded-lg text-xs text-muted-foreground">
+                <strong className="text-foreground">Note:</strong> Maintainer selection for incoming batches begins in the second semester. Details will be announced in due course.
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* GitHub */}
+          <Card className="border-border/60 hover:shadow-md transition-shadow duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Github className="h-5 w-5 text-primary" />
+                </div>
+                <CardTitle className="text-lg text-foreground">Open Source</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                This project is open source. Contribute, report issues, or suggest improvements on GitHub.
+              </p>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>✨ Open Source Project</p>
+                <p>🔧 React & TypeScript</p>
+                <p>🎨 Tailwind CSS</p>
+              </div>
+              <Button variant="default" className="w-full font-semibold" asChild>
                 <a href="https://github.com/CODEAbhinav-art/gsv-freshers-compass.git" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4 mr-2" />
                   View on GitHub
