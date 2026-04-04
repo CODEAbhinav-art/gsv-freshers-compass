@@ -103,7 +103,7 @@ export const AboutMe = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {risingContributors.map((c, i) => (
+                {presentContributors.map((c, i) => (
                   <ContributorPill key={i} name={c.name} subtitle={c.subtitle} placeholder={c.placeholder} />
                 ))}
               </div>
