@@ -151,6 +151,16 @@
   }
 }
 
+  @keyframes gold-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .animate-gold-shimmer {
+    animation: gold-shimmer 6s ease-in-out infinite;
+  }
+}
+
 /* Keep legacy class names as no-ops so nothing breaks */
 .animate-float-slow, .animate-float-medium, .animate-float-fast,
 .animate-gradient, .animate-gradient-x,
