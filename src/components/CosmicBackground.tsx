@@ -2,7 +2,7 @@ import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const STAR_COUNT = 1000;
+const STAR_COUNT = 800;
 
 function Starfield() {
   const ref = useRef<THREE.Points>(null);
@@ -19,9 +19,9 @@ function Starfield() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 50;
       positions[i * 3 + 2] = Math.random() * -50;
 
-      sizes[i] = Math.random() * 3 + 1.5;
-      baseOpacities[i] = Math.random() * 0.5 + 0.4;
-      speeds[i] = Math.random() * 0.4 + 0.1;
+      sizes[i] = Math.random() * 1.2 + 0.4;
+      baseOpacities[i] = Math.random() * 0.25 + 0.15;
+      speeds[i] = Math.random() * 0.3 + 0.1;
 
       // Slight color variation: white, blue-white, warm-white
       const colorType = Math.random();
