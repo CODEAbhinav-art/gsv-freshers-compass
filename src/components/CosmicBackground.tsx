@@ -2,31 +2,42 @@ import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const STAR_COUNT = 1200;
+const STAR_COUNT = 1000;
 
 function Starfield() {
   const ref = useRef<THREE.Points>(null);
 
-  const { positions, sizes, opacities, speeds } = useMemo(() => {
+  const { positions, sizes, baseOpacities, speeds, colors } = useMemo(() => {
     const positions = new Float32Array(STAR_COUNT * 3);
     const sizes = new Float32Array(STAR_COUNT);
-    const opacities = new Float32Array(STAR_COUNT);
+    const baseOpacities = new Float32Array(STAR_COUNT);
     const speeds = new Float32Array(STAR_COUNT);
+    const colors = new Float32Array(STAR_COUNT * 3);
 
     for (let i = 0; i < STAR_COUNT; i++) {
-      // Spread stars in a large box around the camera
-      positions[i * 3] = (Math.random() - 0.5) * 40;     // x
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 40; // y
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 50; // z depth
+      positions[i * 3] = (Math.random() - 0.5) * 50;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 50;
+      positions[i * 3 + 2] = Math.random() * -50;
 
-      sizes[i] = Math.random() * 2.5 + 0.8;
-      opacities[i] = Math.random() * 0.6 + 0.3;
-      speeds[i] = Math.random() * 0.3 + 0.1; // individual twinkle speed
+      sizes[i] = Math.random() * 3 + 1.5;
+      baseOpacities[i] = Math.random() * 0.5 + 0.4;
+      speeds[i] = Math.random() * 0.4 + 0.1;
+
+      // Slight color variation: white, blue-white, warm-white
+      const colorType = Math.random();
+      if (colorType < 0.5) {
+        colors[i * 3] = 1.0; colors[i * 3 + 1] = 1.0; colors[i * 3 + 2] = 1.0; // white
+      } else if (colorType < 0.8) {
+        colors[i * 3] = 0.8; colors[i * 3 + 1] = 0.85; colors[i * 3 + 2] = 1.0; // blue-white
+      } else {
+        colors[i * 3] = 1.0; colors[i * 3 + 1] = 0.95; colors[i * 3 + 2] = 0.8; // warm
+      }
     }
-    return { positions, sizes, opacities, speeds };
+    return { positions, sizes, baseOpacities, speeds, colors };
   }, []);
 
-  // Slow forward drift + subtle twinkle
+  const opacities = useMemo(() => new Float32Array(STAR_COUNT), []);
+
   useFrame(({ clock }) => {
     if (!ref.current) return;
     const geo = ref.current.geometry;
@@ -35,15 +46,15 @@ function Starfield() {
     const t = clock.getElapsedTime();
 
     for (let i = 0; i < STAR_COUNT; i++) {
-      // Slow forward movement (z drift)
-      let z = posAttr.getZ(i) + 0.003;
-      if (z > 25) z -= 50; // wrap around
+      // Slow forward drift
+      let z = posAttr.getZ(i) + 0.008;
+      if (z > 0) z -= 50;
       posAttr.setZ(i, z);
 
       // Twinkle
-      const base = opacities[i];
-      const twinkle = base * (0.6 + 0.4 * Math.sin(t * speeds[i] * 2 + i));
-      opAttr.setX(i, twinkle);
+      const base = baseOpacities[i];
+      opacities[i] = base * (0.5 + 0.5 * Math.sin(t * speeds[i] * 2.5 + i * 1.7));
+      opAttr.setX(i, opacities[i]);
     }
     posAttr.needsUpdate = true;
     opAttr.needsUpdate = true;
@@ -54,26 +65,31 @@ function Starfield() {
       new THREE.ShaderMaterial({
         transparent: true,
         depthWrite: false,
-        blending: THREE.AdditiveBlending,
+        blending: THREE.NormalBlending,
         uniforms: {},
         vertexShader: `
           attribute float aSize;
           attribute float aOpacity;
+          attribute vec3 aColor;
           varying float vOpacity;
+          varying vec3 vColor;
           void main() {
             vOpacity = aOpacity;
+            vColor = aColor;
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = aSize * (200.0 / -mvPosition.z);
+            gl_PointSize = aSize * (150.0 / -mvPosition.z);
             gl_Position = projectionMatrix * mvPosition;
           }
         `,
         fragmentShader: `
           varying float vOpacity;
+          varying vec3 vColor;
           void main() {
             float d = length(gl_PointCoord - vec2(0.5));
             if (d > 0.5) discard;
-            float alpha = vOpacity * smoothstep(0.5, 0.1, d);
-            gl_FragColor = vec4(0.85, 0.9, 1.0, alpha);
+            float glow = smoothstep(0.5, 0.0, d);
+            float alpha = vOpacity * glow * glow;
+            gl_FragColor = vec4(vColor, alpha);
           }
         `,
       }),
@@ -85,7 +101,8 @@ function Starfield() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         <bufferAttribute attach="attributes-aSize" args={[sizes, 1]} />
-        <bufferAttribute attach="attributes-aOpacity" args={[opacities, 1]} />
+        <bufferAttribute attach="attributes-aOpacity" args={[new Float32Array(STAR_COUNT).fill(0.5), 1]} />
+        <bufferAttribute attach="attributes-aColor" args={[colors, 3]} />
       </bufferGeometry>
     </points>
   );
@@ -107,7 +124,7 @@ export const CosmicBackground = () => {
   return (
     <div className="fixed inset-0 pointer-events-none" style={{ width: "100vw", height: "100vh", zIndex: 50 }}>
       <Canvas
-        camera={{ position: [0, 0, 15], fov: 60, near: 0.1, far: 100 }}
+        camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 100 }}
         gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
         dpr={[1, 1.5]}
         style={{ background: "transparent" }}
