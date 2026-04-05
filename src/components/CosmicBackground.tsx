@@ -2,7 +2,7 @@ import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const STAR_COUNT = 900;
+const STAR_COUNT = 1200;
 
 function Starfield() {
   const ref = useRef<THREE.Points>(null);
@@ -19,8 +19,8 @@ function Starfield() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 40; // y
       positions[i * 3 + 2] = (Math.random() - 0.5) * 50; // z depth
 
-      sizes[i] = Math.random() * 1.5 + 0.3;
-      opacities[i] = Math.random() * 0.5 + 0.15;
+      sizes[i] = Math.random() * 2.5 + 0.8;
+      opacities[i] = Math.random() * 0.6 + 0.3;
       speeds[i] = Math.random() * 0.3 + 0.1; // individual twinkle speed
     }
     return { positions, sizes, opacities, speeds };
@@ -105,7 +105,7 @@ export const CosmicBackground = () => {
   if (reducedMotion) return null;
 
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none">
+    <div className="fixed inset-0 -z-10 pointer-events-none" style={{ width: "100vw", height: "100vh" }}>
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60, near: 0.1, far: 100 }}
         gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
