@@ -157,6 +157,31 @@
   .animate-gold-shimmer {
     animation: gold-shimmer 6s ease-in-out infinite;
   }
+
+  @keyframes cosmic-twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes cosmic-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.05); }
+    66% { transform: translate(-20px, 15px) scale(0.95); }
+  }
+
+  @keyframes cosmic-drift-reverse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-25px, 20px) scale(0.97); }
+    66% { transform: translate(15px, -25px) scale(1.03); }
+  }
+
+  .animate-cosmic-drift {
+    animation: cosmic-drift 30s ease-in-out infinite;
+  }
+
+  .animate-cosmic-drift-reverse {
+    animation: cosmic-drift-reverse 35s ease-in-out infinite;
+  }
 }
 
 /* Keep legacy class names as no-ops so nothing breaks */
