@@ -20,7 +20,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background/90 relative" style={{ zIndex: 1 }}>
+    <div className="min-h-screen bg-background relative">
       <AnimatedBackground />
       <Header />
       <Hero />
