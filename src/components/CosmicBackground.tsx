@@ -105,7 +105,7 @@ export const CosmicBackground = () => {
   if (reducedMotion) return null;
 
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none" style={{ width: "100vw", height: "100vh" }}>
+    <div className="fixed inset-0 pointer-events-none" style={{ width: "100vw", height: "100vh", zIndex: 0 }}>
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60, near: 0.1, far: 100 }}
         gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
