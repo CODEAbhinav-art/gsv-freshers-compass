@@ -68,11 +68,11 @@ export const AboutMe = () => {
                   <Crown className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg text-foreground">Founding Batch (2024–28)</CardTitle>
-                  <p className="text-xs text-muted-foreground mt-0.5">Original creators of GSV Freshers Compass</p>
+                  <CardTitle className="text-lg text-foreground">Batch (2024–28)</CardTitle>
+                  <p className="text-xs text-muted-foreground mt-0.5">Creators of GSV Freshers Compass</p>
                 </div>
                 <Badge className="ml-auto bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 border border-amber-300/60 dark:border-amber-700/50 hover:bg-amber-100">
-                  Founders
+                  Starts
                 </Badge>
               </div>
             </CardHeader>
@@ -94,7 +94,7 @@ export const AboutMe = () => {
                 </div>
                 <div>
                   <CardTitle className="text-lg text-foreground">present Contributors (2025–29)</CardTitle>
-                  <p className="text-xs text-muted-foreground mt-0.5">The next generation carrying the torch</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">The current active seniors</p>
                 </div>
                 <Badge variant="outline" className="ml-auto border-amber-300/60 dark:border-amber-700/50 text-amber-600 dark:text-amber-400">
                   Contd.
@@ -120,16 +120,16 @@ export const AboutMe = () => {
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Target className="h-5 w-5 text-primary" />
                 </div>
-                <CardTitle className="text-lg text-foreground">Our Mission</CardTitle>
+                <CardTitle className="text-lg text-foreground">Purpose</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p>• Centralized, one-stop resource platform for all first-year students.</p>
               <p>• Increase awareness of campus events, deadlines, and essential info.</p>
-              <p>• Connect freshers with senior mentors for guidance and support.</p>
+              <p>• Connect freshers with senior students for information and support.</p>
               <p>• Foster collaboration—this platform is a legacy passed between batches.</p>
               <div className="mt-4 p-3 bg-muted/40 rounded-lg text-xs text-muted-foreground">
-                <strong className="text-foreground">Note:</strong> Maintainer selection for incoming batches begins in the second semester. Details will be announced in due course.
+                <strong className="text-foreground">Note:</strong> New Contributors for incoming batches begins in the second semester. Details will be announced in due course.
               </div>
             </CardContent>
           </Card>
