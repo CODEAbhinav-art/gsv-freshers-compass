@@ -84,7 +84,7 @@ export const ImportantLinks = () => {
                     <div className="rounded-lg border bg-secondary/50 dark:bg-secondary/20 p-3">
                       <p className="font-medium text-foreground mb-1.5">Required Documents</p>
                       <ul className="space-y-1 text-muted-foreground">
-                        <li>• Income Tax Return (FY 2025-2026) [Mandatory]</li>
+                        <li>• Income Tax Return (FY 2026-2027) [Mandatory]</li>
                         <li>• Aay Praman Patra (Income Certificate)</li>
                       </ul>
                       <p className="text-xs text-muted-foreground mt-2 p-2 bg-background rounded border">
