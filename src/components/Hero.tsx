@@ -30,7 +30,7 @@ export const Hero = () => {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm text-white/90 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Freshers 2025 — Your onboarding starts here
+            Freshers 2026 — Your onboarding starts here
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white drop-shadow-lg">
