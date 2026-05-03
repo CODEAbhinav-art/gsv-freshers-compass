@@ -12,6 +12,7 @@ import { EntrepreneurSection } from "@/components/EntrepreneurSection";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { SiteSearch } from "@/components/SiteSearch";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +25,7 @@ const Index = () => {
       <AnimatedBackground />
       <Header />
       <Hero />
+      <SiteSearch />
       <QuickLinks />
       <ImportantLinks />
       <BatchmatesConnect />
