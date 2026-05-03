@@ -27,7 +27,7 @@ const INDEX: SearchItem[] = [
   { title: "Branchwise Mentors", description: "Connect with senior mentors", keywords: ["mentors", "seniors", "branch", "guidance", "help"], action: { type: "navigate", to: "/branchwise-mentors" } },
   { title: "Clubs at GSV", description: "Student clubs and organizations", keywords: ["clubs", "societies", "activities", "campus life"], action: { type: "scroll", target: "#clubs" } },
   { title: "Batchmates Connect", description: "Find your batchmates", keywords: ["batchmates", "connect", "friends", "directory", "network"], action: { type: "scroll", target: "#batchmates" } },
-  { title: "Aspiring Entrepreneurs", description: "Entrepreneurship resources & Hult Prize", keywords: ["entrepreneur", "startup", "hult", "business", "founder"], action: { type: "scroll", target: "#entrepreneurs" } },
+  { title: "Aspiring Entrepreneurs", description: "Entrepreneurship resources & Hult Prize", keywords: ["entrepreneur", "startup", "hult", "business", "founder"], action: { type: "scroll", target: "#entrepreneur-section" } },
   { title: "GSV Gallery", description: "Student life photos", keywords: ["gallery", "photos", "images", "internship", "student life"], action: { type: "scroll", target: "#gallery" } },
   { title: "FAQs", description: "Frequently asked questions", keywords: ["faq", "questions", "help", "vadodara", "city"], action: { type: "scroll", target: "#faqs" } },
   { title: "About GSV Freshers Compass", description: "About this project", keywords: ["about", "team", "credits", "contributors"], action: { type: "navigate", to: "/about" } },
