@@ -1,10 +1,12 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, MapPin } from "lucide-react";
+import { Users, MapPin, Bot } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const QuickLinks = () => {
   const ref = useScrollReveal();
+  const navigate = useNavigate();
 
   const quickLinks = [
     {
@@ -29,10 +31,25 @@ export const QuickLinks = () => {
         "EME Temple — unique all-aluminum temple",
       ],
     },
+    {
+      title: "GSV Chat Bot",
+      description: "Ask our AI assistant anything about GSV",
+      icon: Bot,
+      href: "/chat",
+      details: [
+        "Instant answers to common questions",
+        "Available 24/7 — no waiting",
+        "Powered by our Zapier-trained bot",
+      ],
+    },
   ];
 
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (href: string) => {
+    if (href.startsWith("#")) {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -47,11 +64,11 @@ export const QuickLinks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {quickLinks.map((link) => (
             <Card
               key={link.title}
-              onClick={() => scrollTo(link.href)}
+              onClick={() => handleClick(link.href)}
               className="cursor-pointer group hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
             >
               <CardHeader className="pb-3">
