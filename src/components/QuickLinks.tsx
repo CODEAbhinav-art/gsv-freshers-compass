@@ -1,8 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Users, MapPin, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const QuickLinks = () => {
@@ -77,15 +75,6 @@ export const QuickLinks = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <Button asChild size="lg" className="shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200">
-            <Link to="/chat">
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Open Chat
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
