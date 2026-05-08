@@ -1,6 +1,8 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, MapPin, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const QuickLinks = () => {
