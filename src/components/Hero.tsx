@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import campusBg from "@/assets/gsv-campus.jpg";
 
 export const Hero = () => {
@@ -62,6 +63,17 @@ export const Hero = () => {
             >
               Explore Sections
               <ArrowDown className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="text-base px-8 h-12 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+            >
+              <Link to="/chat">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Open Chat
+              </Link>
             </Button>
           </div>
         </div>
