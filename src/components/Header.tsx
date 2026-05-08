@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { GraduationCap, Menu, X, Moon, Sun } from "lucide-react";
+import { GraduationCap, Menu, X, Moon, Sun, Bot } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
 
@@ -80,6 +81,12 @@ export const Header = () => {
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
+            <Button asChild size="sm" variant="outline" className="ml-2">
+              <Link to="/chat">
+                <Bot className="h-4 w-4" />
+                GSV Chat Bot
+              </Link>
+            </Button>
             <Button
               size="sm"
               className="ml-2 shadow-sm"
@@ -132,6 +139,12 @@ export const Header = () => {
                 {link.label}
               </button>
             ))}
+            <Button asChild size="sm" variant="outline" className="w-full mt-2">
+              <Link to="/chat" onClick={() => setMobileOpen(false)}>
+                <Bot className="h-4 w-4" />
+                GSV Chat Bot
+              </Link>
+            </Button>
             <Button
               size="sm"
               className="w-full mt-2"
