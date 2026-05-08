@@ -15,6 +15,7 @@ import MechanicalEngineering from "./pages/MechanicalEngineering";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
+import { ZapierChatbot } from "./components/ZapierChatbot";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <ZapierChatbot />
     </TooltipProvider>
   </QueryClientProvider>
 );
