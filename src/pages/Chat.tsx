@@ -27,7 +27,7 @@ const Chat = () => {
         </div>
 
         <div className="mx-auto w-full max-w-5xl rounded-2xl border border-border bg-card shadow-2xl shadow-primary/10 overflow-hidden p-2 sm:p-4">
-          {/* @ts-expect-error custom element */}
+          
           <zapier-interfaces-chatbot-embed
             is-popup="false"
             chatbot-id="d85263"
