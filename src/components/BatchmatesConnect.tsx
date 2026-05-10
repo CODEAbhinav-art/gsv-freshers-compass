@@ -1,13 +1,17 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, ExternalLink, ChevronDown } from "lucide-react";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Users, ExternalLink, FileText } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+const SHEET_ID = "1AS9VR1LUKlNAFpF6EcaM86SXOM6HXup9WOb3W9WRDYQ";
+const SHEET_VIEW_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?usp=sharing`;
+const SHEET_EMBED_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/htmlembed?widget=true&headers=false&chrome=false`;
+
+const FORM_VIEW_URL = "https://forms.gle/UjwycnRMwZxU2Smt8";
+const FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfN2To_btwHggPJkxPpxM9XfqqTYdcdZRkwf5LlBPCielmIEw/viewform?embedded=true";
+
 export const BatchmatesConnect = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const ref = useScrollReveal();
 
   return (
@@ -20,10 +24,13 @@ export const BatchmatesConnect = () => {
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
             Build connections with fellow students and create lasting friendships
           </p>
+          <p className="text-sm text-primary/90 mt-3 max-w-2xl mx-auto">
+            Fill out the form to be added to the directory and connect with your fellow GSV students!
+          </p>
         </div>
 
-        <div className="max-w-lg mx-auto">
-          <Card className="hover:shadow-lg transition-all duration-300">
+        <div className="max-w-3xl mx-auto">
+          <Card className="hover:shadow-lg transition-all duration-300 border-primary/20">
             <CardHeader className="text-center pb-4">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto mb-3">
                 <Users className="h-6 w-6" />
@@ -33,31 +40,60 @@ export const BatchmatesConnect = () => {
                 Connect with students from your batch early
               </p>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-                <CollapsibleTrigger asChild>
-                  <Button className="w-full">
+            <CardContent>
+              <Tabs defaultValue="list" className="w-full">
+                <TabsList className="grid grid-cols-2 w-full mb-4">
+                  <TabsTrigger value="list">
                     <Users className="h-4 w-4 mr-2" />
-                    Batchmates Connect
-                    <ChevronDown className={`ml-auto h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <div className="mt-3 space-y-2">
-                    <Button size="sm" className="w-full" asChild>
-                      <a href="https://docs.google.com/spreadsheets/d/1BrFwxqFIp1-ib_VUbJ-DadvquVuxIH8zWlMeBefEowg/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> View Batchmates List
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full" asChild>
-                      <a href="https://forms.gle/6DDDakotWGf1aqHh9" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> Update Your Info
-                      </a>
-                    </Button>
-                    <p className="text-xs text-muted-foreground text-center pt-1">Credits: Mandeep Nehra</p>
+                    Batchmates List
+                  </TabsTrigger>
+                  <TabsTrigger value="update">
+                    <FileText className="h-4 w-4 mr-2" />
+                    Update Your Info
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="list" className="space-y-3">
+                  <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
+                    <iframe
+                      src={SHEET_EMBED_URL}
+                      title="Batchmates List"
+                      className="w-full"
+                      style={{ height: 440, border: 0 }}
+                      loading="lazy"
+                    />
                   </div>
-                </CollapsibleContent>
-              </Collapsible>
+                  <Button className="w-full" asChild>
+                    <a href={SHEET_VIEW_URL} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" /> View Full List
+                    </a>
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    If the embed doesn't load, use the button above to open the full sheet.
+                  </p>
+                </TabsContent>
+
+                <TabsContent value="update" className="space-y-3">
+                  <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
+                    <iframe
+                      src={FORM_EMBED_URL}
+                      title="Update Your Info"
+                      className="w-full"
+                      style={{ height: 620, border: 0 }}
+                      loading="lazy"
+                    >
+                      Loading…
+                    </iframe>
+                  </div>
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href={FORM_VIEW_URL} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" /> Open form in new tab
+                    </a>
+                  </Button>
+                </TabsContent>
+              </Tabs>
+
+              <p className="text-xs text-muted-foreground text-center pt-4">Credits: Mandeep Nehra</p>
             </CardContent>
           </Card>
         </div>
