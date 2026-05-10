@@ -90,7 +90,7 @@ export const BatchmatesConnect = () => {
                 </TabsContent>
               </Tabs>
 
-              <p className="text-xs text-muted-foreground text-center pt-4">Credits: Mandeep Nehra</p>
+              <p className="text-sm font-medium text-primary text-center pt-4">Developed by Rudransh Mishra</p>
             </CardContent>
           </Card>
         </div>
