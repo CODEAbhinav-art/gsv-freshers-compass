@@ -53,24 +53,21 @@ export const BatchmatesConnect = () => {
                   </TabsTrigger>
                 </TabsList>
 
-                <TabsContent value="list" className="space-y-3">
-                  <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
-                    <iframe
-                      src={SHEET_EMBED_URL}
-                      title="Batchmates List"
-                      className="w-full"
-                      style={{ height: 440, border: 0 }}
-                      loading="lazy"
-                    />
+                <TabsContent value="list" className="space-y-4">
+                  <div className="rounded-lg border border-primary/20 bg-primary/5 p-6 text-center space-y-3">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto">
+                      <Users className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-semibold text-foreground">Batchmates Directory</h3>
+                    <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                      View the full list of batchmates and their contact details in our shared Google Sheet.
+                    </p>
+                    <Button size="lg" asChild>
+                      <a href={SHEET_VIEW_URL} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" /> View Full List
+                      </a>
+                    </Button>
                   </div>
-                  <Button className="w-full" asChild>
-                    <a href={SHEET_VIEW_URL} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" /> View Full List
-                    </a>
-                  </Button>
-                  <p className="text-xs text-muted-foreground text-center">
-                    If the embed doesn't load, use the button above to open the full sheet.
-                  </p>
                 </TabsContent>
 
                 <TabsContent value="update" className="space-y-3">
