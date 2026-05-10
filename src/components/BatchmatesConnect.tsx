@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SHEET_ID = "1AS9VR1LUKlNAFpF6EcaM86SXOM6HXup9WOb3W9WRDYQ";
 const SHEET_VIEW_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?usp=sharing`;
-const SHEET_EMBED_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/htmlembed?widget=true&headers=false&chrome=false`;
+
 
 const FORM_VIEW_URL = "https://forms.gle/UjwycnRMwZxU2Smt8";
 const FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfN2To_btwHggPJkxPpxM9XfqqTYdcdZRkwf5LlBPCielmIEw/viewform?embedded=true";
