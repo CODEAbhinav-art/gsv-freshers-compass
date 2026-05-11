@@ -13,6 +13,7 @@ import InternshipGallery from "./pages/InternshipGallery";
 import BranchwiseMentors from "./pages/BranchwiseMentors";
 import MechanicalEngineering from "./pages/MechanicalEngineering";
 import About from "./pages/About";
+import SeniorWisdom from "./pages/SeniorWisdom";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import { ZapierChatbot } from "./components/ZapierChatbot";
