@@ -129,7 +129,7 @@ export const SubmitWisdomDialog = ({ onSubmitted }: { onSubmitted?: () => void }
     setSubmitting(false);
 
     if (error) return toast.error(error.message);
-    toast.success("Submitted! Your wisdom will appear after a quick review.");
+    toast.success("Submitted! Your tips will appear after a quick review.");
     reset();
     setOpen(false);
     onSubmitted?.();
@@ -139,12 +139,12 @@ export const SubmitWisdomDialog = ({ onSubmitted }: { onSubmitted?: () => void }
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>
-          <Plus className="h-4 w-4 mr-2" /> Share Wisdom
+          <Plus className="h-4 w-4 mr-2" /> Share the info
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Share your wisdom</DialogTitle>
+          <DialogTitle>Share your experiences</DialogTitle>
           <DialogDescription>
             Help juniors by sharing what you wish you knew. Posts go through a quick review.
           </DialogDescription>
