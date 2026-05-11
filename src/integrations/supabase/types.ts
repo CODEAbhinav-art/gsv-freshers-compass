@@ -117,6 +117,33 @@ export type Database = {
           },
         ]
       }
+      profiles: {
+        Row: {
+          branch: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          branch?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          branch?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       questions: {
         Row: {
           admin_id: string | null
@@ -156,6 +183,75 @@ export type Database = {
         }
         Relationships: []
       }
+      senior_wisdom: {
+        Row: {
+          author_name: string | null
+          author_user_id: string | null
+          branch: string
+          category: string
+          content: string
+          created_at: string
+          id: string
+          is_anonymous: boolean
+          preview: string
+          status: Database["public"]["Enums"]["moderation_status"]
+          title: string
+          updated_at: string
+          upvotes_count: number
+        }
+        Insert: {
+          author_name?: string | null
+          author_user_id?: string | null
+          branch: string
+          category: string
+          content: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean
+          preview: string
+          status?: Database["public"]["Enums"]["moderation_status"]
+          title: string
+          updated_at?: string
+          upvotes_count?: number
+        }
+        Update: {
+          author_name?: string | null
+          author_user_id?: string | null
+          branch?: string
+          category?: string
+          content?: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean
+          preview?: string
+          status?: Database["public"]["Enums"]["moderation_status"]
+          title?: string
+          updated_at?: string
+          upvotes_count?: number
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
       website_visits: {
         Row: {
           id: string
@@ -177,15 +273,52 @@ export type Database = {
         }
         Relationships: []
       }
+      wisdom_upvotes: {
+        Row: {
+          created_at: string
+          id: string
+          post_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          post_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          post_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wisdom_upvotes_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "senior_wisdom"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
       get_visitor_count: { Args: never; Returns: number }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
+      moderation_status: "pending" | "approved" | "rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -312,6 +445,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+      moderation_status: ["pending", "approved", "rejected"],
+    },
   },
 } as const

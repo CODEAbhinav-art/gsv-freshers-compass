@@ -8,6 +8,7 @@ import { InternshipHighlights } from "@/components/InternshipHighlights";
 import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { ClubsAtGSV } from "@/components/ClubsAtGSV";
 import { BatchmatesConnect } from "@/components/BatchmatesConnect";
+import { SeniorWisdomPreview } from "@/components/SeniorWisdomPreview";
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
 import { Footer } from "@/components/Footer";
 import { Watermark } from "@/components/Watermark";
@@ -28,6 +29,7 @@ const Index = () => {
       <SiteSearch />
       <QuickLinks />
       <ImportantLinks />
+      <SeniorWisdomPreview />
       <BatchmatesConnect />
       <EntrepreneurSection />
       <InternshipHighlights />
