@@ -71,26 +71,22 @@ export const BatchmatesConnect = () => {
                 </TabsContent>
 
                 <TabsContent value="update" className="space-y-3">
-                  <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
-                    <iframe
-                      src={FORM_EMBED_URL}
-                      title="Update Your Info"
-                      className="w-full"
-                      style={{ height: 620, border: 0 }}
-                      loading="lazy"
-                    >
-                      Loading…
-                    </iframe>
+                  <div className="rounded-lg border border-primary/20 bg-primary/5 p-6 text-center space-y-3">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mx-auto">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-semibold text-foreground">Update Your Info</h3>
+                    <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                      Add or update your details in the batchmates directory by filling out our Google Form.
+                    </p>
+                    <Button size="lg" asChild>
+                      <a href={FORM_VIEW_URL} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" /> Open Form
+                      </a>
+                    </Button>
                   </div>
-                  <Button variant="outline" className="w-full" asChild>
-                    <a href={FORM_VIEW_URL} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" /> Open form in new tab
-                    </a>
-                  </Button>
                 </TabsContent>
               </Tabs>
-
-              <p className="text-sm font-medium text-primary text-center pt-4">Developed by Rudransh Mishra</p>
             </CardContent>
           </Card>
         </div>
