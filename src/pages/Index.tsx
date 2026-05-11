@@ -29,6 +29,7 @@ const Index = () => {
       <SiteSearch />
       <QuickLinks />
       <ImportantLinks />
+      <SeniorWisdomPreview />
       <BatchmatesConnect />
       <EntrepreneurSection />
       <InternshipHighlights />
