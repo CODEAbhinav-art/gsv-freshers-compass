@@ -26,14 +26,14 @@ const ContributorPill = ({ name, subtitle, placeholder = false }: ContributorPro
 );
 
 const foundingBatch = [
-  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · UI-UX" },
+  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creator" },
   { name: "Pratik Ranjan", subtitle: "ECE'2028 · UI-UX" },
   { name: "Ved Vyas", subtitle: "ME'2028 · Exam Papers" },
   { name: "Harivarun Bandi", subtitle: "ECE'2028 · Media" }
 ];
 
 const presentContributors = [
-  { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Maintainer", placeholder: false },
+  { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Chatbot/Clubs", placeholder: false },
   { name: "Your Name Here", subtitle: "Contribute to get featured", placeholder: true },
   { name: "Earn Your Place", subtitle: "Join the hall of contributors", placeholder: true },
 ];
