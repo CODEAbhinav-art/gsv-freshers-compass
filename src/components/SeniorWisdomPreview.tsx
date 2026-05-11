@@ -17,10 +17,10 @@ export const SeniorWisdomPreview = () => {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
                 <Lightbulb className="h-5 w-5" />
               </div>
-              <h2 className="text-3xl font-bold text-foreground">Senior Wisdom</h2>
+              <h2 className="text-3xl font-bold text-foreground">Student Experiences</h2>
             </div>
             <p className="text-muted-foreground max-w-xl">
-              Hard-earned tips from GSV seniors — the things they wish someone had told them.
+              Tips from GSV seniors — the things they wish someone had told them.
             </p>
           </div>
           <Button variant="outline" asChild>
@@ -33,10 +33,10 @@ export const SeniorWisdomPreview = () => {
         ) : posts.length === 0 ? (
           <div className="rounded-lg border-2 border-dashed border-border p-10 text-center">
             <Lightbulb className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-            <h3 className="font-semibold text-foreground mb-1">No wisdom shared yet</h3>
+            <h3 className="font-semibold text-foreground mb-1">No information shared yet</h3>
             <p className="text-sm text-muted-foreground mb-4">Be the first senior to drop a tip for the juniors.</p>
             <Button asChild>
-              <Link to="/senior-wisdom">Share wisdom</Link>
+              <Link to="/senior-wisdom">Share info</Link>
             </Button>
           </div>
         ) : (
