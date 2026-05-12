@@ -17,11 +17,8 @@ export const SeniorWisdomPreview = () => {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
                 <Lightbulb className="h-5 w-5" />
               </div>
-              <h2 className="text-3xl font-bold text-foreground">Student Experiences</h2>
+              <h2 className="text-3xl font-bold text-foreground">Senior Insights</h2>
             </div>
-            <p className="text-muted-foreground max-w-xl">
-              Tips from GSV seniors — the things they wish someone had told them.
-            </p>
           </div>
           <Button variant="outline" asChild>
             <Link to="/senior-wisdom">Explore all <ArrowRight className="h-4 w-4 ml-2" /></Link>

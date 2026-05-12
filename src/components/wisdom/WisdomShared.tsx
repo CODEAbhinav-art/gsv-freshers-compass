@@ -139,7 +139,7 @@ export const SubmitWisdomDialog = ({ onSubmitted }: { onSubmitted?: () => void }
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>
-          <Plus className="h-4 w-4 mr-2" /> Share the info
+          <Plus className="h-4 w-4 mr-2" /> Share an insight
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">

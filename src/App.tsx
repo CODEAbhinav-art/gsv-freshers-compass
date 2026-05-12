@@ -14,6 +14,7 @@ import BranchwiseMentors from "./pages/BranchwiseMentors";
 import MechanicalEngineering from "./pages/MechanicalEngineering";
 import About from "./pages/About";
 import SeniorWisdom from "./pages/SeniorWisdom";
+import Auth from "./pages/Auth";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import { ZapierChatbot } from "./components/ZapierChatbot";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/mechanical-engineering" element={<MechanicalEngineering />} />
           <Route path="/about" element={<About />} />
           <Route path="/senior-wisdom" element={<SeniorWisdom />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
