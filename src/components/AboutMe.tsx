@@ -26,7 +26,7 @@ const ContributorPill = ({ name, subtitle, placeholder = false }: ContributorPro
 );
 
 const foundingBatch = [
-  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creator" },
+  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creation/Moderation" },
   { name: "Pratik Ranjan", subtitle: "ECE'2028 · UI-UX" },
   { name: "Ved Vyas", subtitle: "ME'2028 · Exam Papers" },
   { name: "Harivarun Bandi", subtitle: "ECE'2028 · Media" }
