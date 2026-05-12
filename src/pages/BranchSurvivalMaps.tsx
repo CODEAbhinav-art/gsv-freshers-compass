@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ArrowUp, Compass, Clock, LogIn, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,8 @@ import { toast } from "sonner";
 
 const BranchSurvivalMaps = () => {
   const navigate = useNavigate();
-  const [branch, setBranch] = useState<string>("all");
+  const [params] = useSearchParams();
+  const [branch, setBranch] = useState<string>(params.get("branch") || "all");
   const [userId, setUserId] = useState<string | null>(null);
   const [upvoted, setUpvoted] = useState<Set<string>>(new Set());
 

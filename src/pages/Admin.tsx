@@ -2,6 +2,7 @@ import { AdminDashboard } from "@/components/AdminDashboard";
 import { MainNavigation } from "@/components/MainNavigation";
 import { SpaceBackground } from "@/components/SpaceBackground";
 import { WisdomModeration } from "@/components/wisdom/WisdomModeration";
+import { SurvivalModeration } from "@/components/survival/SurvivalModeration";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Admin = () => {
@@ -14,12 +15,16 @@ const Admin = () => {
           <TabsList>
             <TabsTrigger value="questions">Questions</TabsTrigger>
             <TabsTrigger value="insights">Senior Insights</TabsTrigger>
+            <TabsTrigger value="survival">Survival Maps</TabsTrigger>
           </TabsList>
           <TabsContent value="questions" className="mt-6">
             <AdminDashboard />
           </TabsContent>
           <TabsContent value="insights" className="mt-6">
             <WisdomModeration />
+          </TabsContent>
+          <TabsContent value="survival" className="mt-6">
+            <SurvivalModeration />
           </TabsContent>
         </Tabs>
       </div>
