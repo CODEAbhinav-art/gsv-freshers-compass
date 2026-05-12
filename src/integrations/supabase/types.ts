@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      branch_survival_entries: {
+        Row: {
+          author_name: string | null
+          author_user_id: string | null
+          branch: string
+          content: string
+          created_at: string
+          id: string
+          is_anonymous: boolean
+          section: string
+          status: Database["public"]["Enums"]["moderation_status"]
+          title: string
+          updated_at: string
+          upvotes_count: number
+        }
+        Insert: {
+          author_name?: string | null
+          author_user_id?: string | null
+          branch: string
+          content: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean
+          section: string
+          status?: Database["public"]["Enums"]["moderation_status"]
+          title: string
+          updated_at?: string
+          upvotes_count?: number
+        }
+        Update: {
+          author_name?: string | null
+          author_user_id?: string | null
+          branch?: string
+          content?: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean
+          section?: string
+          status?: Database["public"]["Enums"]["moderation_status"]
+          title?: string
+          updated_at?: string
+          upvotes_count?: number
+        }
+        Relationships: []
+      }
       forum_likes: {
         Row: {
           created_at: string
@@ -230,6 +275,35 @@ export type Database = {
           upvotes_count?: number
         }
         Relationships: []
+      }
+      survival_upvotes: {
+        Row: {
+          created_at: string
+          entry_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          entry_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          entry_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "survival_upvotes_entry_id_fkey"
+            columns: ["entry_id"]
+            isOneToOne: false
+            referencedRelation: "branch_survival_entries"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {
