@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Compass, Clock, LogIn, LogOut } from "lucide-react";
+import { ArrowLeft, ArrowUp, Compass, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { BRANCHES, branchLabel } from "@/lib/wisdomConstants";
 import { SURVIVAL_SECTIONS } from "@/lib/survivalConstants";
-import { SubmitSurvivalDialog, useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
+import { useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
 import { ResourceCorner } from "@/components/survival/ResourceCorner";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
@@ -83,20 +83,8 @@ const BranchSurvivalMaps = () => {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
                 <Compass className="h-5 w-5" />
               </div>
-              <h1 className="text-3xl font-bold text-foreground">Branch Survival Maps</h1>
+              <h1 className="text-3xl font-bold text-foreground">Branch Guides</h1>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {userId ? (
-              <Button variant="outline" size="sm" onClick={async () => { await supabase.auth.signOut(); toast.success("Signed out"); }}>
-                <LogOut className="h-4 w-4 mr-1.5" /> Sign out
-              </Button>
-            ) : (
-              <Button variant="outline" size="sm" onClick={() => navigate("/auth")}>
-                <LogIn className="h-4 w-4 mr-1.5" /> Sign in
-              </Button>
-            )}
-            <SubmitSurvivalDialog defaultBranch={branch} onSubmitted={reload} />
           </div>
         </div>
 
