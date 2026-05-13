@@ -111,6 +111,8 @@ const BranchSurvivalMaps = () => {
           </Select>
         </div>
 
+        <ResourceCorner branch={branch} />
+
         {loading ? (
           <p className="text-center text-muted-foreground py-12">Loading map…</p>
         ) : entries.length === 0 ? (
