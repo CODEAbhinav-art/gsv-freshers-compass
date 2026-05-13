@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Compass, Clock, LogIn, LogOut } from "lucide-react";
+import { ArrowLeft, ArrowUp, Compass, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { BRANCHES, branchLabel } from "@/lib/wisdomConstants";
 import { SURVIVAL_SECTIONS } from "@/lib/survivalConstants";
-import { SubmitSurvivalDialog, useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
+import { useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
 import { ResourceCorner } from "@/components/survival/ResourceCorner";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
@@ -83,20 +83,8 @@ const BranchSurvivalMaps = () => {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
                 <Compass className="h-5 w-5" />
               </div>
-              <h1 className="text-3xl font-bold text-foreground">Branch Survival Maps</h1>
+              <h1 className="text-3xl font-bold text-foreground">Branch Guides</h1>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {userId ? (
-              <Button variant="outline" size="sm" onClick={async () => { await supabase.auth.signOut(); toast.success("Signed out"); }}>
-                <LogOut className="h-4 w-4 mr-1.5" /> Sign out
-              </Button>
-            ) : (
-              <Button variant="outline" size="sm" onClick={() => navigate("/auth")}>
-                <LogIn className="h-4 w-4 mr-1.5" /> Sign in
-              </Button>
-            )}
-            <SubmitSurvivalDialog defaultBranch={branch} onSubmitted={reload} />
           </div>
         </div>
 
@@ -119,8 +107,7 @@ const BranchSurvivalMaps = () => {
           <div className="rounded-lg border-2 border-dashed border-border p-12 text-center">
             <Compass className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
             <h3 className="font-semibold text-foreground mb-1">No tips yet for this branch</h3>
-            <p className="text-sm text-muted-foreground mb-4">Be the first to map it out for juniors.</p>
-            <SubmitSurvivalDialog defaultBranch={branch} onSubmitted={reload} />
+            <p className="text-sm text-muted-foreground">Browse the resource corner above for curated links.</p>
           </div>
         ) : (
           <Accordion type="multiple" defaultValue={SURVIVAL_SECTIONS.filter((s) => (grouped.get(s)?.length ?? 0) > 0).slice(0, 3) as unknown as string[]} className="space-y-2">
