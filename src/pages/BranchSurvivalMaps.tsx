@@ -13,6 +13,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { BRANCHES, branchLabel } from "@/lib/wisdomConstants";
 import { SURVIVAL_SECTIONS } from "@/lib/survivalConstants";
 import { SubmitSurvivalDialog, useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
+import { ResourceCorner } from "@/components/survival/ResourceCorner";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
 
@@ -109,6 +110,8 @@ const BranchSurvivalMaps = () => {
             </SelectContent>
           </Select>
         </div>
+
+        <ResourceCorner branch={branch} />
 
         {loading ? (
           <p className="text-center text-muted-foreground py-12">Loading map…</p>
