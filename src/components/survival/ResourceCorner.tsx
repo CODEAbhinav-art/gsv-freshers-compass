@@ -1,46 +1,37 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, FileText, NotebookPen, Youtube, Trophy } from "lucide-react";
-import { getBranchResources, type ResourceLink } from "@/lib/branchResources";
+import { ArrowRight, ExternalLink, FileText, NotebookPen, Youtube, Trophy, Copy } from "lucide-react";
+import { getBranchResources } from "@/lib/branchResources";
 import { branchLabel } from "@/lib/wisdomConstants";
-
-const LinkList = ({ items, emptyHint }: { items: ResourceLink[]; emptyHint: string }) => {
-  if (!items.length) {
-    return (
-      <p className="text-sm text-muted-foreground italic">
-        {emptyHint} — share via the “Share a tip” button above to help juniors.
-      </p>
-    );
-  }
-  return (
-    <ul className="space-y-2">
-      {items.map((r, i) => (
-        <li key={i} className="flex items-start justify-between gap-3 rounded-md border border-border/60 bg-background/40 px-3 py-2">
-          <div className="min-w-0">
-            <div className="text-sm font-medium text-foreground truncate">{r.label}</div>
-            {r.note && <div className="text-xs text-muted-foreground">{r.note}</div>}
-          </div>
-          <Button asChild size="sm" variant="outline" className="h-8 shrink-0">
-            <a href={r.url} target="_blank" rel="noopener noreferrer">
-              Open <ExternalLink className="h-3 w-3 ml-1" />
-            </a>
-          </Button>
-        </li>
-      ))}
-    </ul>
-  );
-};
+import { toast } from "sonner";
 
 interface Props {
   branch: string;
 }
 
+const SEARCH_TEXT = "Gati Shakti Vishwavidyalaya";
+
 export const ResourceCorner = ({ branch }: Props) => {
-  // Show "general" bundle when "all" is selected.
   const effectiveBranch = branch === "all" ? "general" : branch;
   const { pyqs, notes, youtube } = getBranchResources(effectiveBranch);
   const isAiDs = effectiveBranch === "ai-ds";
+
+  const sections = [
+    { key: "pyqs", title: "PYQ Papers", icon: FileText, count: pyqs.length },
+    { key: "notes", title: "Notes & Resources", icon: NotebookPen, count: notes.length },
+    { key: "youtube", title: "YouTube Channels", icon: Youtube, count: youtube.length },
+  ] as const;
+
+  const copySearch = async () => {
+    try {
+      await navigator.clipboard.writeText(SEARCH_TEXT);
+      toast.success("Copied — paste it in the leaderboard search box");
+    } catch {
+      toast.error("Couldn't copy. Please copy manually.");
+    }
+  };
 
   return (
     <section className="mb-10 space-y-4">
@@ -50,38 +41,25 @@ export const ResourceCorner = ({ branch }: Props) => {
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base flex items-center gap-2">
-              <FileText className="h-4 w-4 text-primary" /> PYQ Papers
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <LinkList items={pyqs} emptyHint="No PYQ papers curated yet" />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base flex items-center gap-2">
-              <NotebookPen className="h-4 w-4 text-primary" /> Notes &amp; Resources
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <LinkList items={notes} emptyHint="No notes shared yet" />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base flex items-center gap-2">
-              <Youtube className="h-4 w-4 text-primary" /> YouTube Channels
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <LinkList items={youtube} emptyHint="No channels recommended yet" />
-          </CardContent>
-        </Card>
+        {sections.map(({ key, title, icon: Icon, count }) => (
+          <Card key={key} className="hover:border-primary/40 transition-colors">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Icon className="h-4 w-4 text-primary" /> {title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                {count > 0 ? `${count} curated link${count === 1 ? "" : "s"}` : "Coming soon"}
+              </p>
+              <Button asChild variant="outline" size="sm" className="w-full">
+                <Link to={`/branch-guides/${effectiveBranch}/${key}`}>
+                  Open <ArrowRight className="h-3.5 w-3.5 ml-1" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
       </div>
 
       {isAiDs && (
@@ -93,25 +71,19 @@ export const ResourceCorner = ({ branch }: Props) => {
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-sm text-muted-foreground">
-              Live leaderboard from TLE Eliminators tracking GSV's top competitive programmers.
+              Live leaderboard from TLE Eliminators. Open it and search for{" "}
+              <span className="font-medium text-foreground">"{SEARCH_TEXT}"</span> to see the GSV programmers list.
             </p>
-            <div className="rounded-lg overflow-hidden border bg-background">
-              <iframe
-                src="https://www.tle-eliminators.com/cp-sheet/leaderboard"
-                title="GSV CP Leaderboard"
-                loading="lazy"
-                className="w-full h-[600px]"
-              />
+            <div className="flex flex-wrap gap-2">
+              <Button asChild size="sm">
+                <a href="https://www.tle-eliminators.com/cp-sheet/leaderboard" target="_blank" rel="noopener noreferrer">
+                  Open leaderboard <ExternalLink className="h-3.5 w-3.5 ml-1" />
+                </a>
+              </Button>
+              <Button variant="outline" size="sm" onClick={copySearch}>
+                <Copy className="h-3.5 w-3.5 mr-1" /> Copy "{SEARCH_TEXT}"
+              </Button>
             </div>
-            <Button asChild variant="outline" size="sm">
-              <a
-                href="https://www.tle-eliminators.com/cp-sheet/leaderboard"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open full leaderboard <ExternalLink className="h-3 w-3 ml-1" />
-              </a>
-            </Button>
           </CardContent>
         </Card>
       )}

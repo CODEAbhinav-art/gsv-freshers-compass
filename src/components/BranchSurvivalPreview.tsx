@@ -16,11 +16,11 @@ export const BranchSurvivalPreview = () => {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
                 <Compass className="h-5 w-5" />
               </div>
-              <h2 className="text-3xl font-bold text-foreground">Branch Survival Maps</h2>
+              <h2 className="text-3xl font-bold text-foreground">Branch Guides</h2>
             </div>
           </div>
           <Button variant="outline" asChild>
-            <Link to="/branch-survival">Open maps <ArrowRight className="h-4 w-4 ml-2" /></Link>
+            <Link to="/branch-survival">Open guides <ArrowRight className="h-4 w-4 ml-2" /></Link>
           </Button>
         </div>
 

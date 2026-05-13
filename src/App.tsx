@@ -15,6 +15,7 @@ import MechanicalEngineering from "./pages/MechanicalEngineering";
 import About from "./pages/About";
 import SeniorWisdom from "./pages/SeniorWisdom";
 import BranchSurvivalMaps from "./pages/BranchSurvivalMaps";
+import BranchResourceSection from "./pages/BranchResourceSection";
 import Auth from "./pages/Auth";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/senior-wisdom" element={<SeniorWisdom />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/branch-survival" element={<BranchSurvivalMaps />} />
+          <Route path="/branch-guides/:branch/:section" element={<BranchResourceSection />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
