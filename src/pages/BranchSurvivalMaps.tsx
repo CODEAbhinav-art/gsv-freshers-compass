@@ -107,8 +107,7 @@ const BranchSurvivalMaps = () => {
           <div className="rounded-lg border-2 border-dashed border-border p-12 text-center">
             <Compass className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
             <h3 className="font-semibold text-foreground mb-1">No tips yet for this branch</h3>
-            <p className="text-sm text-muted-foreground mb-4">Be the first to map it out for juniors.</p>
-            <SubmitSurvivalDialog defaultBranch={branch} onSubmitted={reload} />
+            <p className="text-sm text-muted-foreground">Browse the resource corner above for curated links.</p>
           </div>
         ) : (
           <Accordion type="multiple" defaultValue={SURVIVAL_SECTIONS.filter((s) => (grouped.get(s)?.length ?? 0) > 0).slice(0, 3) as unknown as string[]} className="space-y-2">
