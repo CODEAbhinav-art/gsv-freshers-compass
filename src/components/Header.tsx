@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { GraduationCap, Menu, X, Moon, Sun, Bot } from "lucide-react";
+import { GraduationCap, Menu, X, Moon, Sun, Bot, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
@@ -99,6 +99,12 @@ export const Header = () => {
             >
               Ask Question
             </Button>
+            <Button asChild size="sm" variant="ghost" className="ml-1 text-muted-foreground hover:text-foreground" title="Admin Dashboard">
+              <Link to="/admin">
+                <Shield className="h-4 w-4" />
+                Admin
+              </Link>
+            </Button>
           </nav>
 
           {/* Mobile toggle */}
@@ -157,6 +163,12 @@ export const Header = () => {
               }}
             >
               Ask Question
+            </Button>
+            <Button asChild size="sm" variant="ghost" className="w-full mt-2 text-muted-foreground">
+              <Link to="/admin" onClick={() => setMobileOpen(false)}>
+                <Shield className="h-4 w-4" />
+                Admin Dashboard
+              </Link>
             </Button>
           </div>
         )}
