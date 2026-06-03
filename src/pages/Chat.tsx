@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight } from "lucide-react";
 
-const CHATBOT_URL = "https://gsv-bot-d85263.zapier.app";
+const CHATBOT_URL = "https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/23/08/20260523082735-94MDKPNC.json";
 
 const Chat = () => {
   return (
