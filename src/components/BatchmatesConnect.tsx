@@ -5,11 +5,11 @@ import { Users, ExternalLink, FileText } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SHEET_ID = "1AS9VR1LUKlNAFpF6EcaM86SXOM6HXup9WOb3W9WRDYQ";
-const SHEET_VIEW_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?usp=sharing`;
+const SHEET_VIEW_URL = `https://docs.google.com/spreadsheets/d/1BrFwxqFIp1-ib_VUbJ-DadvquVuxIH8zWlMeBefEowg/edit?usp=sharing`;
 
 
-const FORM_VIEW_URL = "https://forms.gle/UjwycnRMwZxU2Smt8";
-const FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfN2To_btwHggPJkxPpxM9XfqqTYdcdZRkwf5LlBPCielmIEw/viewform?embedded=true";
+const FORM_VIEW_URL = "https://forms.gle/JA5fkXHTehwN22oAA";
+const FORM_EMBED_URL = "https://forms.gle/JA5fkXHTehwN22oAA";
 
 export const BatchmatesConnect = () => {
   const ref = useScrollReveal();
