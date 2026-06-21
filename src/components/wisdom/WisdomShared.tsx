@@ -57,7 +57,7 @@ export const WisdomCard = ({ post, onUpvote, hasUpvoted }: {
         <Collapsible open={open} onOpenChange={setOpen}>
           <CollapsibleTrigger asChild>
             <Button variant="ghost" size="sm" className="h-8 px-2 -ml-2 text-primary hover:text-primary">
-              {open ? <>Show less <ChevronUp className="h-4 w-4 ml-1" /></> : <>Read more <ChevronDown className="h-4 w-4 ml-1" /></>}
+              {open ? <>Show less <ChevronUp className="h-4 w-4 ml-1" /></> : <>Read full insight <ChevronDown className="h-4 w-4 ml-1" /></>}
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
