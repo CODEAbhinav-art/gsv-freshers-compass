@@ -86,8 +86,10 @@ const ExamPreparation = () => {
 
         {/* Resource Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          
+
           {/* E-Books Section */}
+          <section aria-labelledby="ebooks-heading">
+          <h2 id="ebooks-heading" className="sr-only">E-Books</h2>
           <Card className="border-2 border-blue-200 shadow-lg">
             <CardHeader>
               <div className="flex items-center space-x-3">
@@ -126,8 +128,11 @@ const ExamPreparation = () => {
               </Collapsible>
             </CardContent>
           </Card>
+          </section>
 
           {/* YouTube Channels Section */}
+          <section aria-labelledby="youtube-heading">
+          <h2 id="youtube-heading" className="sr-only">Subject-wise YouTube Channels</h2>
           <Card className="border-2 border-red-200 shadow-lg">
             <CardHeader>
               <div className="flex items-center space-x-3">
@@ -179,6 +184,7 @@ const ExamPreparation = () => {
               </Collapsible>
             </CardContent>
           </Card>
+          </section>
         </div>
 
         {/* Additional Info */}

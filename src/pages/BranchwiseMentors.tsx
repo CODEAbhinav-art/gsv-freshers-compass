@@ -256,6 +256,7 @@ const BranchwiseMentors = () => {
               Connect with experienced seniors from your branch for personalized guidance and support
             </p>
             
+            <h2 className="sr-only">Important Note</h2>
             <Card className="max-w-4xl mx-auto mb-8 border-2 border-primary/30 bg-card/95 backdrop-blur-sm shadow-lg">
               <CardHeader>
                 <CardTitle className="text-left text-lg text-foreground">
@@ -284,6 +285,7 @@ const BranchwiseMentors = () => {
           </div>
         </div>
 
+        <h2 className="sr-only">Mentor List by Branch</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {branches.map((branch, index) => (
             <Card 
