@@ -109,6 +109,11 @@ const mustWatchVideos = [
 const LearningResources = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+      <PageMeta
+        title="Learning Resources — GSV Freshers Compass"
+        description="Pre-joining and technical learning recommendations curated for incoming Gati Shakti Vishwavidyalaya students."
+        path="/learning-resources"
+      />
       <header className="bg-white shadow-sm sticky top-0 z-20 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Button asChild variant="ghost">
