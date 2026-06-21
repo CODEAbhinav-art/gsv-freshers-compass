@@ -1,3 +1,4 @@
+import { PageMeta } from "@/components/PageMeta";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageSquare } from "lucide-react";

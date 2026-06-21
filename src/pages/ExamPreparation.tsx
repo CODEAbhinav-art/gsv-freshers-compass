@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageMeta } from "@/components/PageMeta";
 import { ArrowLeft, BookOpen, ExternalLink, ChevronDown, Youtube, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 

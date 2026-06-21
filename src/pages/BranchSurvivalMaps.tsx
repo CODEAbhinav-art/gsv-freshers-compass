@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { PageMeta } from "@/components/PageMeta";
 import { BRANCHES, branchLabel } from "@/lib/wisdomConstants";
 import { SURVIVAL_SECTIONS } from "@/lib/survivalConstants";
 import { useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";

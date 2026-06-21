@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { PageMeta } from "@/components/PageMeta";
 import { BRANCHES, WISDOM_CATEGORIES } from "@/lib/wisdomConstants";
 import { SubmitWisdomDialog, WisdomCard, useApprovedWisdom } from "@/components/wisdom/WisdomShared";
 import { supabase } from "@/integrations/supabase/client";
