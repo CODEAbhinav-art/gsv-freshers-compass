@@ -62,7 +62,13 @@ const ExamPreparation = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Exam Preparation — GSV Freshers Compass"
+        description="E-books and subject-wise YouTube channels for first-year exams at Gati Shakti Vishwavidyalaya."
+        path="/exam-preparation"
+      />
       <Header />
+      
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
