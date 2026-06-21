@@ -64,6 +64,11 @@ const SeniorWisdom = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <PageMeta
+        title="Senior Insights — GSV Freshers Compass"
+        description="Crowd-sourced advice and tips from GSV seniors on academics, hostel life, internships and more."
+        path="/senior-wisdom"
+      />
       <AnimatedBackground />
       <Header />
 

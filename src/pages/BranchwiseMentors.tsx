@@ -235,6 +235,11 @@ const BranchwiseMentors = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Branchwise Mentors — GSV Freshers Compass"
+        description="Senior mentors for each engineering branch at GSV with contact details and guidance."
+        path="/branchwise-mentors"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <Button 
