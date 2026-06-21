@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageMeta } from "@/components/PageMeta";
 import { ArrowLeft, BookOpen, ExternalLink, ChevronDown, Youtube, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -61,7 +62,13 @@ const ExamPreparation = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Exam Preparation — GSV Freshers Compass"
+        description="E-books and subject-wise YouTube channels for first-year exams at Gati Shakti Vishwavidyalaya."
+        path="/exam-preparation"
+      />
       <Header />
+      
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
@@ -86,8 +93,10 @@ const ExamPreparation = () => {
 
         {/* Resource Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          
+
           {/* E-Books Section */}
+          <section aria-labelledby="ebooks-heading">
+          <h2 id="ebooks-heading" className="sr-only">E-Books</h2>
           <Card className="border-2 border-blue-200 shadow-lg">
             <CardHeader>
               <div className="flex items-center space-x-3">
@@ -126,8 +135,11 @@ const ExamPreparation = () => {
               </Collapsible>
             </CardContent>
           </Card>
+          </section>
 
           {/* YouTube Channels Section */}
+          <section aria-labelledby="youtube-heading">
+          <h2 id="youtube-heading" className="sr-only">Subject-wise YouTube Channels</h2>
           <Card className="border-2 border-red-200 shadow-lg">
             <CardHeader>
               <div className="flex items-center space-x-3">
@@ -179,6 +191,7 @@ const ExamPreparation = () => {
               </Collapsible>
             </CardContent>
           </Card>
+          </section>
         </div>
 
         {/* Additional Info */}

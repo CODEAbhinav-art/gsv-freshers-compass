@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { PageMeta } from "@/components/PageMeta";
 import { BRANCHES, branchLabel } from "@/lib/wisdomConstants";
 import { SURVIVAL_SECTIONS } from "@/lib/survivalConstants";
 import { useApprovedSurvival, type SurvivalEntry } from "@/components/survival/SurvivalShared";
@@ -69,6 +70,11 @@ const BranchSurvivalMaps = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <PageMeta
+        title="Branch Guides — GSV Freshers Compass"
+        description="Branch-specific resource corner with PYQ papers, notes and YouTube channels for GSV students."
+        path="/branch-survival"
+      />
       <AnimatedBackground />
       <Header />
 

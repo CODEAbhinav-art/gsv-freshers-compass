@@ -1,3 +1,4 @@
+import { PageMeta } from "@/components/PageMeta";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users, MessageCircle, GraduationCap, ExternalLink, Mail, Phone, Instagram, MessageSquare } from "lucide-react";
@@ -234,6 +235,11 @@ const BranchwiseMentors = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Branchwise Mentors — GSV Freshers Compass"
+        description="Senior mentors for each engineering branch at GSV with contact details and guidance."
+        path="/branchwise-mentors"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <Button 
@@ -256,6 +262,7 @@ const BranchwiseMentors = () => {
               Connect with experienced seniors from your branch for personalized guidance and support
             </p>
             
+            <h2 className="sr-only">Important Note</h2>
             <Card className="max-w-4xl mx-auto mb-8 border-2 border-primary/30 bg-card/95 backdrop-blur-sm shadow-lg">
               <CardHeader>
                 <CardTitle className="text-left text-lg text-foreground">
@@ -284,6 +291,7 @@ const BranchwiseMentors = () => {
           </div>
         </div>
 
+        <h2 className="sr-only">Mentor List by Branch</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {branches.map((branch, index) => (
             <Card 

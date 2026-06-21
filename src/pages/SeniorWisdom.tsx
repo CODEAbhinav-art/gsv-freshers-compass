@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { PageMeta } from "@/components/PageMeta";
 import { BRANCHES, WISDOM_CATEGORIES } from "@/lib/wisdomConstants";
 import { SubmitWisdomDialog, WisdomCard, useApprovedWisdom } from "@/components/wisdom/WisdomShared";
 import { supabase } from "@/integrations/supabase/client";
@@ -63,6 +64,11 @@ const SeniorWisdom = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <PageMeta
+        title="Senior Insights — GSV Freshers Compass"
+        description="Crowd-sourced advice and tips from GSV seniors on academics, hostel life, internships and more."
+        path="/senior-wisdom"
+      />
       <AnimatedBackground />
       <Header />
 

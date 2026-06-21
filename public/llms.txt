@@ -1,0 +1,22 @@
+# GSV Freshers Compass
+
+> Student-run guide for new students at Gati Shakti Vishwavidyalaya (GSV) — mentors, exam prep, branch guides, clubs, scholarships and senior insights.
+
+GSV Freshers Compass is a volunteer initiative by GSV students to help freshers settle in. It centralises practical resources: branchwise senior mentors, exam preparation material, learning resources, internship highlights, branch-specific guides, student clubs, and crowd-sourced insights from seniors.
+
+## Pages
+
+- [Home](/): Overview, FAQs, important links, hall of contributors and visitor count.
+- [About](/about): About the volunteer team and the project's purpose.
+- [Branchwise Mentors](/branchwise-mentors): Senior mentors for each engineering branch with contact details.
+- [Exam Preparation](/exam-preparation): E-books and subject-wise YouTube channels for first-year exams.
+- [Learning Resources](/learning-resources): Pre-joining and technical learning recommendations.
+- [Internship Gallery](/internship-gallery): Internship experiences and outcomes from GSV students.
+- [Senior Insights](/senior-wisdom): Crowd-sourced advice and tips from GSV seniors.
+- [Branch Guides](/branch-survival): Branch-specific resource corner with PYQ papers, notes and YouTube channels.
+- [Mechanical Engineering](/mechanical-engineering): Dedicated guide for ME branch students.
+- [Chat](/chat): GSV AI Assistant chatbot.
+
+## Optional
+
+- [Auth](/auth): Sign-in for upvoting and submissions.

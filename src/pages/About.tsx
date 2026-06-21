@@ -1,4 +1,5 @@
 
+import { PageMeta } from "@/components/PageMeta";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AboutMe } from "@/components/AboutMe";
@@ -11,6 +12,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="About — GSV Freshers Compass"
+        description="About the volunteer GSV student team behind Freshers Compass and the project's purpose."
+        path="/about"
+      />
       <Header />
       
       <div className="pt-24 pb-8">
