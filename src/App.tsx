@@ -18,6 +18,7 @@ import BranchSurvivalMaps from "./pages/BranchSurvivalMaps";
 import BranchResourceSection from "./pages/BranchResourceSection";
 import Auth from "./pages/Auth";
 import Chat from "./pages/Chat";
+import AcademicCalendar from "./pages/AcademicCalendar";
 import NotFound from "./pages/NotFound";
 import { ZapierChatbot } from "./components/ZapierChatbot";
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/branch-survival" element={<BranchSurvivalMaps />} />
           <Route path="/branch-guides/:branch/:section" element={<BranchResourceSection />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/academic-calendar" element={<AcademicCalendar />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
