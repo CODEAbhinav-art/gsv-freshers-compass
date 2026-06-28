@@ -19,6 +19,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { SiteSearch } from "@/components/SiteSearch";
 import { UpcomingEventsWidget } from "@/components/UpcomingEventsWidget";
 import { WhatsAppCommunity } from "@/components/WhatsAppCommunity";
+import { FutureCampus } from "@/components/FutureCampus";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import { useNavigate } from "react-router-dom";
