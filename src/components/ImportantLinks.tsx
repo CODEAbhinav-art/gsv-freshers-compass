@@ -268,7 +268,7 @@ export const ImportantLinks = () => {
             <CardContent className="pt-0 space-y-2.5">
               <p className="text-sm text-muted-foreground">Take a virtual tour of the GSV campus</p>
               <Button size="sm" className="w-full" asChild>
-                <a href="https://youtu.be/KN-mVKcXMNs?si=_Tpsw_B4Z2YAMFvW" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/watch?v=KN-mVKcXMNs" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-3.5 w-3.5 mr-1.5" /> Watch Tour
                 </a>
               </Button>
