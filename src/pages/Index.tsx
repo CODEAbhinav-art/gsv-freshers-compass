@@ -52,6 +52,7 @@ const Index = () => {
       <AnimatedBackground />
       <Header />
       <Hero />
+      <FutureCampus />
       <WhatsAppCommunity />
       <SiteSearch />
       <QuickLinks />
