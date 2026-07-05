@@ -2,15 +2,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Heart, Users, Target, Code2, Camera, Star, User, Crown, Sparkles } from "lucide-react";
+import { Github, Heart, Users, Target, Code2, Camera, Star, User, Crown, Sparkles, Linkedin } from "lucide-react";
 
 interface ContributorProps {
   name: string;
   subtitle: string;
   placeholder?: boolean;
+  linkedin?: string;
 }
 
-const ContributorPill = ({ name, subtitle, placeholder = false }: ContributorProps) => (
+const ContributorPill = ({ name, subtitle, placeholder = false, linkedin }: ContributorProps) => (
   <div
     className={`group relative px-4 py-3 rounded-xl border transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
       placeholder
@@ -18,25 +19,39 @@ const ContributorPill = ({ name, subtitle, placeholder = false }: ContributorPro
         : "border-amber-400/50 bg-card hover:border-amber-400/80 hover:shadow-amber-200/30 dark:hover:shadow-amber-800/20"
     }`}
   >
-    <p className={`font-medium text-sm ${placeholder ? "text-muted-foreground italic" : "text-foreground"}`}>
-      {name}
-    </p>
+    <div className="flex items-center justify-between gap-2">
+      <p className={`font-medium text-sm ${placeholder ? "text-muted-foreground italic" : "text-foreground"}`}>
+        {name}
+      </p>
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} on LinkedIn`}
+          className="text-muted-foreground hover:text-[#0A66C2] transition-colors"
+        >
+          <Linkedin className="h-4 w-4" />
+        </a>
+      )}
+    </div>
     <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
   </div>
 );
 
 const foundingBatch = [
-  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creation/Moderation" },
-  { name: "Pratik Ranjan", subtitle: "ECE'2028 · UI-UX" },
-  { name: "Ved Vyas", subtitle: "ME'2028 · Exam Papers" },
-  { name: "Harivarun Bandi", subtitle: "ECE'2028 · Media" }
+  { name: "Abhinav Mishra", subtitle: "AI-DS'2028 · Creation/Moderation", linkedin: "https://www.linkedin.com/in/abhinavrmishra" },
+  { name: "Pratik Ranjan", subtitle: "ECE'2028 · UI-UX", linkedin: "https://www.linkedin.com/in/pratik-ranjan3011/" },
+  { name: "Ved Vyas", subtitle: "ME'2028 · Exam Papers", linkedin: "https://www.linkedin.com/in/ved-s-vyas/" },
+  { name: "Harivarun Bandi", subtitle: "ECE'2028 · Media", linkedin: "https://www.linkedin.com/in/harivarun-bandi-357b90339/" }
 ];
 
 const presentContributors = [
-  { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Chatbot/Clubs", placeholder: false },
+  { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Chatbot/Clubs", placeholder: false, linkedin: "https://www.linkedin.com/in/rudransh-mishra-3547872a0/" },
+  { name: "Sagar Yadav", subtitle: "2029 · Contributor", placeholder: false, linkedin: "https://www.linkedin.com/in/sagaryadavgsv/" },
   { name: "Your Name Here", subtitle: "Contribute to get featured", placeholder: true },
-  { name: "Earn Your Place", subtitle: "Join the hall of contributors", placeholder: true },
 ];
+
 
 export const AboutMe = () => {
   return (
