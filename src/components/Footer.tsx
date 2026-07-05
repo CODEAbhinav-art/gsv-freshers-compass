@@ -32,7 +32,7 @@ export const Footer = () => {
                 ["Academic FAQs", "#faqs"],
                 ["Campus Life", "#clubs"],
                 ["Resources", "#important-links"],
-                ["Batchmates", "#batchmates"],
+                
               ].map(([label, href]) => (
                 <li key={label}>
                   <a href={href} className="text-muted-foreground hover:text-foreground transition-colors duration-200">{label}</a>

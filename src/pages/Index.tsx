@@ -9,7 +9,7 @@ import { ImportantLinks } from "@/components/ImportantLinks";
 import { InternshipHighlights } from "@/components/InternshipHighlights";
 import { BranchwiseMentors } from "@/components/BranchwiseMentors";
 import { ClubsAtGSV } from "@/components/ClubsAtGSV";
-import { BatchmatesConnect } from "@/components/BatchmatesConnect";
+
 import { SeniorWisdomPreview } from "@/components/SeniorWisdomPreview";
 import { BranchSurvivalPreview } from "@/components/BranchSurvivalPreview";
 import { EntrepreneurSection } from "@/components/EntrepreneurSection";
@@ -59,7 +59,7 @@ const Index = () => {
       <ImportantLinks />
       <SeniorWisdomPreview />
       <BranchSurvivalPreview />
-      <BatchmatesConnect />
+      
       <EntrepreneurSection />
       <InternshipHighlights />
       <BranchwiseMentors />

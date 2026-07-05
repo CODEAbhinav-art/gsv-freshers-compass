@@ -7,7 +7,7 @@ import { useTheme } from "@/hooks/useTheme";
 
 const navLinks = [
   { label: "Resources", href: "#important-links" },
-  { label: "Batchmates", href: "#batchmates" },
+  
   { label: "Clubs", href: "#clubs" },
   { label: "FAQs", href: "#faqs" },
   { label: "Gallery", href: "#gallery" },
