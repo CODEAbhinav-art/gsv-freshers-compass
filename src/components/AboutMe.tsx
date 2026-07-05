@@ -48,7 +48,7 @@ const foundingBatch = [
 
 const presentContributors = [
   { name: "Rudransh Mishra", subtitle: "AI-DS'2029 · Chatbot/Clubs", placeholder: false, linkedin: "https://www.linkedin.com/in/rudransh-mishra-3547872a0/" },
-  { name: "Sagar Yadav", subtitle: "2029 · Contributor", placeholder: false, linkedin: "https://www.linkedin.com/in/sagaryadavgsv/" },
+  { name: "Sagar Yadav", subtitle: "EE'2029 · PYQ Papers", placeholder: false, linkedin: "https://www.linkedin.com/in/sagaryadavgsv/" },
   { name: "Your Name Here", subtitle: "Contribute to get featured", placeholder: true },
 ];
 
