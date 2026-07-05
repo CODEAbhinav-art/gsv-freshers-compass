@@ -94,7 +94,7 @@ export const AboutMe = () => {
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {foundingBatch.map((c) => (
-                  <ContributorPill key={c.name} name={c.name} subtitle={c.subtitle} />
+                  <ContributorPill key={c.name} name={c.name} subtitle={c.subtitle} linkedin={c.linkedin} />
                 ))}
               </div>
             </CardContent>
@@ -119,7 +119,7 @@ export const AboutMe = () => {
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {presentContributors.map((c, i) => (
-                  <ContributorPill key={i} name={c.name} subtitle={c.subtitle} placeholder={c.placeholder} />
+                  <ContributorPill key={i} name={c.name} subtitle={c.subtitle} placeholder={c.placeholder} linkedin={c.linkedin} />
                 ))}
               </div>
             </CardContent>
