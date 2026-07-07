@@ -276,6 +276,24 @@ export type Database = {
         }
         Relationships: []
       }
+      site_stats: {
+        Row: {
+          id: number
+          updated_at: string
+          visitor_count: number
+        }
+        Insert: {
+          id?: number
+          updated_at?: string
+          visitor_count?: number
+        }
+        Update: {
+          id?: number
+          updated_at?: string
+          visitor_count?: number
+        }
+        Relationships: []
+      }
       survival_upvotes: {
         Row: {
           created_at: string
@@ -381,7 +399,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_visitor_count: { Args: never; Returns: number }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

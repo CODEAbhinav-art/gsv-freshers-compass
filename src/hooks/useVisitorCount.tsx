@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -7,17 +6,13 @@ export const useVisitorCount = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Track the current visit only on initial site load (not on navigation)
     const trackVisit = async () => {
       try {
-        // Check if this is a new session
         const hasVisited = sessionStorage.getItem('hasVisited');
         if (!hasVisited) {
-          // This will work with RLS as we allow public INSERT
           await supabase.from('website_visits').insert({
             user_agent: navigator.userAgent,
           });
-          // Mark this session as visited
           sessionStorage.setItem('hasVisited', 'true');
         }
       } catch (error) {
@@ -25,49 +20,39 @@ export const useVisitorCount = () => {
       }
     };
 
-    // Get initial visitor count
-    const getVisitorCount = async () => {
+    const fetchCount = async () => {
       try {
-        // Use the secure function that now has proper SECURITY DEFINER
-        const { data, error } = await supabase.rpc('get_visitor_count');
+        const { data, error } = await supabase
+          .from('site_stats')
+          .select('visitor_count')
+          .eq('id', 1)
+          .maybeSingle();
         if (error) {
           console.error('Error getting visitor count:', error);
-          // Set a default count if we can't retrieve it
           setVisitorCount(0);
         } else {
-          setVisitorCount(data || 0);
+          setVisitorCount(Number(data?.visitor_count ?? 0));
         }
-        setLoading(false);
       } catch (error) {
         console.error('Error getting visitor count:', error);
         setVisitorCount(0);
+      } finally {
         setLoading(false);
       }
     };
 
-    // Track this visit and get initial count
     trackVisit();
-    getVisitorCount();
+    fetchCount();
 
-    // Set up real-time subscription for new visits
     const channel = supabase
-      .channel('visitor-tracking')
+      .channel('site-stats-updates')
       .on(
         'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'website_visits'
-        },
-        async () => {
-          // When a new visit is recorded, update the count
-          try {
-            const { data, error } = await supabase.rpc('get_visitor_count');
-            if (!error && data !== null) {
-              setVisitorCount(data);
-            }
-          } catch (error) {
-            console.error('Error updating visitor count:', error);
+        { event: 'UPDATE', schema: 'public', table: 'site_stats' },
+        (payload: any) => {
+          const next = payload?.new?.visitor_count;
+          if (typeof next === 'number' || typeof next === 'bigint') {
+            setVisitorCount(Number(next));
           }
         }
       )
