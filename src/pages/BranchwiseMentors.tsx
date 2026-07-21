@@ -95,11 +95,11 @@ const BranchwiseMentors = () => {
       mentors: {
         males: [
           {
-            name: "Atulya Bharat",
-            details: "9+ CGPA, Internship coordinator(EE), Co-coordinator Technocrats",
+            name: "Sagar Yadav",
+            details: "8.5+ CGPA,Member Technocrats",
             contacts: {
-              linkedin: "https://www.linkedin.com/in/atulyabharat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              WhatsApp: "https://wa.me/qr/CDSAFPBMZOCVN1"
+              linkedin: "https://www.linkedin.com/in/sagaryadavgsv/",
+              WhatsApp: "https://wa.me/+916283610873"
             }
           },
           {
